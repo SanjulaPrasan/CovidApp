@@ -6,32 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".UI.Privacy">
 
-    <TextView
-        android:id="@+id/tvSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="Skip"
-        android:textColor="#02DAC5"
-        android:textSize="25sp"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <ImageView
         android:id="@+id/ivPrivacy"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:src="@drawable/img_privacy3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSkip"
-        android:src="@drawable/img_privacy3"
-        />
+        tools:layout_editor_absoluteY="93dp" />
 
     <TextView
         android:id="@+id/tvWelcome"

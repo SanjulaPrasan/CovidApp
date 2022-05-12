@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
-            android:name=".UI.Logo"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Registation"
+            android:name=".UI.Registration"
             android:exported="false" />
         <activity
             android:name=".UI.Home"
@@ -25,7 +22,7 @@
             android:name=".UI.Start"
             android:exported="false" />
         <activity
-            android:name=".UI.SelfAssesment"
+            android:name=".UI.SelfAssessment"
             android:exported="false" />
         <activity
             android:name=".UI.Api"
@@ -41,7 +38,10 @@
             android:exported="false" />
         <activity
             android:name=".UI.Bluetooth"
-            android:exported="true">
+            android:exported="false" />
+        <activity
+            android:name=".UI.Logo"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

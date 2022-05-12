@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.ui1.R;
 
-public class SelfAssesment extends AppCompatActivity {
+public class SelfAssessment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self_assesment);
+        setContentView(R.layout.activity_self_assessment);
     }
 }
