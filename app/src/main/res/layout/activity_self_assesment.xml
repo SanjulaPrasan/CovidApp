@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.SelfAssesment">
+
+    <TextView
+        android:id="@+id/tvSelfAss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:text="Self Assesment"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="-5dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelfAss"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <ImageView
+        android:id="@+id/imFever"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_fever2"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelfAss"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fever"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imFever"
+        app:layout_constraintLeft_toRightOf="@id/imFever"
+        app:layout_constraintTop_toTopOf="@+id/imFever" />
+
+    <ImageView
+        android:id="@+id/ivDry"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_dry"
+        app:layout_constraintTop_toBottomOf="@+id/imFever"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dry Cough"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDry"
+        app:layout_constraintLeft_toRightOf="@id/ivDry"
+        app:layout_constraintTop_toTopOf="@+id/ivDry" />
+
+
+    <ImageView
+        android:id="@+id/ivFati"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_fatigu"
+        app:layout_constraintTop_toBottomOf="@+id/ivDry"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fatigue"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFati"
+        app:layout_constraintLeft_toRightOf="@id/ivFati"
+        app:layout_constraintTop_toTopOf="@+id/ivFati" />
+
+
+    <ImageView
+        android:id="@+id/ivbrea"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_breath"
+        app:layout_constraintTop_toBottomOf="@+id/ivFati"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty in breathing"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivbrea"
+        app:layout_constraintLeft_toRightOf="@id/ivbrea"
+        app:layout_constraintTop_toTopOf="@+id/ivbrea" />
+
+    <RelativeLayout
+        android:id="@+id/rlCovid"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/ivbrea"
+        android:background="@drawable/rounded_rectangle1"
+        />
+    <ImageView
+        android:id="@+id/ivCovid"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_covid"
+        app:layout_constraintTop_toBottomOf="@+id/ivbrea"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Covid-19 Positive"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCovid"
+        app:layout_constraintLeft_toRightOf="@id/ivCovid"
+        app:layout_constraintTop_toTopOf="@+id/ivCovid" />
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="17dp"
+        android:text="Submit"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/rlCovid"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/rounded_rectangle2"
+        />
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:text="Home"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/relativeLayout"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/rounded_rectangle"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

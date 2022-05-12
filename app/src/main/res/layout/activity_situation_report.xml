@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.SituationReport">
+
+    <TextView
+        android:id="@+id/tvSituRep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:text="Situation Report"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="545dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="-5dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSituRep"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022-Apr-30 | 23:04"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imFever"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_totcase"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Confirmed Cases"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imFever"
+        app:layout_constraintLeft_toRightOf="@id/imFever"
+        app:layout_constraintTop_toTopOf="@+id/imFever" />
+
+    <ImageView
+        android:id="@+id/ivDry"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_actcase"
+        app:layout_constraintTop_toBottomOf="@+id/imFever"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active Cases"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDry"
+        app:layout_constraintLeft_toRightOf="@id/ivDry"
+        app:layout_constraintTop_toTopOf="@+id/ivDry" />
+
+
+    <ImageView
+        android:id="@+id/ivFati"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_dalynew"
+        app:layout_constraintTop_toBottomOf="@+id/ivDry"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily New Cases"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFati"
+        app:layout_constraintLeft_toRightOf="@id/ivFati"
+        app:layout_constraintTop_toTopOf="@+id/ivFati" />
+
+
+    <ImageView
+        android:id="@+id/ivbrea"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_recover"
+        app:layout_constraintTop_toBottomOf="@+id/ivFati"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recovered"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivbrea"
+        app:layout_constraintLeft_toRightOf="@id/ivbrea"
+        app:layout_constraintTop_toTopOf="@+id/ivbrea" />
+
+
+    <ImageView
+        android:id="@+id/ivCovid"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/img_deaths"
+        app:layout_constraintTop_toBottomOf="@+id/ivbrea"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deaths"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivCovid"
+        app:layout_constraintLeft_toRightOf="@id/ivCovid"
+        app:layout_constraintTop_toTopOf="@+id/ivCovid" />
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Home"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/rounded_rectangle2"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
