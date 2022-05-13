@@ -26,7 +26,7 @@ public class Privacy extends AppCompatActivity {
     }
 
     public void openStart(){
-        Intent intent = new Intent(this, Start.class);
+        Intent intent = new Intent(this, Bluetooth.class);
         startActivity(intent);
     }
 }
