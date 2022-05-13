@@ -20,13 +20,13 @@ public class Start extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openBluetooth();
+                openRegistration();
             }
         });
     }
 
-    public void openBluetooth(){
-        Intent intent = new Intent(this, Bluetooth.class);
+    public void openRegistration(){
+        Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
 }
