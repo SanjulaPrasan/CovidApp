@@ -16,8 +16,8 @@ public class Bluetooth extends AppCompatActivity {
     private static final int REQUEST_ENABLE_BT = 0;
     private static final int REQUEST_DISCOVER_BT = 1;
 
-    BluetoothAdapter mblueAdapter;
-    Button btnNext;
+   private BluetoothAdapter mblueAdapter;
+   private Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -143,7 +143,7 @@
         app:layout_constraintLeft_toRightOf="@id/ivCovid"
         app:layout_constraintTop_toTopOf="@+id/ivCovid" />
     <Button
-        android:id="@+id/btnHome"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentLeft="true"

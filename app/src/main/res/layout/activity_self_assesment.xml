@@ -159,7 +159,7 @@
         android:background="@drawable/rounded_rectangle2"
         />
     <Button
-        android:id="@+id/btnHome"
+        android:id="@+id/button"
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_alignParentLeft="true"

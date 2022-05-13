@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="@+id/rlReport" />
 
     <Button
-        android:id="@+id/btnSelfAss"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentLeft="true"
