@@ -10,14 +10,14 @@ import android.widget.Button;
 import com.example.ui1.R;
 
 public class Start extends AppCompatActivity {
-    private Button button;
+    private Button btnStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        button = (Button) findViewById(R.id.btnNext);
-        button.setOnClickListener(new View.OnClickListener() {
+        btnStart = (Button) findViewById(R.id.btnNext);
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openRegistration();

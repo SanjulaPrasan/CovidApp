@@ -10,15 +10,15 @@ import android.widget.Button;
 import com.example.ui1.R;
 
 public class Logo extends AppCompatActivity {
-    private Button button;
+    private Button btnLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo);
 
-        button = (Button) findViewById(R.id.btnNext);
-        button.setOnClickListener(new View.OnClickListener() {
+        btnLogo = (Button) findViewById(R.id.btnNext);
+        btnLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPrivacy();

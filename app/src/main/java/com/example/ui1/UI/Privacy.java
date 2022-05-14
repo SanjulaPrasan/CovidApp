@@ -10,14 +10,14 @@ import android.widget.Button;
 import com.example.ui1.R;
 
 public class Privacy extends AppCompatActivity {
-    private Button button;
+    private Button btnPrivacy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy);
-        button = (Button) findViewById(R.id.btnNext);
-        button.setOnClickListener(new View.OnClickListener() {
+        btnPrivacy = (Button) findViewById(R.id.btnNext);
+        btnPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openStart();

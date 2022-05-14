@@ -10,14 +10,14 @@ import android.widget.Button;
 import com.example.ui1.R;
 
 public class Bluetooth extends AppCompatActivity {
-    private Button btnNext;
+    private Button btnBluetooth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
 
-        btnNext = findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        btnBluetooth = findViewById(R.id.btnNext);
+        btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGetStarted();
