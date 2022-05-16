@@ -57,6 +57,7 @@
     <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/switchBtnFever"
         android:textOff="No"
         android:textOn="Yes"
         android:thumb="@drawable/thumb"
@@ -92,6 +93,7 @@
     <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/switchBtnCough"
         android:textOff="No"
         android:textOn="Yes"
         android:thumb="@drawable/thumb"
@@ -128,6 +130,7 @@
     <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/switchBtnFatigue"
         android:textOff="No"
         android:textOn="Yes"
         android:thumb="@drawable/thumb"
@@ -164,6 +167,7 @@
     <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/switchBtnBreathing"
         android:textOff="No"
         android:textOn="Yes"
         android:thumb="@drawable/thumb"
@@ -210,6 +214,7 @@
     <androidx.appcompat.widget.SwitchCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/switchBtnCovid"
         android:textOff="No"
         android:textOn="Yes"
         android:thumb="@drawable/thumb"
