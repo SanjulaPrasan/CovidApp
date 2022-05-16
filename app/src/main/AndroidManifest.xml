@@ -22,7 +22,7 @@
             android:name=".UI.Start"
             android:exported="false" />
         <activity
-            android:name=".UI.SelfAssessment"
+            android:name=".UI.Logo"
             android:exported="false" />
         <activity
             android:name=".UI.Api"
@@ -40,7 +40,7 @@
             android:name=".UI.Bluetooth"
             android:exported="false" />
         <activity
-            android:name=".UI.Logo"
+            android:name=".UI.SelfAssessment"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
