@@ -55,6 +55,7 @@ public class Stats extends AppCompatActivity {
                         pieChart.addPieSlice(new PieModel("Active", localActive, Color.parseColor("#008F06")));
                         pieChart.addPieSlice(new PieModel("Recovered", localRecovered, Color.parseColor("#FF3700B3")));
                         pieChart.addPieSlice(new PieModel("Deaths", localDeaths, Color.parseColor("#f55c47")));
+                        pieChart.startAnimation();
 
                     }
                 }
