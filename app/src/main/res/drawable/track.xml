@@ -11,7 +11,7 @@
 
     <item android:state_checked="false">
         <shape android:shape="rectangle">
-            <solid android:color="#008F06"/>
+            <solid android:color="#03da59"/>
             <corners android:radius="100dp"/>
             <stroke android:width="1dp" android:color="#8c8c8c"/>
             <size android:height="20dp"/>
