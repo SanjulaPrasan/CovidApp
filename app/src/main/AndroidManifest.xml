@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ui1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -41,6 +42,9 @@
             android:exported="false" />
         <activity
             android:name=".UI.Logo"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Stats"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
