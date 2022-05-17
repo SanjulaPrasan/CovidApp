@@ -788,14 +788,15 @@
         android:layout_marginTop="5dp">
 
         <Button
+            android:id="@+id/btnHome"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btnHome"
+            android:layout_marginTop="5dp"
             android:text="Home"
             android:textColor="@color/black"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:textSize="20dp">
+            android:background="#03dac5">
 
         </Button>
 

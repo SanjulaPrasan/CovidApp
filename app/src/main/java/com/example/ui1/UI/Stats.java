@@ -4,8 +4,11 @@ import com.example.ui1.API.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.ui1.R;
@@ -22,6 +25,8 @@ public class Stats extends AppCompatActivity {
     private TextView localtotal,localactive,localrecovered,localdeaths;
     private TextView globaltotal,globalactive,globalrecovered,globaldeaths;
     private PieChart pieChart;
+
+    private Button btnHome;
 
     private List<ModelClass> list;
 
@@ -69,6 +74,14 @@ public class Stats extends AppCompatActivity {
 
         getGlobalData();
 
+        btnHome = (Button) findViewById(R.id.btnHome);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHome();
+            }
+        });
+
     }
 
     private void getGlobalData() {
@@ -107,6 +120,11 @@ public class Stats extends AppCompatActivity {
         globalrecovered=findViewById(R.id.globalrecovered);
         globaldeaths=findViewById(R.id.globaldeaths);
         pieChart=findViewById(R.id.piechart);
+    }
+
+    public void openHome(){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
     }
 }
 

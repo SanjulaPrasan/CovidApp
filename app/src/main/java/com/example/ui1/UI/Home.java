@@ -46,7 +46,7 @@ public class Home extends AppCompatActivity {
         btnStats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSituationReport();
+                openStats();
             }
         });
         btnSelfAss = (Button) findViewById(R.id.btnSelfAss);
@@ -65,12 +65,12 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    public void openSituationReport(){
-        Intent intent = new Intent(this, SituationReport.class);
+    public void openStats(){
+        Intent intent = new Intent(this, Stats.class);
         startActivity(intent);
     }
     public void openSelfAss(){
-        Intent intent = new Intent(this, SelfAssessment.class);
+        Intent intent = new Intent(this, SelfAssessmentHome.class);
         startActivity(intent);
     }
     public void openProf(){

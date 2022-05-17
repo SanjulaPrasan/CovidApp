@@ -9,6 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
+
+        <activity
+            android:name=".UI.Logo"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".UI.Privacy"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Bluetooth"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Start"
+            android:exported="false" />
         <activity
             android:name=".UI.Registration"
             android:exported="false" />
@@ -16,41 +36,18 @@
             android:name=".UI.SelfAssessment"
             android:exported="false" />
         <activity
-            android:name=".UI.SituationReport"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Start"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Logo"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Api"
-            android:exported="false" />
-        <activity
-            android:name=".UI.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Privacy"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Profile"
-            android:exported="false" />
-        <activity
-            android:name=".UI.Bluetooth"
+            android:name=".UI.Home"
             android:exported="false" />
         <activity
             android:name=".UI.Stats"
             android:exported="false" />
         <activity
-            android:name=".UI.Home"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".UI.SelfAssessmentHome"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Profile"
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
