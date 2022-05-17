@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Profile">
+    tools:context=".UI.Profile"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tvHome"
@@ -54,6 +55,7 @@
         android:layout_marginRight="10dp"
         android:text="Full Name"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/rlCovid"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -68,6 +70,7 @@
         android:layout_marginRight="10dp"
         android:text="Address"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvFullName"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -82,6 +85,7 @@
         android:layout_marginRight="10dp"
         android:text="Email"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvAdd"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -96,6 +100,7 @@
         android:layout_marginRight="10dp"
         android:text="Phone"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -110,6 +115,7 @@
         android:layout_marginRight="10dp"
         android:text="BT MAC Add (GET Defualt)"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvPhone"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -124,13 +130,14 @@
         android:layout_marginRight="10dp"
         android:text="User UID"
         android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvMACAdd"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnHome"
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_marginLeft="10dp"
