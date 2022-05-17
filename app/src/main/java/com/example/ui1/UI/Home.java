@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.ui1.R;
@@ -18,10 +19,12 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        videoView = findViewById(R.id.vvBlueScan);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2);
-        videoView.setVideoURI(uri);
-        videoView.start();
+        this.videoView = findViewById(R.id.vvBlueScan);
+        this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
+        MediaController videoControl = new MediaController(this);
+        videoControl.setAnchorView(this.videoView);
+        this.videoView.setMediaController(videoControl);
+        this.videoView.start();
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

@@ -3,9 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_logo.xml" value="0.16197916666666667" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_start.xml" value="0.16197916666666667" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_bluetooth.xml" value="0.17777777777777778" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_logo.xml" value="0.1736111111111111" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
@@ -37,11 +34,14 @@
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/drawable/track.xml" value="0.2015" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_api.xml" value="0.10092592592592593" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_bluetooth.xml" value="0.264" />
+        <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_home.xml" value="0.14739583333333334" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_logo.xml" value="0.25" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_privacy.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_self_assessment.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_situation_report.xml" value="0.25" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_start.xml" value="0.264" />
       </map>
     </option>
