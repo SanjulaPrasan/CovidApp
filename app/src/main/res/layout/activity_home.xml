@@ -50,7 +50,7 @@
         android:id="@+id/vvBlueScan"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnStatus"
+        app:layout_constraintBottom_toTopOf="@+id/btnStats"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rlCovid"
@@ -58,7 +58,7 @@
 
 
     <Button
-        android:id="@+id/btnStatus"
+        android:id="@+id/btnStats"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentLeft="true"
@@ -68,7 +68,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/rounded_rectangle"
-        android:text="Status"
+        android:text="Stats"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
