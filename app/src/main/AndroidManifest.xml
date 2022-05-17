@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ui1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
@@ -14,7 +13,7 @@
             android:name=".UI.Registration"
             android:exported="false" />
         <activity
-            android:name=".UI.Home"
+            android:name=".UI.SelfAssessment"
             android:exported="false" />
         <activity
             android:name=".UI.SituationReport"
@@ -23,7 +22,7 @@
             android:name=".UI.Start"
             android:exported="false" />
         <activity
-            android:name=".UI.SelfAssessment"
+            android:name=".UI.Logo"
             android:exported="false" />
         <activity
             android:name=".UI.Api"
@@ -42,6 +41,9 @@
             android:exported="false" />
         <activity
             android:name=".UI.Logo"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Home"
             android:exported="false" />
         <activity
             android:name=".UI.Stats"
