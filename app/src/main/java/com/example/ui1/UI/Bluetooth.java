@@ -53,14 +53,19 @@ public class Bluetooth extends AppCompatActivity {
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!mblueAdapter.isEnabled()){
+                if(mblueAdapter != null && !mblueAdapter.isEnabled()) {
+                    mblueAdapter.enable();
+                    Intent i=new Intent(Bluetooth.this, Start.class);
+                    startActivity(i);
+                }
+               /* if(!mblueAdapter.isEnabled()){
                     showToast("Turning on Bluetooth ...");
                     Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                     startActivityForResult(intent,REQUEST_ENABLE_BT);
                     Intent i=new Intent(Bluetooth.this, Start.class);
                     startActivity(i);
 
-                }else{
+                }*/else{
                     showToast("Bluetooth is already on .....");
                     Intent i=new Intent(Bluetooth.this, Start.class);
                     startActivity(i);
