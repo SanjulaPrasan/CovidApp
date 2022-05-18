@@ -9,14 +9,14 @@ import android.widget.Button;
 
 import com.example.ui1.R;
 
-public class Profile extends AppCompatActivity {
+public class SelfAssessmentHome extends AppCompatActivity {
 
-    private Button btnHome;
+    private Button  btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_self_assessment_home);
         btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
