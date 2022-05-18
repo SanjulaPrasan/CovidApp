@@ -12,32 +12,9 @@ import android.widget.Toast;
 import com.example.ui1.R;
 
 public class Bluetooth extends AppCompatActivity {
-    /*private Button btnBluetooth;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bluetooth);
-
-        btnBluetooth = findViewById(R.id.btnNext);
-        btnBluetooth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGetStarted();
-            }
-        });
-    }
-
-    public void openGetStarted(){
-        Intent intent = new Intent(this, Start.class);
-        startActivity(intent);
-    }*/
-
-
-
 
     private static final int REQUEST_ENABLE_BT = 0;
     private static final int REQUEST_DISCOVER_BT = 1;
-
     private BluetoothAdapter mblueAdapter;
     private Button btnBluetooth;
 
