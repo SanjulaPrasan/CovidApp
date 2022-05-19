@@ -7,91 +7,32 @@
     tools:context=".UI.Registration"
     android:background="@color/white">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
     <TextView
         android:id="@+id/tvRegistation"
-        android:layout_width="321dp"
-        android:layout_height="92dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:gravity="top"
-        android:text="Registation"
+        android:layout_marginTop="20dp"
+        android:text="Registration"
         android:textColor="#000000"
         android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etFullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp"
-        android:hint="Full Name"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegDes" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="10dp"
-        android:hint="Password"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMACAdd" />
-
-    <EditText
-        android:id="@+id/etMACAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="10dp"
-        android:hint="BT MAC Add (GET Defualt)"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
-
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="10dp"
-        android:hint="Phone"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="10dp"
-        android:hint="Email"
-        android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAdd" />
 
     <TextView
         android:id="@+id/tvRegDes"
@@ -99,8 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="28dp"
-        android:text="First Time You must be Registerd"
+        android:layout_marginTop="-2dp"
+        android:text="First Time You must be Registered"
         android:textAlignment="center"
         android:textColor="#B3000000"
         android:textSize="20sp"
@@ -109,19 +50,99 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRegistation" />
 
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:hint="Full Name"
+        android:textSize="25sp"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRegDes" />
+
     <EditText
         android:id="@+id/etAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
         android:hint="Address"
         android:textSize="25sp"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFullName" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:inputType="phone"
+        android:hint="Email"
+        android:textSize="25sp"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAdd" />
+
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:hint="Phone"
+        android:textSize="25sp"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <EditText
+        android:id="@+id/etMACAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:hint="BT MAC Add (GET Defualt)"
+        android:textSize="25sp"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textSize="25sp"
+        android:textColorHint="@color/reg_tv"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMACAdd" />
 
     <Button
         android:id="@+id/btnRegister"
