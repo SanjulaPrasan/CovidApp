@@ -11,18 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
-            android:name=".Signin"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LogIn"
-            android:exported="false" />
-        <activity
             android:name=".UI.Logo"
             android:exported="true">
             <intent-filter>
@@ -57,6 +45,9 @@
             android:exported="false" />
         <activity
             android:name=".UI.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LogInActivity"
             android:exported="false" />
     </application>
 

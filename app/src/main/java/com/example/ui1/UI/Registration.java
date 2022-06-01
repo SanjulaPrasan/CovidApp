@@ -58,7 +58,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tvLogIn:
-                startActivity(new Intent(this,Home.class));
+                startActivity(new Intent(this,LogInActivity.class));
                 break;
             case R.id.btnRegister:
                 registerUser();
@@ -147,5 +147,18 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mAuth.getCurrentUser()!=null){
+            Toast.makeText(Registration.this,"Already Logged In!",Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(Registration.this, Home.class));
+            finish();
+        }
+        else{
+            Toast.makeText(Registration.this,"You can login now!",Toast.LENGTH_SHORT).show();
+        }
     }
 }
