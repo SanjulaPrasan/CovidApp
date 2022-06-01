@@ -28,6 +28,8 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
+    private TextView tvLogIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +43,23 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         etPhone = (EditText) findViewById(R.id.etPhone);
         etPassword = (EditText) findViewById(R.id.etPassword);
 
+        tvLogIn = (TextView) findViewById(R.id.tvLogIn);
+        tvLogIn.setOnClickListener(this);
+
         btnRegistration = (Button) findViewById(R.id.btnRegister);
         btnRegistration.setOnClickListener(this);
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
+
+
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            /*case R.id.tvRegistation:
-                startActivity(new Intent(this,Registration.class));
-                break;*/
+            case R.id.tvLogIn:
+                startActivity(new Intent(this,Home.class));
+                break;
             case R.id.btnRegister:
                 registerUser();
                 break;
