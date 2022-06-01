@@ -34,5 +34,17 @@ public class Logo extends AppCompatActivity {
         Intent intent = new Intent(this, Privacy.class);
         startActivity(intent);
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mAuth.getCurrentUser()!=null){
+            Toast.makeText(Logo.this,"Already Logged In!",Toast.LENGTH_SHORT).show();
 
+            startActivity(new Intent(Logo.this, Home.class));
+            finish();
+        }
+        else{
+            Toast.makeText(Logo.this,"You can login now!",Toast.LENGTH_SHORT).show();
+        }
+    }
 }

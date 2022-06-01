@@ -30,4 +30,5 @@ public class Start extends AppCompatActivity {
         Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
+
 }

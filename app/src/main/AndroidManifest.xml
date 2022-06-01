@@ -46,9 +46,7 @@
         <activity
             android:name=".UI.Profile"
             android:exported="false" />
-        <activity
-            android:name=".UI.LogInActivity"
-            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -58,7 +58,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tvLogIn:
-                startActivity(new Intent(this,LogInActivity.class));
+                //startActivity(new Intent(this,LogInActivity.class));
                 break;
             case R.id.btnRegister:
                 registerUser();
