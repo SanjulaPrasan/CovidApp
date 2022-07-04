@@ -23,6 +23,8 @@ public class Home extends AppCompatActivity {
     private Button btnProf;
     private int count;
 
+    public static String healthStatus;
+
 
 
     @Override
@@ -35,13 +37,17 @@ public class Home extends AppCompatActivity {
         count = SelfAssessment.i;
 
         if(count == 5){
-            status.setText("POSITIVE");
+            healthStatus = "POSITIVE";
+            status.setText("" + healthStatus);
         }else if(count > 2 && count < 5){
-            status.setText("HIGH RISK");
+            healthStatus = "HIGH RISK";
+            status.setText("" + healthStatus);
         }else if(count > 0 && count < 3){
-            status.setText("LOW RISK");
+            healthStatus = "LOW RISK";
+            status.setText("" + healthStatus);
         }else{
-            status.setText("NEGATIVE");
+            healthStatus = "NEGATIVE";
+            status.setText("" + healthStatus);
         }
 
         this.videoView = findViewById(R.id.vvBlueScan);

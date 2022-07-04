@@ -6,18 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.ui1.R;
 
 public class Profile extends AppCompatActivity {
 
     private Button btnHome;
-    private int count;
+    private TextView status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        status = findViewById(R.id.tvStatusValue);
+        status.setText("" + Home.healthStatus);
+
         btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
