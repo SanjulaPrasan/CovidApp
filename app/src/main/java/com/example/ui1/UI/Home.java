@@ -21,6 +21,7 @@ public class Home extends AppCompatActivity {
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
+    private int count;
 
 
 
@@ -29,9 +30,19 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         status = findViewById(R.id.tvStatusValue);
-        status.setText(SelfAssessment.healthStatus);
+
+        count = SelfAssessment.i;
+
+        if(count == 5){
+            status.setText("POSITIVE");
+        }else if(count > 2 && count < 5){
+            status.setText("HIGH RISK");
+        }else if(count > 0 && count < 3){
+            status.setText("LOW RISK");
+        }else{
+            status.setText("NEGATIVE");
+        }
 
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));

@@ -8,15 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 
 import com.example.ui1.R;
 
 public class SelfAssessment extends AppCompatActivity {
 
-    private Button  btnSubmit;
+    private Button btnSubmit;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
-    private int i = 0;
-    public static String healthStatus;
+    public static int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +27,16 @@ public class SelfAssessment extends AppCompatActivity {
         switchFever.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchCovid.isChecked()){
+                if (switchCovid.isChecked()) {
                     switchFever.setChecked(true);
                     Log.d("", "COVID POSITIVE");
-                }else{
-                    if(switchFever.isChecked()){
+                } else {
+                    if (switchFever.isChecked()) {
                         i++;
-                        Log.d("", "1 fever printed");
-                    }else {
+                        Log.d("", "1 fever printed" + i);
+                    } else {
                         i--;
-                        Log.d("", "0 fever printed");
+                        Log.d("", "0 fever printed" + i);
                     }
                 }
             }
@@ -45,16 +45,16 @@ public class SelfAssessment extends AppCompatActivity {
         switchCough.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchCovid.isChecked()){
+                if (switchCovid.isChecked()) {
                     switchCough.setChecked(true);
                     Log.d("", "COVID POSITIVE");
-                }else{
-                    if(switchCough.isChecked()){
+                } else {
+                    if (switchCough.isChecked()) {
                         i++;
-                        Log.d("", "1 cough printed");
-                    }else {
+                        Log.d("", "1 cough printed" + i);
+                    } else {
                         i--;
-                        Log.d("", "0 cough printed");
+                        Log.d("", "0 cough printed" + i);
                     }
                 }
             }
@@ -63,16 +63,16 @@ public class SelfAssessment extends AppCompatActivity {
         switchFatigue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchCovid.isChecked()){
+                if (switchCovid.isChecked()) {
                     switchFatigue.setChecked(true);
                     Log.d("", "COVID POSITIVE");
-                }else{
-                    if(switchFatigue.isChecked()){
+                } else {
+                    if (switchFatigue.isChecked()) {
                         i++;
-                        Log.d("", "1 fatigue printed");
-                    }else {
+                        Log.d("", "1 fatigue printed" + i);
+                    } else {
                         i--;
-                        Log.d("", "0 fatigue printed");
+                        Log.d("", "0 fatigue printed" + i);
                     }
                 }
             }
@@ -81,16 +81,16 @@ public class SelfAssessment extends AppCompatActivity {
         switchBreathing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchCovid.isChecked()){
+                if (switchCovid.isChecked()) {
                     switchBreathing.setChecked(true);
                     Log.d("", "COVID POSITIVE");
-                }else{
-                    if(switchBreathing.isChecked()){
+                } else {
+                    if (switchBreathing.isChecked()) {
                         i++;
-                        Log.d("", "1 breathing difficulty printed");
-                    }else {
+                        Log.d("", "1 breathing difficulty printed" + i);
+                    } else {
                         i--;
-                        Log.d("", "0 breathing difficulty printed");
+                        Log.d("", "0 breathing difficulty printed" + i);
                     }
                 }
             }
@@ -99,35 +99,23 @@ public class SelfAssessment extends AppCompatActivity {
         switchCovid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchCovid.isChecked()){
+                if (switchCovid.isChecked()) {
                     switchFever.setChecked(true);
                     switchCough.setChecked(true);
                     switchFatigue.setChecked(true);
                     switchBreathing.setChecked(true);
-                    i=5;
-                    Log.d("", "1 covid printed");
-                }else{
+                    i = 5;
+                    Log.d("", "1 covid printed" + i);
+                } else {
                     switchFever.setChecked(false);
                     switchCough.setChecked(false);
                     switchFatigue.setChecked(false);
                     switchBreathing.setChecked(false);
-                    i=0;
-                    Log.d("", "0 covid printed");
+                    i = 0;
+                    Log.d("", "0 covid printed" + i);
                 }
             }
         });
-
-        Log.d("", "Value: " + i);
-
-        if(i == 5){
-            healthStatus = "POSITIVE";
-        }else if(i > 2 && i < 5){
-            healthStatus = "HIGH RISK";
-        }else if(i > 0 && i  < 3){
-            healthStatus = "LOW RISK";
-        }else{
-            healthStatus = "NE";
-        }
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
