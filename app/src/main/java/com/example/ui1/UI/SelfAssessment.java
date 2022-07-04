@@ -16,6 +16,7 @@ public class SelfAssessment extends AppCompatActivity {
     private Button  btnSubmit;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
     private int i = 0;
+    public String healthStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +116,17 @@ public class SelfAssessment extends AppCompatActivity {
                 }
             }
         });
+
+        if(i == 5){
+            healthStatus = "POSITIVE";
+        }else if(i > 2 && i < 5){
+            healthStatus = "HIGH RISK";
+        }else if(i > 0 && i  < 3){
+            healthStatus = "LOW RISK";
+        }else{
+            healthStatus = "NEGATIVE";
+        }
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -9,12 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.example.ui1.R;
 
 public class Home extends AppCompatActivity {
-
+    private TextView status;
     VideoView videoView;
 
     private Button btnStats;
