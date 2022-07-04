@@ -1,6 +1,7 @@
 package com.example.ui1.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import com.example.ui1.R;
 public class SelfAssessmentHome extends AppCompatActivity {
 
     private Button  btnHome;
+    private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
