@@ -80,12 +80,17 @@ public class SelfAssessment extends AppCompatActivity {
         switchBreathing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchBreathing.isChecked()){
-                    i++;
-                    Log.d("", "1 bbb printed");
+                if(switchCovid.isChecked()){
+                    switchBreathing.setChecked(true);
+                    Log.d("", "COVID POSITIVE");
                 }else{
-                    i--;
-                    Log.d("", "0 bbb printed");
+                    if(switchBreathing.isChecked()){
+                        i++;
+                        Log.d("", "1 breathing difficulty printed");
+                    }else {
+                        i--;
+                        Log.d("", "0 breathing difficulty printed");
+                    }
                 }
             }
         });
