@@ -27,11 +27,11 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchFever.isChecked()){
-                    i = 1;
-                    Log.d("", "1 printed");
+                    i++;
+                    Log.d("", "1 fever printed");
                 }else{
-                    i=0;
-                    Log.d("", "0 printed");
+                    i--;
+                    Log.d("", "0 fever printed");
                 }
             }
         });
@@ -40,11 +40,11 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchCough.isChecked()){
-                    i = 1;
-                    Log.d("", "1 printed");
+                    i++;
+                    Log.d("", "1 cough printed");
                 }else{
-                    i=0;
-                    Log.d("", "0 printed");
+                    i--;
+                    Log.d("", "0 cough printed");
                 }
             }
         });
@@ -53,11 +53,11 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchFatigue.isChecked()){
-                    i = 1;
-                    Log.d("", "1 printed");
+                    i++;
+                    Log.d("", "1 fatigue printed");
                 }else{
-                    i=0;
-                    Log.d("", "0 printed");
+                    i--;
+                    Log.d("", "0 fatigue printed");
                 }
             }
         });
@@ -66,11 +66,11 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchBreathing.isChecked()){
-                    i = 1;
-                    Log.d("", "1 printed");
+                    i++;
+                    Log.d("", "1 bbb printed");
                 }else{
-                    i=0;
-                    Log.d("", "0 printed");
+                    i--;
+                    Log.d("", "0 bbb printed");
                 }
             }
         });
@@ -79,11 +79,11 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchCovid.isChecked()){
-                    i = 1;
-                    Log.d("", "1 printed");
+                    i++;
+                    Log.d("", "1 covid printed");
                 }else{
-                    i=0;
-                    Log.d("", "0 printed");
+                    i--;
+                    Log.d("", "0 covid printed");
                 }
             }
         });
