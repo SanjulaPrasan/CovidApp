@@ -91,6 +91,7 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openHome();
+                Log.d("", "value: " + Integer.toString(i));
             }
         });
     }
