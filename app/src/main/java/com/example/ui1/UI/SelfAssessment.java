@@ -48,6 +48,19 @@ public class SelfAssessment extends AppCompatActivity {
                 }
             }
         });
+        switchFatigue = findViewById(R.id.switchBtnFatigue);
+        switchFatigue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switchFatigue.isChecked()){
+                    i = 1;
+                    Log.d("", "1 printed");
+                }else{
+                    i=0;
+                    Log.d("", "0 printed");
+                }
+            }
+        });
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
