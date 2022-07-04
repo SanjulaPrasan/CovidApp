@@ -14,12 +14,30 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
     private Button  btnHome;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
+    public static int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment_home);
         btnHome = (Button) findViewById(R.id.btnHome);
+
+        switchFever = findViewById(R.id.switchBtnFever);
+        switchFever.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCovid.isChecked()) {
+                    switchFever.setChecked(true);
+                } else {
+                    if (switchFever.isChecked()) {
+                        i++;
+                    } else {
+                        i--;
+                    }
+                }
+            }
+        });
+
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
