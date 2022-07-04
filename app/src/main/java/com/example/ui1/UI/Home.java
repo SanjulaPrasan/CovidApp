@@ -32,27 +32,6 @@ public class Home extends AppCompatActivity {
         health = SelfAssessment.healthStatus;
         status.setText("" + health);
 
-
-
-        /*
-        count = SelfAssessment.i;
-
-        if(count == 5){
-            healthStatus = "POSITIVE";
-            status.setText("" + healthStatus);
-        }else if(count > 2 && count < 5){
-            healthStatus = "HIGH RISK";
-            status.setText("" + healthStatus);
-        }else if(count > 0 && count < 3){
-            healthStatus = "LOW RISK";
-            status.setText("" + healthStatus);
-        }else{
-            healthStatus = "NEGATIVE";
-            status.setText("" + healthStatus);
-        }
-
-         */
-
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
         MediaController videoControl = new MediaController(this);
