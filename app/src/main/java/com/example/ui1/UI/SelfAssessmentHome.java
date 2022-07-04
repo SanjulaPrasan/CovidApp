@@ -12,15 +12,17 @@ import com.example.ui1.R;
 
 public class SelfAssessmentHome extends AppCompatActivity {
 
+    private Button btnSubmit;
     private Button  btnHome;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
-    public static int j = 0;
+    public static int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment_home);
         btnHome = (Button) findViewById(R.id.btnHome);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         switchFever = findViewById(R.id.switchBtnFever);
         switchFever.setOnClickListener(new View.OnClickListener() {
@@ -30,9 +32,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchFever.setChecked(true);
                 } else {
                     if (switchFever.isChecked()) {
-                        j++;
+                        i++;
                     } else {
-                        j--;
+                        i--;
                     }
                 }
             }
@@ -45,9 +47,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchCough.setChecked(true);
                 } else {
                     if (switchCough.isChecked()) {
-                        j++;
+                        i++;
                     } else {
-                        j--;
+                        i--;
                     }
                 }
             }
@@ -60,9 +62,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchFatigue.setChecked(true);
                 } else {
                     if (switchFatigue.isChecked()) {
-                        j++;
+                        i++;
                     } else {
-                        j--;
+                        i--;
                     }
                 }
             }
@@ -75,9 +77,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchBreathing.setChecked(true);
                 } else {
                     if (switchBreathing.isChecked()) {
-                        j++;
+                        i++;
                     } else {
-                        j--;
+                        i--;
                     }
                 }
             }
@@ -91,14 +93,21 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchCough.setChecked(true);
                     switchFatigue.setChecked(true);
                     switchBreathing.setChecked(true);
-                    j = 5;
+                    i = 5;
                 } else {
                     switchFever.setChecked(false);
                     switchCough.setChecked(false);
                     switchFatigue.setChecked(false);
                     switchBreathing.setChecked(false);
-                    j = 0;
+                    i = 0;
                 }
+            }
+        });
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHome();
             }
         });
 

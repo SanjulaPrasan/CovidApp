@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity {
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
-    private int count;
+    private int count, count1;
 
     public static String healthStatus;
 
