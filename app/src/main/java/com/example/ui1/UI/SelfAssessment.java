@@ -61,6 +61,19 @@ public class SelfAssessment extends AppCompatActivity {
                 }
             }
         });
+        switchBreathing = findViewById(R.id.switchBtnBreathing);
+        switchBreathing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switchBreathing.isChecked()){
+                    i = 1;
+                    Log.d("", "1 printed");
+                }else{
+                    i=0;
+                    Log.d("", "0 printed");
+                }
+            }
+        });
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
