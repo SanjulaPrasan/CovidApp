@@ -16,7 +16,7 @@ public class SelfAssessment extends AppCompatActivity {
 
     private Button btnSubmit;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
-    public static int i = 0;
+    private int i = 0;
     public static String healthStatus;
 
     @Override
