@@ -12,6 +12,7 @@ import com.example.ui1.R;
 public class Profile extends AppCompatActivity {
 
     private Button btnHome;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
