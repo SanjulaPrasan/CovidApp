@@ -14,7 +14,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
     private Button  btnHome;
     private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
-    public static int i = 0;
+    public static int j = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchFever.setChecked(true);
                 } else {
                     if (switchFever.isChecked()) {
-                        i++;
+                        j++;
                     } else {
-                        i--;
+                        j--;
                     }
                 }
             }
@@ -45,10 +45,59 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     switchCough.setChecked(true);
                 } else {
                     if (switchCough.isChecked()) {
-                        i++;
+                        j++;
                     } else {
-                        i--;
+                        j--;
                     }
+                }
+            }
+        });
+        switchFatigue = findViewById(R.id.switchBtnFatigue);
+        switchFatigue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCovid.isChecked()) {
+                    switchFatigue.setChecked(true);
+                } else {
+                    if (switchFatigue.isChecked()) {
+                        j++;
+                    } else {
+                        j--;
+                    }
+                }
+            }
+        });
+        switchBreathing = findViewById(R.id.switchBtnBreathing);
+        switchBreathing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCovid.isChecked()) {
+                    switchBreathing.setChecked(true);
+                } else {
+                    if (switchBreathing.isChecked()) {
+                        j++;
+                    } else {
+                        j--;
+                    }
+                }
+            }
+        });
+        switchCovid = findViewById(R.id.switchBtnCovid);
+        switchCovid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCovid.isChecked()) {
+                    switchFever.setChecked(true);
+                    switchCough.setChecked(true);
+                    switchFatigue.setChecked(true);
+                    switchBreathing.setChecked(true);
+                    j = 5;
+                } else {
+                    switchFever.setChecked(false);
+                    switchCough.setChecked(false);
+                    switchFatigue.setChecked(false);
+                    switchBreathing.setChecked(false);
+                    j = 0;
                 }
             }
         });
