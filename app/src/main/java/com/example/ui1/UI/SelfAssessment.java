@@ -74,6 +74,19 @@ public class SelfAssessment extends AppCompatActivity {
                 }
             }
         });
+        switchCovid = findViewById(R.id.switchBtnCovid);
+        switchCovid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switchCovid.isChecked()){
+                    i = 1;
+                    Log.d("", "1 printed");
+                }else{
+                    i=0;
+                    Log.d("", "0 printed");
+                }
+            }
+        });
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
