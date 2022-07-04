@@ -79,10 +79,18 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchCovid.isChecked()){
-                    i++;
+                    switchFever.setChecked(true);
+                    switchCough.setChecked(true);
+                    switchFatigue.setChecked(true);
+                    switchBreathing.setChecked(true);
+                    i=5;
                     Log.d("", "1 covid printed");
                 }else{
-                    i--;
+                    switchFever.setChecked(false);
+                    switchCough.setChecked(false);
+                    switchFatigue.setChecked(false);
+                    switchBreathing.setChecked(false);
+                    i=0;
                     Log.d("", "0 covid printed");
                 }
             }
