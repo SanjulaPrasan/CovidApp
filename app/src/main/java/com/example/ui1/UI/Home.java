@@ -21,10 +21,7 @@ public class Home extends AppCompatActivity {
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
-    private int count, count1;
-
-
-
+    public static String health;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +29,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         status = findViewById(R.id.tvStatusValue);
-        status.setText("" + SelfAssessment.healthStatus);
+        health = SelfAssessment.healthStatus;
+        status.setText("" + health);
 
 
 

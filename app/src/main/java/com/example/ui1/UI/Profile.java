@@ -21,7 +21,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         status = findViewById(R.id.tvStatusValue);
-        //status.setText("" + Home.healthStatus);
+        status.setText("" + Home.health);
 
         btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
