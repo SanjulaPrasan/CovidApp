@@ -29,14 +29,11 @@ public class SelfAssessment extends AppCompatActivity {
             public void onClick(View v) {
                 if (switchCovid.isChecked()) {
                     switchFever.setChecked(true);
-                    Log.d("", "COVID POSITIVE");
                 } else {
                     if (switchFever.isChecked()) {
                         i++;
-                        Log.d("", "1 fever printed" + i);
                     } else {
                         i--;
-                        Log.d("", "0 fever printed" + i);
                     }
                 }
             }
@@ -47,14 +44,11 @@ public class SelfAssessment extends AppCompatActivity {
             public void onClick(View v) {
                 if (switchCovid.isChecked()) {
                     switchCough.setChecked(true);
-                    Log.d("", "COVID POSITIVE");
                 } else {
                     if (switchCough.isChecked()) {
                         i++;
-                        Log.d("", "1 cough printed" + i);
                     } else {
                         i--;
-                        Log.d("", "0 cough printed" + i);
                     }
                 }
             }
@@ -65,14 +59,11 @@ public class SelfAssessment extends AppCompatActivity {
             public void onClick(View v) {
                 if (switchCovid.isChecked()) {
                     switchFatigue.setChecked(true);
-                    Log.d("", "COVID POSITIVE");
                 } else {
                     if (switchFatigue.isChecked()) {
                         i++;
-                        Log.d("", "1 fatigue printed" + i);
                     } else {
                         i--;
-                        Log.d("", "0 fatigue printed" + i);
                     }
                 }
             }
@@ -83,14 +74,11 @@ public class SelfAssessment extends AppCompatActivity {
             public void onClick(View v) {
                 if (switchCovid.isChecked()) {
                     switchBreathing.setChecked(true);
-                    Log.d("", "COVID POSITIVE");
                 } else {
                     if (switchBreathing.isChecked()) {
                         i++;
-                        Log.d("", "1 breathing difficulty printed" + i);
                     } else {
                         i--;
-                        Log.d("", "0 breathing difficulty printed" + i);
                     }
                 }
             }
@@ -105,14 +93,12 @@ public class SelfAssessment extends AppCompatActivity {
                     switchFatigue.setChecked(true);
                     switchBreathing.setChecked(true);
                     i = 5;
-                    Log.d("", "1 covid printed" + i);
                 } else {
                     switchFever.setChecked(false);
                     switchCough.setChecked(false);
                     switchFatigue.setChecked(false);
                     switchBreathing.setChecked(false);
                     i = 0;
-                    Log.d("", "0 covid printed" + i);
                 }
             }
         });
@@ -121,7 +107,6 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openHome();
-                Log.d("", "value: " + Integer.toString(i));
             }
         });
     }
