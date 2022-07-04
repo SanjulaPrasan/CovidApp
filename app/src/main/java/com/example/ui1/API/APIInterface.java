@@ -7,11 +7,11 @@ import retrofit2.http.GET;
 
 public interface APIInterface {
 
-    String BASE_URL="https://corona.lmao.ninja/v3/COVID-19/";
+    String BASE_URL="https://disease.sh/v2/";
     @GET("countries")
     Call<List<ModelClass>> getLocalData();
 
-    String BASE_URL1="https://corona.lmao.ninja/v3/COVID-19/";
+    String BASE_URL1="https://disease.sh/v2/";
     @GET("all")
     Call<ModelClass1> getGlobalData();
 }
