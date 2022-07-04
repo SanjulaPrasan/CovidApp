@@ -62,12 +62,17 @@ public class SelfAssessment extends AppCompatActivity {
         switchFatigue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(switchFatigue.isChecked()){
-                    i++;
-                    Log.d("", "1 fatigue printed");
+                if(switchCovid.isChecked()){
+                    switchFatigue.setChecked(true);
+                    Log.d("", "COVID POSITIVE");
                 }else{
-                    i--;
-                    Log.d("", "0 fatigue printed");
+                    if(switchFatigue.isChecked()){
+                        i++;
+                        Log.d("", "1 fatigue printed");
+                    }else {
+                        i--;
+                        Log.d("", "0 fatigue printed");
+                    }
                 }
             }
         });
