@@ -37,6 +37,21 @@ public class SelfAssessmentHome extends AppCompatActivity {
                 }
             }
         });
+        switchCough = findViewById(R.id.switchBtnCough);
+        switchCough.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switchCovid.isChecked()) {
+                    switchCough.setChecked(true);
+                } else {
+                    if (switchCough.isChecked()) {
+                        i++;
+                    } else {
+                        i--;
+                    }
+                }
+            }
+        });
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
