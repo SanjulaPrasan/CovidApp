@@ -14,7 +14,7 @@ import com.example.ui1.R;
 public class SelfAssessment extends AppCompatActivity {
 
     private Button  btnSubmit;
-    private SwitchCompat switchFever;
+    private SwitchCompat switchFever, switchCough, switchFatigue, switchBreathing, switchCovid;
     private int i = 0;
 
     @Override
@@ -27,6 +27,19 @@ public class SelfAssessment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(switchFever.isChecked()){
+                    i = 1;
+                    Log.d("", "1 printed");
+                }else{
+                    i=0;
+                    Log.d("", "0 printed");
+                }
+            }
+        });
+        switchCough = findViewById(R.id.switchBtnCough);
+        switchCough.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switchCough.isChecked()){
                     i = 1;
                     Log.d("", "1 printed");
                 }else{
