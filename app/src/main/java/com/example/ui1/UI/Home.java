@@ -29,6 +29,10 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        status = findViewById(R.id.tvStatusValue);
+        status.setText(SelfAssessment.healthStatus);
+
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
         MediaController videoControl = new MediaController(this);
