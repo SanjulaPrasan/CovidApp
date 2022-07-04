@@ -23,7 +23,6 @@ public class Home extends AppCompatActivity {
     private Button btnProf;
     private int count, count1;
 
-    public static String healthStatus;
 
 
 
@@ -33,7 +32,11 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         status = findViewById(R.id.tvStatusValue);
+        status.setText("" + SelfAssessment.healthStatus);
 
+
+
+        /*
         count = SelfAssessment.i;
 
         if(count == 5){
@@ -49,6 +52,8 @@ public class Home extends AppCompatActivity {
             healthStatus = "NEGATIVE";
             status.setText("" + healthStatus);
         }
+
+         */
 
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
