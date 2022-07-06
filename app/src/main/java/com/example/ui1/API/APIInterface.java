@@ -11,7 +11,9 @@ public interface APIInterface {
     @GET("countries")
     Call<List<ModelClass>> getLocalData();
 
-    String BASE_URL1="https://disease.sh/v2/";
+
+    String BASE_URL1="https://disease.sh/v2//";
+
     @GET("all")
     Call<ModelClass1> getGlobalData();
 }
