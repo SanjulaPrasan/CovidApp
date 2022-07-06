@@ -3,6 +3,7 @@ package com.example.ui1.UI;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,7 +30,12 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         status = findViewById(R.id.tvStatusValue);
-        health = SelfAssessment.healthStatus;
+        /*
+        SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
+        health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+
+         */
+
         status.setText("" + health);
 
         this.videoView = findViewById(R.id.vvBlueScan);
