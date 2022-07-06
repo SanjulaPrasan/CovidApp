@@ -3,27 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle1.xml" value="0.1505" />
-
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_api.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth.xml" value="0.140625" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_home.xml" value="0.129981884057971" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_log_in.xml" value="0.15416666666666667" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_logo.xml" value="0.19583333333333333" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_main.xml" value="0.140625" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_privacy.xml" value="0.140625" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_profile.xml" value="0.140625" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_registration.xml" value="0.17" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_sample.xml" value="0.15416666666666667" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_self_assessment.xml" value="0.25" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_self_assessment_home.xml" value="0.25" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_signin.xml" value="0.184375" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_registration.xml" value="0.140625" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_self_assessment.xml" value="0.129981884057971" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_situation_report.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_start.xml" value="0.1" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_stats.xml" value="0.16197916666666667" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1725" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_bluetooth.xml" value="0.17777777777777778" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_logo.xml" value="0.1736111111111111" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
@@ -80,7 +70,10 @@
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_status.xml" value="0.2" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/layout_item.xml" value="0.24895833333333334" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/status.xml" value="0.15625" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_bluetooth.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_login.xml" value="0.18671875" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_privacy.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment_home.xml" value="0.25" />
