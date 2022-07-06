@@ -123,7 +123,7 @@
         android:textSize="20sp"
         android:textColorHint="@color/reg_tv"
         android:drawablePadding="10dp"
-        android:drawableStart="@drawable/ic_bluetooth"
+        android:drawableStart="@drawable/ic_location"
         />
     </com.google.android.material.textfield.TextInputLayout>
 
