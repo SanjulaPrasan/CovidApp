@@ -70,10 +70,10 @@ public class Profile extends AppCompatActivity {
                     String address = userProfile.address;
 
                     //greetingTextView.setText("Welcome, "+ fullname+ "!");
-                    fullNameTextView.setText(fullname);
-                    emailTextView.setText(email);
-                    addressTextView.setText(address);
-                    phoneTextView.setText(phone);
+                    fullNameTextView.setText("Fullname: "+fullname);
+                    emailTextView.setText("Email: "+email);
+                    addressTextView.setText("Address: "+address);
+                    phoneTextView.setText("Phone: "+phone);
                 }
             }
 
