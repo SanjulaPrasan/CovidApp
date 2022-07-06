@@ -30,11 +30,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         status = findViewById(R.id.tvStatusValue);
-        /*
+
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         health = sharedPreferences.getString(SelfAssessment.TEXT, "");
-
-         */
 
         status.setText("" + health);
 
