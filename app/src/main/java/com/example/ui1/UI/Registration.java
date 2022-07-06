@@ -132,7 +132,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
-                                                startActivity(new Intent(Registration.this,Profile.class));
+                                                openSelfAss();
                                                 Toast.makeText(Registration.this, "User has been Registered", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
                                             }else {
