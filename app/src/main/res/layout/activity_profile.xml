@@ -46,6 +46,18 @@
         app:layout_constraintTop_toTopOf="@+id/rlCovid" />
 
     <TextView
+        android:id="@+id/tvStatusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@+id/rlCovid"
+        app:layout_constraintRight_toRightOf="@+id/rlCovid"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+    <TextView
         android:id="@+id/tvFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

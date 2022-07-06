@@ -9,24 +9,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.example.ui1.R;
 
 public class Home extends AppCompatActivity {
-
+    private TextView status;
     VideoView videoView;
 
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
-
-
+    public static String health;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        status = findViewById(R.id.tvStatusValue);
+        health = SelfAssessment.healthStatus;
+        status.setText("" + health);
 
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
