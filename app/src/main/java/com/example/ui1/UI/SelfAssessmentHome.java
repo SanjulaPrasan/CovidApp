@@ -147,8 +147,6 @@ public class SelfAssessmentHome extends AppCompatActivity {
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
 
-
-
     public void openHome(){
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
