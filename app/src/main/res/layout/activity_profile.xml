@@ -151,7 +151,7 @@
         />
 
     <Button
-        android:visibility="invisible"
+        android:visibility="visible"
         android:id="@+id/btnLogout"
         android:layout_width="320dp"
         android:layout_height="55dp"
