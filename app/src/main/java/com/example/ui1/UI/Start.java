@@ -27,8 +27,9 @@ public class Start extends AppCompatActivity {
     }
 
     public void openRegistration(){
-        Intent intent = new Intent(this, Registration.class);
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+        finish();
     }
 
 }

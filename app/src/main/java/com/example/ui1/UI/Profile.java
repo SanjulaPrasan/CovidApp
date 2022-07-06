@@ -3,6 +3,8 @@ package com.example.ui1.UI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
 
-    private Button btnHome;
+    private Button btnHome,btnLogout;
     private TextView status;
 
     private FirebaseUser user;
@@ -39,6 +41,9 @@ public class Profile extends AppCompatActivity {
 
         status = findViewById(R.id.tvStatusValue);
         status.setText("" + Home.health);
+
+        btnLogout = findViewById(R.id.btnLogout);
+
 
         btnHome = (Button) findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +62,7 @@ public class Profile extends AppCompatActivity {
         final TextView emailTextView = (TextView) findViewById(R.id.tvEmail);
         final TextView addressTextView = (TextView) findViewById(R.id.tvAdd);
         final  TextView phoneTextView =(TextView) findViewById(R.id.tvPhone);
+
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -83,10 +89,32 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder =  new AlertDialog.Builder(Profile.this);
+                builder
+                        .setTitle("Personal Budgeting App")
+                        .setMessage("Are you sure you want to exit?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                FirebaseAuth.getInstance().signOut();
+                                Intent intent = new Intent(Profile.this, Login.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }).setNegativeButton("No", null).show();
+
+            }
+        });
+
     }
 
     public void openHome(){
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
+
 }

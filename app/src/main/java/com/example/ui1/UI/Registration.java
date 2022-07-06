@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.example.ui1.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,7 +26,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
     private Button btnRegistration;
 
-    private EditText etFullName, etAdd, etEmail, etPhone, etPassword;
+    private TextInputEditText etFullName, etAdd, etEmail, etPhone, etPassword;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
@@ -37,19 +39,19 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-        etFullName = (EditText) findViewById(R.id.etFullName);
-        etAdd = (EditText) findViewById(R.id.etAdd);
-        etEmail = (EditText) findViewById(R.id.etEmail);
-        etPhone = (EditText) findViewById(R.id.etPhone);
-        etPassword = (EditText) findViewById(R.id.etPassword);
+        etFullName =  findViewById(R.id.etFullName);
+        etAdd =  findViewById(R.id.etAdd);
+        etEmail = findViewById(R.id.etEmail);
+        etPhone =  findViewById(R.id.etPhone);
+        etPassword =  findViewById(R.id.etPassword);
 
-        tvLogIn = (TextView) findViewById(R.id.tvLogIn);
+        tvLogIn = findViewById(R.id.tvLogIn);
         tvLogIn.setOnClickListener(this);
 
-        btnRegistration = (Button) findViewById(R.id.btnRegister);
+        btnRegistration =  findViewById(R.id.btnRegister);
         btnRegistration.setOnClickListener(this);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
 
 
 
@@ -58,7 +60,9 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.tvLogIn:
-                //startActivity(new Intent(this,LogInActivity.class));
+                Intent intent = new Intent(Registration.this,Login.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.btnRegister:
                 registerUser();
@@ -86,14 +90,14 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
             etFullName.requestFocus();
             return;
         }
-        if (phone.isEmpty()){
-            etPhone.setError("Phone  is required!");
-            etPhone.requestFocus();
-            return;
-        }
         if (address.isEmpty()){
             etAdd.setError("Full name is required!");
             etAdd.requestFocus();
+            return;
+        }
+        if (phone.isEmpty()){
+            etPhone.setError("Phone  is required!");
+            etPhone.requestFocus();
             return;
         }
         if (email.isEmpty()){
@@ -148,7 +152,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     }
                 });
     }
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
         if (mAuth.getCurrentUser()!=null){
@@ -160,5 +164,5 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         else{
             Toast.makeText(Registration.this,"You can login now!",Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }
