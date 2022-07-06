@@ -110,7 +110,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 generateNewHealthStatus(i);
-                //saveDataHome();
+                saveDataHome();
                 openHome();
             }
         });
@@ -135,7 +135,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
         }
     }
 
-    /*
+
     public void saveDataHome(){
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -147,7 +147,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
 
-     */
+
 
     public void openHome(){
         Intent intent = new Intent(this, Home.class);
