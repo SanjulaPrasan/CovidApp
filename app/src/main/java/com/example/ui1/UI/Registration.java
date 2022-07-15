@@ -86,22 +86,22 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         String password = etPassword.getText().toString().trim();
 
         if (fullName.isEmpty()){
-            etFullName.setError("Full name is required!");
+            etFullName.setError("Field can't be empty");
             etFullName.requestFocus();
             return;
         }
         if (address.isEmpty()){
-            etAdd.setError("Full name is required!");
+            etAdd.setError("Field can't be empty");
             etAdd.requestFocus();
             return;
         }
         if (phone.isEmpty()){
-            etPhone.setError("Phone  is required!");
+            etPhone.setError("Field can't be empty!");
             etPhone.requestFocus();
             return;
         }
         if (email.isEmpty()){
-            etEmail.setError("Full name is required!");
+            etEmail.setError("Field can't be empty");
             etEmail.requestFocus();
             return;
         }
@@ -111,12 +111,12 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if(password.isEmpty()){
-            etPassword.setError("Password is required!");
+            etPassword.setError("Field can't be empty");
             etPassword.requestFocus();
             return;
         }
         if (password.length()<6){
-            etPassword.setError("Min password length 6");
+            etPassword.setError("Password must be at least 6 characters");
             etPassword.requestFocus();
             return;
         }

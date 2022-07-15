@@ -67,12 +67,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+
     private void userLogin() {
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
         if (email.isEmpty()){
-            etEmail.setError("Phone  is required!");
+            etEmail.setError("Field can't be empty");
             etEmail.requestFocus();
             return;
         }
@@ -82,35 +83,36 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             return;
         }
         if(password.isEmpty()){
-            etPassword.setError("Password is required!");
+            etPassword.setError("Field can't be empty");
             etPassword.requestFocus();
             return;
         }
         if (password.length()<6){
-            etPassword.setError("Min password length 6");
+            etPassword.setError("Password must be at least 6 characters");
             etPassword.requestFocus();
             return;
         }
 
-            progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
 
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(Login.this, "User has been Registered", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Login.this, SelfAssessment.class);
-                        startActivity(intent);
-                        finish();
-                        progressBar.setVisibility(View.GONE);
-                    }else{
-                        Toast.makeText(Login.this, "Failed to login ! Try again!", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
-                    }
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(Login.this, "Login successful", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(Login.this, SelfAssessment.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(Login.this, "Incorrect username or password.", Toast.LENGTH_LONG).show();
 
                 }
-            });
+                progressBar.setVisibility(View.GONE);
+
+            }
+        });
 
 
     }
+
 }
