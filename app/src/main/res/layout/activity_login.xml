@@ -64,7 +64,7 @@
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your Email"
+            android:hint="Email Address"
             android:textColor="@color/black"
             android:inputType="textEmailAddress"
             android:textSize="18sp"
