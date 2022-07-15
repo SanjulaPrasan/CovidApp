@@ -124,7 +124,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"
-        android:text="Log In"
+        android:text="LogIn"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/tempPassword"
