@@ -11,14 +11,20 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.ui1.R;
+import com.example.ui1.UI.Home;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class BluetoothActivity extends AppCompatActivity {
 
@@ -26,10 +32,34 @@ public class BluetoothActivity extends AppCompatActivity {
 
     BluetoothAdapter mBluetoothAdapter;
     Button btnEnableDisable_Discoverable;
-    public ArrayList<BluetoothDevice> mBTDevices = new ArrayList<>();
+    public ArrayList<BluetoothDevice> mBTDevices;
     public DeviceListAdapter mDeviceListAdapter;
     ListView lvNewDevices;
 
+    Handler handler = new Handler();
+    Runnable runnable;
+    int delay = 15000;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bluetoth);
+
+        Button btnONOFF = (Button) findViewById(R.id.btnONOFF);
+        lvNewDevices = (ListView) findViewById(R.id.lvNewDevices);
+        mBTDevices = new ArrayList<>();
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        btnONOFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: enabling/disabling bluetooth.");
+                enableDisableBT();
+            }
+        });
+
+        startScan();
+    }
 
     private final BroadcastReceiver mBroadcastReceiver1 = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
@@ -103,6 +133,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 mBTDevices.add(device);
                 Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
                 mDeviceListAdapter = new DeviceListAdapter(context, R.layout.device_adapter_view, mBTDevices);
+
                 lvNewDevices.setAdapter(mDeviceListAdapter);
             }
         }
@@ -117,27 +148,7 @@ public class BluetoothActivity extends AppCompatActivity {
         //mBluetoothAdapter.cancelDiscovery();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bluetoth);
 
-        Button btnONOFF = (Button) findViewById(R.id.btnONOFF);
-        lvNewDevices = (ListView) findViewById(R.id.lvNewDevices);
-        mBTDevices = new ArrayList<>();
-
-
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-
-        btnONOFF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(TAG, "onClick: enabling/disabling bluetooth.");
-                enableDisableBT();
-            }
-        });
-    }
 
     public void enableDisableBT(){
         if(mBluetoothAdapter == null){
@@ -159,6 +170,19 @@ public class BluetoothActivity extends AppCompatActivity {
             registerReceiver(mBroadcastReceiver1, BTIntent);
         }
 
+    }
+    private void startScan() {
+
+        View v= this.findViewById(android.R.id.content);
+        handler.postDelayed(runnable = new Runnable() {
+            public void run() {
+                handler.postDelayed(runnable, delay);
+                Toast.makeText(BluetoothActivity.this, "Scanning",
+                        Toast.LENGTH_SHORT).show();
+                mBTDevices.clear();
+                btnDiscover(v);
+            }
+        }, delay);
     }
 
     public void btnDiscover(View view) {
@@ -184,6 +208,12 @@ public class BluetoothActivity extends AppCompatActivity {
             IntentFilter discoverDevicesIntent = new IntentFilter(BluetoothDevice.ACTION_FOUND);
             registerReceiver(mBroadcastReceiver3, discoverDevicesIntent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 
     private void checkBTPermissions() {
