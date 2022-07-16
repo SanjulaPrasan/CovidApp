@@ -13,6 +13,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.example.ui1.Bluetooth.BluetoothActivity;
 import com.example.ui1.R;
 
 public class Home extends AppCompatActivity {
@@ -49,6 +50,12 @@ public class Home extends AppCompatActivity {
                 mp.setLooping(true);
             }
         });
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBTScan();
+            }
+        });
 
         btnStats = (Button) findViewById(R.id.btnStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +90,10 @@ public class Home extends AppCompatActivity {
     }
     public void openProf(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+    public void openBTScan(){
+        Intent intent = new Intent(this, BluetoothActivity.class);
         startActivity(intent);
     }
 
