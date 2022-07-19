@@ -113,6 +113,10 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(bluMAC);
 
+        String regex1 = "^[0-9]{10}";
+        Pattern p1 = Pattern.compile(regex1);
+        Matcher m1 = p1.matcher(phone);
+
         if (fullName.isEmpty()){
             etFullName.setError("Field can't be empty");
             etFullName.requestFocus();
@@ -125,6 +129,11 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         }
         if (phone.isEmpty()){
             etPhone.setError("Field can't be empty!");
+            etPhone.requestFocus();
+            return;
+        }
+        if (!m1.matches()){
+            etPhone.setError("Enter valid phone number");
             etPhone.requestFocus();
             return;
         }
