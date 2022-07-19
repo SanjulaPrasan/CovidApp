@@ -19,12 +19,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.ui1.R;
-import com.example.ui1.UI.Home;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class BluetoothActivity extends AppCompatActivity {
 
@@ -38,12 +34,12 @@ public class BluetoothActivity extends AppCompatActivity {
 
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 150000;
+    int delay = 15000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bluetoth);
+        setContentView(R.layout.activity_bluetooth_view);
 
         //Button btnONOFF = (Button) findViewById(R.id.btnONOFF);
         lvNewDevices = (ListView) findViewById(R.id.lvNewDevices);
