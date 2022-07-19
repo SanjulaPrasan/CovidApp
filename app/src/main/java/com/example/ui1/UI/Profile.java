@@ -97,7 +97,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder =  new AlertDialog.Builder(Profile.this);
                 builder
-                        .setTitle("Personal Budgeting App")
+                        .setTitle("CoviTrack App")
                         .setMessage("Are you sure you want to exit?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
