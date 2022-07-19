@@ -22,12 +22,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Registration extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRegistration;
     private Button btnFind;
 
-    private TextInputEditText etFullName, etAdd, etEmail, etPhone, etPassword;
+    private TextInputEditText etFullName, etAdd, etEmail, etPhone, etPassword, etMAC;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
@@ -45,6 +48,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         etEmail = findViewById(R.id.etEmail);
         etPhone =  findViewById(R.id.etPhone);
         etPassword =  findViewById(R.id.etPassword);
+        etMAC = findViewById(R.id.etMACAdd);
 
         tvLogIn = findViewById(R.id.tvLogIn);
         tvLogIn.setOnClickListener(this);
@@ -98,6 +102,16 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         String email = etEmail.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
+        String bluMAC = etMAC.getText().toString().trim();
+
+        String regex = "^([0-9A-Fa-f]{2}[:-])"
+                + "{5}([0-9A-Fa-f]{2})|"
+                + "([0-9a-fA-F]{4}\\."
+                + "[0-9a-fA-F]{4}\\."
+                + "[0-9a-fA-F]{4})$";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(bluMAC);
 
         if (fullName.isEmpty()){
             etFullName.setError("Field can't be empty");
@@ -134,6 +148,16 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
             etPassword.requestFocus();
             return;
         }
+        if (bluMAC.isEmpty()){
+            etMAC.setError("Field can't be empty");
+            etMAC.requestFocus();
+            return;
+        }
+        if (!m.matches()){
+            etMAC.setError("Enter Valid Bluetooth MAC Address");
+            etMAC.requestFocus();
+            return;
+        }
 
         progressBar.setVisibility(View.VISIBLE);
 
@@ -142,7 +166,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user = new User(fullName, address, phone, email);
+                            User user = new User(fullName, address, phone, email, bluMAC);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
