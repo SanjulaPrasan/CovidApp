@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Registration extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRegistration;
+    private Button btnFind;
 
     private TextInputEditText etFullName, etAdd, etEmail, etPhone, etPassword;
     private ProgressBar progressBar;
@@ -51,6 +52,14 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         btnRegistration =  findViewById(R.id.btnRegister);
         btnRegistration.setOnClickListener(this);
 
+        btnFind = (Button) findViewById(R.id.btnFind);
+        btnFind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFindMac();
+            }
+        });
+
         progressBar = findViewById(R.id.progressBar);
 
 
@@ -68,6 +77,11 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                 registerUser();
                 break;
         }
+    }
+
+    public void openFindMac(){
+        Intent intent = new Intent(this, FindBlueMACAddress.class);
+        startActivity(intent);
     }
 
 

@@ -13,17 +13,5 @@
 
     <string name="findHead"><br>How to Find the MAC Address of Your Device</br></string>
 
-    <string name="findPara"><br>1. On your Home screen press the
-     Menu button and Settings.</br>
-
-<br>2. Scroll down to About Device and
-     press Status.</br>
-
-<br>3. Scroll down till you find the Wi-Fi
-     MAC address entry.</br>
-
-<br>4. This is you devices MAC address.</br>
-
-<br>5. Directly below that is your Bluetooth
-     MAC address.</br></string>
+    <string name="findPara"><br>1. On your Home screen press the Menu button and Settings.</br>\n\n<br>2. Scroll down to About Device and press Status.</br>\n\n<br>3. Scroll down till you find the Wi-Fi MAC address entry.</br>\n\n<br>4. This is you devices MAC address.</br>\n\n<br>5. Directly below that is your Bluetooth MAC address.</br></string>
 </resources>
