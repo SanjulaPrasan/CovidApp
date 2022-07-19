@@ -22,13 +22,10 @@ public class FindBlueMACAddress extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openReg();
+                super.onBackPressed();
             }
         });
     }
 
-    public void openReg(){
-        Intent intent = new Intent(this, Privacy.class);
-        startActivity(intent);
-    }
+
 }
