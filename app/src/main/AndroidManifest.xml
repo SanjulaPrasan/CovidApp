@@ -22,7 +22,7 @@
             android:name=".UI.FindBlueMACAddress"
             android:exported="false" />
         <activity
-            android:name=".UI.Home"
+            android:name=".UI.Logo"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,7 @@
             android:name=".UI.SelfAssessment"
             android:exported="false" />
         <activity
-            android:name=".UI.Logo"
+            android:name=".UI.Home"
             android:exported="false" />
         <activity
             android:name=".UI.Stats"
