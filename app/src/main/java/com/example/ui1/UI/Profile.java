@@ -61,7 +61,8 @@ public class Profile extends AppCompatActivity {
         final TextView fullNameTextView = (TextView) findViewById(R.id.tvFullName);
         final TextView emailTextView = (TextView) findViewById(R.id.tvEmail);
         final TextView addressTextView = (TextView) findViewById(R.id.tvAdd);
-        final  TextView phoneTextView =(TextView) findViewById(R.id.tvPhone);
+        final TextView phoneTextView =(TextView) findViewById(R.id.tvPhone);
+        final TextView blueMACTextView = (TextView) findViewById(R.id.tvMACAdd);
 
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -70,16 +71,18 @@ public class Profile extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
                 if (userProfile != null) {
 
-                    String fullname = userProfile.fullName;
-                    String email = userProfile.email;
-                    String phone = userProfile.phone;
+                    String fullName = userProfile.fullName;
                     String address = userProfile.address;
+                    String phone = userProfile.phone;
+                    String email = userProfile.email;
+                    String blueMAC = userProfile.blueMac;
 
                     //greetingTextView.setText("Welcome, "+ fullname+ "!");
-                    fullNameTextView.setText("Fullname: "+fullname);
+                    fullNameTextView.setText("Fullname: "+fullName);
                     emailTextView.setText("Email: "+email);
                     addressTextView.setText("Address: "+address);
                     phoneTextView.setText("Phone: "+phone);
+                    blueMACTextView.setText("Bluetooth MAC: "+blueMAC);
                 }
             }
 
@@ -94,7 +97,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View view) {
                 AlertDialog.Builder builder =  new AlertDialog.Builder(Profile.this);
                 builder
-                        .setTitle("Personal Budgeting App")
+                        .setTitle("CoviTrack App")
                         .setMessage("Are you sure you want to exit?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

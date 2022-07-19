@@ -7,7 +7,8 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_person.xml" value="0.1775" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_api.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth.xml" value="0.140625" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_home.xml" value="0.129981884057971" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetoth.xml" value="0.2" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_login.xml" value="0.21557971014492755" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_logo.xml" value="0.19583333333333333" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_main.xml" value="0.140625" />
@@ -18,6 +19,7 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_situation_report.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_stats.xml" value="0.16540020263424518" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/device_adapter_view.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_bluetooth.xml" value="0.17777777777777778" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_logo.xml" value="0.1736111111111111" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/Group-Project/UI Design AS/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
@@ -41,12 +43,14 @@
         <entry key="..\:/CAMPUS WORK/Group Project/UI Design AS/app/src/main/res/layout/activity_situation_report.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/UI Design AS/app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_bluetooth.xml" value="0.209375" />
+        <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_bluetoth.xml" value="0.25" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_home.xml" value="0.20615384615384616" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_logo.xml" value="0.25" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_privacy.xml" value="0.20615384615384616" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_self_assessment.xml" value="0.20615384615384616" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_self_assessment_home.xml" value="0.20615384615384616" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_start.xml" value="0.22" />
+        <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/device_adapter_view.xml" value="0.209375" />
         <entry key="..\:/University/second year/Group Project/MobileApp-2/app/src/main/res/layout/activity_bluetooth.xml" value="0.3482789855072464" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/drawable/card_drawable.xml" value="0.2545" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/drawable/country_code_drawable.xml" value="0.2555" />
@@ -74,11 +78,8 @@
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_status.xml" value="0.2" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/layout_item.xml" value="0.24895833333333334" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/status.xml" value="0.15625" />
-        <entry key="..\:/z Group Project/Working/main/app/src/main/res/drawable/ic_person.xml" value="0.1885" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_registration.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment_home.xml" value="0.25" />
       </map>
