@@ -200,10 +200,11 @@
     <Button
         android:id="@+id/btnFind"
         android:layout_width="65dp"
-        android:layout_height="55dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:text="Find"
         android:textAlignment="center"
         android:textColor="@color/black"
