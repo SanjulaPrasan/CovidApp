@@ -38,8 +38,9 @@ public class DbHandler extends SQLiteOpenHelper {
 
         String table_create_query = "CREATE TABLE " + TABLE_NAME +
                 " (" +
-                MAC_ADDRESS + " TEXT PRIMARY KEY," +
-                CONTACT_STARTED + " DATE" +
+                MAC_ADDRESS + " TEXT," +
+                CONTACT_STARTED + " DATE," +
+                "PRIMARY KEY"+"(" + MAC_ADDRESS + "," + CONTACT_STARTED + ")"+
                 ");";
         sqLiteDatabase.execSQL(table_create_query);
 
