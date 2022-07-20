@@ -23,6 +23,7 @@ public class Bluetooth extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
+
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         btnBluetooth = findViewById(R.id.btnNext);
         btnBluetooth.setOnClickListener(new View.OnClickListener() {
