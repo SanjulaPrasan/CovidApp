@@ -173,8 +173,7 @@ public class Home extends AppCompatActivity {
         handler.postDelayed(runnable = new Runnable() {
             public void run() {
                 handler.postDelayed(runnable, delay);
-                Toast.makeText(Home.this, "Scanning",
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Home.this, "Scanning",Toast.LENGTH_SHORT).show();
                 mBTDevices.clear();
                 btnDiscover(v);
             }
@@ -257,7 +256,7 @@ public class Home extends AppCompatActivity {
         ContactModel contactModel= new ContactModel(mac_Address,now);
 
         dbHandler.addContactData(contactModel);
-        Toast.makeText(Home.this,"Close Contacts Added",Toast.LENGTH_LONG).show();
+        //Toast.makeText(Home.this,"Close Contacts Added",Toast.LENGTH_LONG).show();
         removeFromDatabase();
 
     }
@@ -269,7 +268,8 @@ public class Home extends AppCompatActivity {
         if (i>0) {
             Log.d(TAG, "removeFromDatabase:" + "Old data removed");
         }
-        else
-            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
+        else {
+            //Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
+        }
     }
 }
