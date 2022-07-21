@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 15000;
+    int delay = 30000;
 
     private DbHandler dbHandler;
 
