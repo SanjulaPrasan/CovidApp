@@ -21,12 +21,12 @@ public class Start extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRegistration();
+                openLogin();
             }
         });
     }
 
-    public void openRegistration(){
+    public void openLogin(){
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
