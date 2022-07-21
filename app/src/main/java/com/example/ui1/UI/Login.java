@@ -59,7 +59,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.tvRegister:
                 Intent intent = new Intent(Login.this,Registration.class);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.btnLogin:
                 userLogin();
@@ -115,4 +114,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }
