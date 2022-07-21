@@ -207,7 +207,10 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
     }
 
@@ -233,9 +236,9 @@ public class Home extends AppCompatActivity {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH);
         }
-        else if( mBluetoothAdapter.isEnabled()){
-            Toast.makeText(this, "Bluetooth is already turned on", Toast.LENGTH_LONG).show();
-        }
+//        else if( mBluetoothAdapter.isEnabled()){
+//            Toast.makeText(this, "Bluetooth is already turned on", Toast.LENGTH_LONG).show();
+//        }
 
     }
     @Override
@@ -268,8 +271,8 @@ public class Home extends AppCompatActivity {
         if (i>0) {
             Log.d(TAG, "removeFromDatabase:" + "Old data removed");
         }
-        else {
-            //Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
-        }
+//        else {
+//            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
+//        }
     }
 }
