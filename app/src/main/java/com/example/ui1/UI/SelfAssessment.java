@@ -147,6 +147,7 @@ public class SelfAssessment extends AppCompatActivity {
     public void openHome(){
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
