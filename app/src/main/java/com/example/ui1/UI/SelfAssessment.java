@@ -148,4 +148,9 @@ public class SelfAssessment extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }
