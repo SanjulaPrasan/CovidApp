@@ -90,7 +90,7 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyy-MM-dd");
         LocalDate now = LocalDate.now();
-        LocalDate then = now.minusDays(14);
+        LocalDate then = now.minusDays(1);
 
 //        String query = "DELETE FROM " + TABLE_NAME + " WHERE " + CONTACT_STARTED +" < " + "'"+then.toString()+"'";
 //        System.out.println(query);

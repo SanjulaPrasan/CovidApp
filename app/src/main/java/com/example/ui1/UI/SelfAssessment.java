@@ -28,8 +28,12 @@ public class SelfAssessment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment);
+
+
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
         switchFever = findViewById(R.id.switchBtnFever);
+
+
         switchFever.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
