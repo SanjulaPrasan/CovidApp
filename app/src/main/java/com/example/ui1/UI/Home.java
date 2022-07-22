@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 15000;
+    int delay = 30000;
 
     private DbHandler dbHandler;
 
@@ -173,8 +173,7 @@ public class Home extends AppCompatActivity {
         handler.postDelayed(runnable = new Runnable() {
             public void run() {
                 handler.postDelayed(runnable, delay);
-                Toast.makeText(Home.this, "Scanning",
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Home.this, "Scanning",Toast.LENGTH_SHORT).show();
                 mBTDevices.clear();
                 btnDiscover(v);
             }
@@ -208,7 +207,10 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
 
     }
 
@@ -234,9 +236,9 @@ public class Home extends AppCompatActivity {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH);
         }
-        else if( mBluetoothAdapter.isEnabled()){
-            Toast.makeText(this, "Bluetooth is already turned on", Toast.LENGTH_LONG).show();
-        }
+//        else if( mBluetoothAdapter.isEnabled()){
+//            Toast.makeText(this, "Bluetooth is already turned on", Toast.LENGTH_LONG).show();
+//        }
 
     }
     @Override
@@ -244,9 +246,9 @@ public class Home extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK){
         }
-        else {
-            Toast.makeText(this, "Need to turn on Bluetooth", Toast.LENGTH_LONG).show();
-        }
+//        else {
+//            Toast.makeText(this, "Need to turn on Bluetooth", Toast.LENGTH_LONG).show();
+//        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -257,7 +259,7 @@ public class Home extends AppCompatActivity {
         ContactModel contactModel= new ContactModel(mac_Address,now);
 
         dbHandler.addContactData(contactModel);
-        Toast.makeText(Home.this,"Close Contacts Added",Toast.LENGTH_LONG).show();
+        //Toast.makeText(Home.this,"Close Contacts Added",Toast.LENGTH_LONG).show();
         removeFromDatabase();
 
     }
@@ -269,7 +271,8 @@ public class Home extends AppCompatActivity {
         if (i>0) {
             Log.d(TAG, "removeFromDatabase:" + "Old data removed");
         }
-        else
-            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
+//        else {
+//            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
+//        }
     }
 }
