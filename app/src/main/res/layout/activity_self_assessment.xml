@@ -183,9 +183,11 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -197,189 +199,191 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:id="@+id/ivSoreThroat"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Sore throat"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/ivSoreThroat"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Sore throat"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Headache"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Headache"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Aches and \nPains"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Aches and \nPains"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Diarrhoea"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Diarrhoea"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="A rash on \nSkin"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="A rash on \nSkin"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/rounded_rectangle1">
-
-                <LinearLayout
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp">
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_rectangle1">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_launcher_background" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Red or Irritated \neyes"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/ic_launcher_background" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Red or Irritated \neyes"
+                            android:textColor="@color/reg_tv"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
 
-            </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
