@@ -454,9 +454,16 @@
                         android:text="Difficulty breathing \nor shortness of breath"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
-                    <Switch
+                    <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/switchBtnBreathing"
+                        android:textOff="No"
+                        android:textOn="Yes"
+                        android:thumb="@drawable/thumb"
+                        app:showText="true"
+                        app:track="@drawable/track"
+                        tools:ignore="MissingConstraints"
                         android:layout_marginLeft="15dp"/>
                 </LinearLayout>
 
@@ -489,6 +496,18 @@
                         android:text="Loss of speech or \nmobility or confusion"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switchBtnLossSpeech"
+                        android:textOff="No"
+                        android:textOn="Yes"
+                        android:thumb="@drawable/thumb"
+                        app:showText="true"
+                        app:track="@drawable/track"
+                        tools:ignore="MissingConstraints"
+                        android:layout_marginLeft="15dp"/>
                 </LinearLayout>
 
 
@@ -519,6 +538,17 @@
                         android:text="Chest pain"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switchBtnChest"
+                        android:textOff="No"
+                        android:textOn="Yes"
+                        android:thumb="@drawable/thumb"
+                        app:showText="true"
+                        app:track="@drawable/track"
+                        tools:ignore="MissingConstraints"
+                        android:layout_marginLeft="15dp"/>
                 </LinearLayout>
 
 
@@ -565,6 +595,17 @@
                         android:text="Rapid antigen"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switchBtnRapid"
+                        android:textOff="No"
+                        android:textOn="Yes"
+                        android:thumb="@drawable/thumb"
+                        app:showText="true"
+                        app:track="@drawable/track"
+                        tools:ignore="MissingConstraints"
+                        android:layout_marginLeft="15dp"/>
                 </LinearLayout>
 
 
@@ -597,6 +638,17 @@
                         android:text="PCR"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switchBtnPCR"
+                        android:textOff="No"
+                        android:textOn="Yes"
+                        android:thumb="@drawable/thumb"
+                        app:showText="true"
+                        app:track="@drawable/track"
+                        tools:ignore="MissingConstraints"
+                        android:layout_marginLeft="15dp"/>
                 </LinearLayout>
             </RelativeLayout>
 
