@@ -246,9 +246,9 @@ public class Home extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK){
         }
-        else {
-            Toast.makeText(this, "Need to turn on Bluetooth", Toast.LENGTH_LONG).show();
-        }
+//        else {
+//            Toast.makeText(this, "Need to turn on Bluetooth", Toast.LENGTH_LONG).show();
+//        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
