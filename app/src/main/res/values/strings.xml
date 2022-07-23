@@ -21,4 +21,10 @@
         <item>5-10 Days</item>
     </string-array>
 
+    <string-array name="test">
+        <item>Not done</item>
+        <item>Negative</item>
+        <item>Positive</item>
+    </string-array>
+
 </resources>
