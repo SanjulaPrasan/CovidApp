@@ -16,7 +16,7 @@
     <string name="findPara"><br>1. On your Home screen press the Menu button and Settings.</br>\n\n<br>2. Scroll down to About Device and press Status.</br>\n\n<br>3. Scroll down till you find the Wi-Fi MAC address entry.</br>\n\n<br>4. This is you devices MAC address.</br>\n\n<br>5. Directly below that is your Bluetooth MAC address.</br></string>
 
     <string-array name="fever">
-        <item>Not Much</item>
+        <item>No</item>
         <item>1-5 Days</item>
         <item>5-10 Days</item>
     </string-array>
