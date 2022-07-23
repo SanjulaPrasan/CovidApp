@@ -37,12 +37,12 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_marginLeft="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Most common symptoms"
+                    android:text="Most Common Symptoms"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -78,17 +78,15 @@
                         android:textSize="20sp" />
 
                     <Spinner
-                        android:id="@+id/sprinFever"
+                        android:id="@+id/spinFever"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:entries="@array/fever"
-                        />
+                        android:entries="@array/fever" />
 
                 </LinearLayout>
 
             </RelativeLayout>
-
 
 
             <RelativeLayout
@@ -106,14 +104,14 @@
                     android:paddingBottom="10dp">
 
                     <ImageView
-                        android:id="@+id/ivDry"
+                        android:id="@+id/ivDryCough"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
                         android:src="@drawable/img_cough" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textView2"
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -121,7 +119,7 @@
                         android:textSize="20sp" />
 
                     <Spinner
-                        android:id="@+id/sprinCough"
+                        android:id="@+id/spinCough"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
@@ -146,22 +144,62 @@
                     android:paddingBottom="10dp">
 
                     <ImageView
-                        android:id="@+id/ivFati"
+                        android:id="@+id/ivDiarrhea"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/img_diarrhea" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="Diarrhea"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/spinDiarrhea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:entries="@array/fever"
+                        android:gravity="left" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_rectangle1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivBodyPain"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
                         android:src="@drawable/img_tiredness" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textView4"
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="Tiredness"
+                        android:text="Muscle and \nBody Pain"
                         android:textSize="20sp" />
 
                     <Spinner
-                        android:id="@+id/sprinTired"
+                        android:id="@+id/spinBodyPain"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
@@ -186,7 +224,47 @@
                     android:paddingBottom="10dp">
 
                     <ImageView
-                        android:id="@+id/ivbrea"
+                        android:id="@+id/ivHeadache"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/img_headache" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="Headache"
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/spinHeadache"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:entries="@array/fever"
+                        android:gravity="left" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_rectangle1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivLossSmell"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
@@ -211,7 +289,7 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -410,7 +488,7 @@
 
 
                 </RelativeLayout>
-            </LinearLayout>
+            </LinearLayout>-->
 
 
             <RelativeLayout
@@ -423,7 +501,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Serious symptoms"
+                    android:text="Serious Symptoms"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -451,7 +529,7 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="Difficulty breathing \nor shortness of breath"
+                        android:text="Shortness of Breath"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
                     <androidx.appcompat.widget.SwitchCompat
@@ -487,20 +565,20 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/img_lossspeech" />
+                        android:src="@drawable/img_consciousness" />
 
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="Loss of speech or \nmobility or confusion"
+                        android:text="Consciousness"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/switchBtnLossSpeech"
+                        android:id="@+id/switchConscious"
                         android:textOff="No"
                         android:textOn="Yes"
                         android:thumb="@drawable/thumb"
@@ -512,7 +590,8 @@
 
 
             </RelativeLayout>
-            <RelativeLayout
+
+            <!--<RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -538,21 +617,22 @@
                         android:text="Chest pain"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchBtnChest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/switchBtnChest"
+                        android:layout_marginLeft="15dp"
                         android:textOff="No"
                         android:textOn="Yes"
                         android:thumb="@drawable/thumb"
                         app:showText="true"
                         app:track="@drawable/track"
-                        tools:ignore="MissingConstraints"
-                        android:layout_marginLeft="15dp"/>
+                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
 
-            </RelativeLayout>
+            </RelativeLayout>-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -669,9 +749,6 @@
 
 
     </ScrollView>
-
-
-
 
 
 </LinearLayout>
