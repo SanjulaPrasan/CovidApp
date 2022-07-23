@@ -26,85 +26,85 @@ public class SelfAssessmentHome extends AppCompatActivity {
         btnHome = (Button) findViewById(R.id.btnHome);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
-        switchFever = findViewById(R.id.switchBtnFever);
-        switchFever.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (switchCovid.isChecked()) {
-                    switchFever.setChecked(true);
-                } else {
-                    if (switchFever.isChecked()) {
-                        i++;
-                    } else {
-                        i--;
-                    }
-                }
-            }
-        });
-        switchCough = findViewById(R.id.switchBtnCough);
-        switchCough.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (switchCovid.isChecked()) {
-                    switchCough.setChecked(true);
-                } else {
-                    if (switchCough.isChecked()) {
-                        i++;
-                    } else {
-                        i--;
-                    }
-                }
-            }
-        });
-        switchFatigue = findViewById(R.id.switchBtnFatigue);
-        switchFatigue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (switchCovid.isChecked()) {
-                    switchFatigue.setChecked(true);
-                } else {
-                    if (switchFatigue.isChecked()) {
-                        i++;
-                    } else {
-                        i--;
-                    }
-                }
-            }
-        });
-        switchBreathing = findViewById(R.id.switchBtnBreathing);
-        switchBreathing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (switchCovid.isChecked()) {
-                    switchBreathing.setChecked(true);
-                } else {
-                    if (switchBreathing.isChecked()) {
-                        i++;
-                    } else {
-                        i--;
-                    }
-                }
-            }
-        });
-        switchCovid = findViewById(R.id.switchBtnCovid);
-        switchCovid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (switchCovid.isChecked()) {
-                    switchFever.setChecked(true);
-                    switchCough.setChecked(true);
-                    switchFatigue.setChecked(true);
-                    switchBreathing.setChecked(true);
-                    i = 5;
-                } else {
-                    switchFever.setChecked(false);
-                    switchCough.setChecked(false);
-                    switchFatigue.setChecked(false);
-                    switchBreathing.setChecked(false);
-                    i = 0;
-                }
-            }
-        });
+//        switchFever = findViewById(R.id.switchBtnFever);
+//        switchFever.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (switchCovid.isChecked()) {
+//                    switchFever.setChecked(true);
+//                } else {
+//                    if (switchFever.isChecked()) {
+//                        i++;
+//                    } else {
+//                        i--;
+//                    }
+//                }
+//            }
+//        });
+//        switchCough = findViewById(R.id.switchBtnCough);
+//        switchCough.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (switchCovid.isChecked()) {
+//                    switchCough.setChecked(true);
+//                } else {
+//                    if (switchCough.isChecked()) {
+//                        i++;
+//                    } else {
+//                        i--;
+//                    }
+//                }
+//            }
+//        });
+//        switchFatigue = findViewById(R.id.switchBtnFatigue);
+//        switchFatigue.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (switchCovid.isChecked()) {
+//                    switchFatigue.setChecked(true);
+//                } else {
+//                    if (switchFatigue.isChecked()) {
+//                        i++;
+//                    } else {
+//                        i--;
+//                    }
+//                }
+//            }
+//        });
+//        switchBreathing = findViewById(R.id.switchBtnBreathing);
+//        switchBreathing.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (switchCovid.isChecked()) {
+//                    switchBreathing.setChecked(true);
+//                } else {
+//                    if (switchBreathing.isChecked()) {
+//                        i++;
+//                    } else {
+//                        i--;
+//                    }
+//                }
+//            }
+//        });
+//        switchCovid = findViewById(R.id.switchBtnCovid);
+//        switchCovid.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (switchCovid.isChecked()) {
+//                    switchFever.setChecked(true);
+//                    switchCough.setChecked(true);
+//                    switchFatigue.setChecked(true);
+//                    switchBreathing.setChecked(true);
+//                    i = 5;
+//                } else {
+//                    switchFever.setChecked(false);
+//                    switchCough.setChecked(false);
+//                    switchFatigue.setChecked(false);
+//                    switchBreathing.setChecked(false);
+//                    i = 0;
+//                }
+//            }
+//        });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
