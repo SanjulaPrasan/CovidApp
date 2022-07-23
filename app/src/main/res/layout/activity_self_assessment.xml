@@ -42,7 +42,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Most common symptoms"
+                    android:text="Most Common Symptoms"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -501,7 +501,7 @@
                     android:layout_gravity="left"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:text="Serious symptoms"
+                    android:text="Serious Symptoms"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -529,7 +529,7 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="Difficulty breathing \nor shortness of breath"
+                        android:text="Shortness of Breath"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
                     <androidx.appcompat.widget.SwitchCompat
@@ -565,20 +565,20 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/img_lossspeech" />
+                        android:src="@drawable/img_consciousness" />
 
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="Loss of speech or \nmobility or confusion"
+                        android:text="Consciousness"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/switchBtnLossSpeech"
+                        android:id="@+id/switchConscious"
                         android:textOff="No"
                         android:textOn="Yes"
                         android:thumb="@drawable/thumb"
@@ -590,7 +590,8 @@
 
 
             </RelativeLayout>
-            <RelativeLayout
+
+            <!--<RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -616,21 +617,22 @@
                         android:text="Chest pain"
                         android:textColor="@color/reg_tv"
                         android:textSize="20sp" />
+
                     <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchBtnChest"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/switchBtnChest"
+                        android:layout_marginLeft="15dp"
                         android:textOff="No"
                         android:textOn="Yes"
                         android:thumb="@drawable/thumb"
                         app:showText="true"
                         app:track="@drawable/track"
-                        tools:ignore="MissingConstraints"
-                        android:layout_marginLeft="15dp"/>
+                        tools:ignore="MissingConstraints" />
                 </LinearLayout>
 
 
-            </RelativeLayout>
+            </RelativeLayout>-->
 
             <RelativeLayout
                 android:layout_width="match_parent"

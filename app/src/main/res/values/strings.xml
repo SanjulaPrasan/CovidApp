@@ -17,8 +17,8 @@
 
     <string-array name="fever">
         <item>Not Much</item>
-        <item>1-4 Days</item>
-        <item>5-6 Days</item>
+        <item>1-5 Days</item>
+        <item>5-10 Days</item>
     </string-array>
 
 </resources>
