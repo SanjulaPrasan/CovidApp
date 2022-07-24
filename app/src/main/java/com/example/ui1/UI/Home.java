@@ -66,6 +66,14 @@ public class Home extends AppCompatActivity {
 
         status.setText("" + health);
 
+        if(health.equals("POSITIVE")){
+            Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
+        }
+
+        if(health.equals("HIGH RISK")){
+            Toast.makeText(this, "HIGH RISK HIGH RISK", Toast.LENGTH_SHORT).show();
+        }
+
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
         MediaController videoControl = new MediaController(this);
