@@ -9,8 +9,12 @@ import android.widget.Button;
 
 import com.example.ui1.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Privacy extends AppCompatActivity {
     private Button btnPrivacy;
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,16 @@ public class Privacy extends AppCompatActivity {
                 openStart();
             }
         });
+
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(Privacy.this,Home.class);
+                startActivity(intent);
+                finish();
+            }
+        },5000);
     }
 
     public void openStart(){
