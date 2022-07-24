@@ -1,5 +1,7 @@
 package com.example.ui1.UI;
 
+import static com.example.ui1.UI.Home.health;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -28,6 +30,10 @@ public class SelfAssessmentHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment_home);
+
+
+
+
 //        btnHome = (Button) findViewById(R.id.btnHome);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
