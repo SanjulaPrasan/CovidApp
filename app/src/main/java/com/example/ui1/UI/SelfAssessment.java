@@ -22,9 +22,9 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     private static final String TAG = "SelfAssessment";
 
     private Button btnSubmit;
-    Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
-    ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
-//    public static String fever, cough, diarrhea, bodyPain, headache, lossOfSmell;
+    private Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
+    private ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
+    private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell;
 //    private int i = 0;
 
     public static String healthStatus;
@@ -75,6 +75,18 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         lossOfSmellAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLossOfSmell.setAdapter(lossOfSmellAdapter);
         spinnerLossOfSmell.setOnItemSelectedListener(this);
+
+//        spinnerRA = (Spinner) findViewById(R.id.spinRAT);
+//        raAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
+//        raAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerRA.setAdapter(raAdapter);
+//        spinnerRA.setOnItemSelectedListener(this);
+//
+//        spinnerPCR = (Spinner) findViewById(R.id.spinPCR);
+//        pcrAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
+//        pcrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerPCR.setAdapter(pcrAdapter);
+//        spinnerPCR.setOnItemSelectedListener(this);
 
 //        switchFever = findViewById(R.id.switchBtnFever);
 //
@@ -219,6 +231,11 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         String bodyPain = parent.getItemAtPosition(position).toString();
         String headache = parent.getItemAtPosition(position).toString();
         String lossOfSmell = parent.getItemAtPosition(position).toString();
+//        String rat = parent.getItemAtPosition(position).toString();
+//        String pcr = parent.getItemAtPosition(position).toString();
+
+        Log.d(TAG, " Testing.... " + fever);
+
 
         if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
             healthStatus = "NEGATIVE";
