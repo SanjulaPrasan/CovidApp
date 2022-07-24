@@ -27,12 +27,15 @@ public class PositiveInstructions extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },50000);
 
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent intent = new Intent(PositiveInstructions.this,Home.class);
+        startActivity(intent);
+        finish();
+        //super.onBackPressed();
     }
 }

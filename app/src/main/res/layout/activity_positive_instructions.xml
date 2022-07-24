@@ -9,29 +9,15 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/tvSelfAss"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
         android:text="YOU HAVE TESTED POSITIVE FOR COVID-19"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="30sp"
-        />
-
-    <TextView
-        android:id="@+id/tvSelfAss1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="Please Follow These Instructions"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
         />
 
     <ScrollView
