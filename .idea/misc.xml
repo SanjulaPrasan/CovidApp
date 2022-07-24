@@ -9,7 +9,6 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle1.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle2.xml" value="0.1555" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/spring_bg.xml" value="0.1645" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_api.xml" value="0.1" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth.xml" value="0.140625" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth_view.xml" value="0.2" />
@@ -87,7 +86,11 @@
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/activity_status.xml" value="0.2" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/layout_item.xml" value="0.24895833333333334" />
         <entry key="..\:/z Group Project/Current project/Latest/UI Design AS/app/src/main/res/layout/status.xml" value="0.15625" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_executable_service.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_find_blue_macaddress.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_positive_instructions.xml" value="0.25" />
+        <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_positive_instructions1.xml" value="0.109375" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment.xml" value="0.25" />
         <entry key="..\:/z Group Project/Working/main/app/src/main/res/layout/activity_self_assessment_home.xml" value="0.25" />
