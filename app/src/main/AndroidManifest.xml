@@ -23,6 +23,12 @@
             android:name=".UI.PositiveInstructions"
             android:exported="false" />
         <activity
+            android:name=".UI.HighRiskInstructions"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ModerateRiskInstructions"
+            android:exported="false" />
+        <activity
             android:name=".UI.FindBlueMACAddress"
             android:exported="false" />
         <activity
