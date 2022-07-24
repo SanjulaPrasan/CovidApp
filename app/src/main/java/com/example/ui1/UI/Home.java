@@ -119,14 +119,17 @@ public class Home extends AppCompatActivity {
     public void openStats(){
         Intent intent = new Intent(this, Stats.class);
         startActivity(intent);
+        finish();
     }
     public void openSelfAss(){
         Intent intent = new Intent(this, SelfAssessmentHome.class);
         startActivity(intent);
+        finish();
     }
     public void openProf(){
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
+        finish();
     }
 
 
