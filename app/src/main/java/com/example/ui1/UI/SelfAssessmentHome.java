@@ -225,7 +225,30 @@ public class SelfAssessmentHome extends AppCompatActivity {
     }
 
     public void openHome(){
-        Intent intent = new Intent(this, Home.class);
-        startActivity(intent);
+        if(health.equals("POSITIVE")){
+            Intent intent = new Intent(SelfAssessmentHome.this,PositiveInstructions.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
+        }
+        else if (health.equals("HIGH RISK")){
+            Intent intent = new Intent(SelfAssessmentHome.this,HighRiskInstructions.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
+        }
+        else if(health.equals("MODERATE RISK")){
+            Intent intent = new Intent(SelfAssessmentHome.this,ModerateRiskInstructions.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(SelfAssessmentHome.this, Home.class));
+            finish();
+        }
+
     }
 }

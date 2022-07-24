@@ -27,16 +27,6 @@ public class Privacy extends AppCompatActivity {
                 openStart();
             }
         });
-
-        timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(Privacy.this,Home.class);
-                startActivity(intent);
-                finish();
-            }
-        },5000);
     }
 
     public void openStart(){

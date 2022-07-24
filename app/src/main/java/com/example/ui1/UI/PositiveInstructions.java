@@ -14,8 +14,6 @@ public class PositiveInstructions extends AppCompatActivity {
 
     Timer timer;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +28,6 @@ public class PositiveInstructions extends AppCompatActivity {
                 finish();
             }
         },5000);
-
-
-
-
 
     }
 
