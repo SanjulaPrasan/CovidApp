@@ -85,7 +85,9 @@
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
                         android:gravity="right"
-                        />
+                        android:theme="@style/spinnerTheme"/>
+
+
 
                 </LinearLayout>
 
@@ -128,7 +130,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -170,7 +173,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -202,8 +206,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Muscle and \nBody Pain"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
                     <Spinner
                         android:id="@+id/spinBodyPain"
@@ -211,7 +215,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -252,7 +257,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -293,7 +299,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/fever"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
 
                 </LinearLayout>
             </RelativeLayout>
@@ -712,7 +719,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/test"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
                 </LinearLayout>
 
 
@@ -772,7 +780,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:entries="@array/test"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:theme="@style/spinnerTheme"/>
                 </LinearLayout>
             </RelativeLayout>
 
