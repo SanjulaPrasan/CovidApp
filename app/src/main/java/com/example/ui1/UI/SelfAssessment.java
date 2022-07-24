@@ -24,7 +24,7 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     private Button btnSubmit;
     private Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
     private ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
-    private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell;
+    private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
 //    private int i = 0;
 
     public static String healthStatus;
@@ -142,17 +142,39 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-//        spinnerRA = (Spinner) findViewById(R.id.spinRAT);
-//        raAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
-//        raAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerRA.setAdapter(raAdapter);
-//        spinnerRA.setOnItemSelectedListener(this);
-//
-//        spinnerPCR = (Spinner) findViewById(R.id.spinPCR);
-//        pcrAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
-//        pcrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerPCR.setAdapter(pcrAdapter);
-//        spinnerPCR.setOnItemSelectedListener(this);
+        spinnerRA = (Spinner) findViewById(R.id.spinRAT);
+        raAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
+        raAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerRA.setAdapter(raAdapter);
+        spinnerRA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                rat = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + rat);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerPCR = (Spinner) findViewById(R.id.spinPCR);
+        pcrAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
+        pcrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerPCR.setAdapter(pcrAdapter);
+        spinnerPCR.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                pcr = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + pcr);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 //        switchFever = findViewById(R.id.switchBtnFever);
 //
@@ -250,12 +272,24 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void generateHealthStatus() {
-        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
+        if(pcr.equals("Positive")){
+            healthStatus = "POSITIVE";
+        } else if(pcr.equals("Negative")){
             healthStatus = "NEGATIVE";
-        } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
-            healthStatus = "HIGH RISK";
-        }  else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
-            healthStatus = "LOW RISK";
+        } else {
+            if(rat.equals("Positive")){
+                healthStatus = "HIGH RISK";
+            } else if(rat.equals("Negative")){
+                healthStatus = "NEGATIVE";
+            } else{
+                if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
+                    healthStatus = "NEGATIVE";
+                } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
+                    healthStatus = "HIGH RISK";
+                }  else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
+                    healthStatus = "LOW RISK";
+                }
+            }
         }
     }
 
