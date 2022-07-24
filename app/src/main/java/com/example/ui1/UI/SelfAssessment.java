@@ -48,7 +48,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 fever = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + fever);
             }
 
             @Override
@@ -65,7 +64,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 cough = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + cough);
             }
 
             @Override
@@ -82,7 +80,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 diarrhea = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + diarrhea);
             }
 
             @Override
@@ -99,7 +96,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 bodyPain = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + bodyPain);
             }
 
             @Override
@@ -116,7 +112,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 headache = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + headache);
             }
 
             @Override
@@ -133,7 +128,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 lossOfSmell = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + lossOfSmell);
             }
 
             @Override
@@ -150,7 +144,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 rat = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + rat);
             }
 
             @Override
@@ -167,7 +160,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 pcr = parent.getItemAtPosition(position).toString();
-                Log.d(TAG, " Testing.... " + pcr);
             }
 
             @Override
@@ -179,81 +171,12 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         switchBreathing = findViewById(R.id.switchBtnBreathing);
         switchConscious = findViewById(R.id.switchConscious);
 
-
-//        switchCough = findViewById(R.id.switchBtnCough);
-//        switchCough.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (switchCovid.isChecked()) {
-//                    switchCough.setChecked(true);
-//                } else {
-//                    if (switchCough.isChecked()) {
-//                        i++;
-//                    } else {
-//                        i--;
-//                    }
-//                }
-//            }
-//        });
-//        switchFatigue = findViewById(R.id.switchBtnFatigue);
-//        switchFatigue.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (switchCovid.isChecked()) {
-//                    switchFatigue.setChecked(true);
-//                } else {
-//                    if (switchFatigue.isChecked()) {
-//                        i++;
-//                    } else {
-//                        i--;
-//                    }
-//                }
-//            }
-//        });
-//        switchBreathing = findViewById(R.id.switchBtnBreathing);
-//        switchBreathing.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (switchCovid.isChecked()) {
-//                    switchBreathing.setChecked(true);
-//                } else {
-//                    if (switchBreathing.isChecked()) {
-//                        i++;
-//                    } else {
-//                        i--;
-//                    }
-//                }
-//            }
-//        });
-//        switchCovid = findViewById(R.id.switchBtnCovid);
-//        switchCovid.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (switchCovid.isChecked()) {
-//                    switchFever.setChecked(true);
-//                    switchCough.setChecked(true);
-//                    switchFatigue.setChecked(true);
-//                    switchBreathing.setChecked(true);
-//                    i = 5;
-//                } else {
-//                    switchFever.setChecked(false);
-//                    switchCough.setChecked(false);
-//                    switchFatigue.setChecked(false);
-//                    switchBreathing.setChecked(false);
-//                    i = 0;
-//                }
-//            }
-//        });
-
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 generateHealthStatus();
-                Log.d(TAG, "Health Status " + healthStatus);
                 saveData();
-                Log.d(TAG, "Health Status " + healthStatus);
-
-//                openHome();
+                openHome();
             }
         });
     }
