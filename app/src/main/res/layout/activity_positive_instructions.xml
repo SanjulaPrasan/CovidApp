@@ -15,7 +15,7 @@
         android:layout_gravity="left"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
-        android:text="YOU ARE TESTED POSITIVE FOR COVID-19"
+        android:text="YOU HAVE TESTED POSITIVE FOR COVID-19"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="30sp"
