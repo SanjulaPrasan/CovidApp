@@ -1,5 +1,7 @@
 package com.example.ui1.UI;
 
+import static com.example.ui1.UI.Home.health;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -36,7 +38,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment);
-
 
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
