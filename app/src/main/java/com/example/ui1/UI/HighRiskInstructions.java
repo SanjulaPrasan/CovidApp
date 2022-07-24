@@ -14,5 +14,8 @@ public class HighRiskInstructions extends AppCompatActivity {
         setContentView(R.layout.activity_high_risk_instructions);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

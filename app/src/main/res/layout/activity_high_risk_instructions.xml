@@ -45,7 +45,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="25dp"
                     android:layout_marginBottom="20dp"
-                    android:text="@string/positivePara"
+                    android:text="@string/highRiskPara"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
 
