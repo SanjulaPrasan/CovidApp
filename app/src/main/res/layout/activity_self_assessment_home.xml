@@ -75,7 +75,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Fever"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinFever"
@@ -117,7 +118,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Dry Cough"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinCough"
@@ -157,6 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Diarrhea"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <Spinner
@@ -197,7 +200,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Muscle and \nBody Pain"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinBodyPain"
@@ -237,7 +241,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Headache"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinHeadache"
@@ -277,7 +282,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Loss of Taste \nor Smell"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinLossSmell"
@@ -527,12 +533,13 @@
                         android:src="@drawable/img_breath" />
 
                     <TextView
-                        android:layout_width="200dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Shortness of Breath"
-                        android:textColor="@color/reg_tv"
-                        android:textSize="20sp" />
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        />
                     <androidx.appcompat.widget.SwitchCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -569,11 +576,11 @@
                         android:src="@drawable/img_consciousness" />
 
                     <TextView
-                        android:layout_width="200dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Consciousness"
-                        android:textColor="@color/reg_tv"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -694,7 +701,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Rapid Antigen \nTest"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinRAT"
@@ -754,7 +762,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="PCR Test"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
                         android:id="@+id/spinPCR"
