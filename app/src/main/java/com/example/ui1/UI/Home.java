@@ -34,6 +34,8 @@ import com.example.ui1.SQLite.DbHandler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Home extends AppCompatActivity {
     private TextView status;
@@ -54,6 +56,8 @@ public class Home extends AppCompatActivity {
 
     private DbHandler dbHandler;
 
+    Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +70,15 @@ public class Home extends AppCompatActivity {
 
         status.setText("" + health);
 
+
+
+
+
         if(health.equals("POSITIVE")){
+
+            Intent intent = new Intent(Home.this,PositiveInstructions.class);
+            startActivity(intent);
+            finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
 

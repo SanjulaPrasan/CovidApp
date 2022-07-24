@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
-            android:name=".PositiveInstructions"
+            android:name=".UI.PositiveInstructions"
             android:exported="false" />
         <activity
             android:name=".UI.FindBlueMACAddress"
