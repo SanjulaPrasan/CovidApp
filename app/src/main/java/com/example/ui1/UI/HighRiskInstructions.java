@@ -27,11 +27,14 @@ public class HighRiskInstructions extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },50000);
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent intent = new Intent(HighRiskInstructions.this,Home.class);
+        startActivity(intent);
+        finish();
+        //super.onBackPressed();
     }
 }
