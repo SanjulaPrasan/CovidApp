@@ -44,37 +44,103 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         feverAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         feverAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFever.setAdapter(feverAdapter);
-        spinnerFever.setOnItemSelectedListener(this);
+        spinnerFever.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                fever = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + fever);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spinnerCough = (Spinner) findViewById(R.id.spinCough);
         coughAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         coughAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCough.setAdapter(coughAdapter);
-        spinnerCough.setOnItemSelectedListener(this);
+        spinnerCough.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                cough = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + cough);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spinnerDiarrhea = (Spinner) findViewById(R.id.spinDiarrhea);
         diarrheaAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         diarrheaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDiarrhea.setAdapter(diarrheaAdapter);
-        spinnerDiarrhea.setOnItemSelectedListener(this);
+        spinnerDiarrhea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                diarrhea = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + diarrhea);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spinnerBodyPain = (Spinner) findViewById(R.id.spinBodyPain);
         bodyPainAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         bodyPainAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBodyPain.setAdapter(bodyPainAdapter);
-        spinnerBodyPain.setOnItemSelectedListener(this);
+        spinnerBodyPain.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                bodyPain = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + bodyPain);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spinnerHeadache = (Spinner) findViewById(R.id.spinHeadache);
         headacheAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         headacheAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerHeadache.setAdapter(headacheAdapter);
-        spinnerHeadache.setOnItemSelectedListener(this);
+        spinnerHeadache.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                headache = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + headache);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         spinnerLossOfSmell = (Spinner) findViewById(R.id.spinLossSmell);
         lossOfSmellAdapter = ArrayAdapter.createFromResource(this, R.array.fever, android.R.layout.simple_spinner_item);
         lossOfSmellAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLossOfSmell.setAdapter(lossOfSmellAdapter);
-        spinnerLossOfSmell.setOnItemSelectedListener(this);
+        spinnerLossOfSmell.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                lossOfSmell = parent.getItemAtPosition(position).toString();
+                Log.d(TAG, " Testing.... " + lossOfSmell);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 //        spinnerRA = (Spinner) findViewById(R.id.spinRAT);
 //        raAdapter = ArrayAdapter.createFromResource(this, R.array.test, android.R.layout.simple_spinner_item);
@@ -173,13 +239,24 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                generateHealthStatus();
+                generateHealthStatus();
+                Log.d(TAG, "Health Status " + healthStatus);
                 saveData();
                 Log.d(TAG, "Health Status " + healthStatus);
 
 //                openHome();
             }
         });
+    }
+
+    private void generateHealthStatus() {
+        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
+            healthStatus = "NEGATIVE";
+        } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
+            healthStatus = "HIGH RISK";
+        }  else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
+            healthStatus = "LOW RISK";
+        }
     }
 
 
@@ -225,25 +302,27 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String fever = parent.getItemAtPosition(position).toString();
-        String cough = parent.getItemAtPosition(position).toString();
-        String diarrhea = parent.getItemAtPosition(position).toString();
-        String bodyPain = parent.getItemAtPosition(position).toString();
-        String headache = parent.getItemAtPosition(position).toString();
-        String lossOfSmell = parent.getItemAtPosition(position).toString();
+//        String fever = parent.getItemAtPosition(position).toString();
+//        String cough = parent.getItemAtPosition(position).toString();
+//        String diarrhea = parent.getItemAtPosition(position).toString();
+//        String bodyPain = parent.getItemAtPosition(position).toString();
+//        String headache = parent.getItemAtPosition(position).toString();
+//        String lossOfSmell = parent.getItemAtPosition(position).toString();
 //        String rat = parent.getItemAtPosition(position).toString();
 //        String pcr = parent.getItemAtPosition(position).toString();
+//
+//        Log.d(TAG, " Testing.... " + healthStatus);
+//
+//
+//        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
+//            healthStatus = "NEGATIVE";
+//        } else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
+//            healthStatus = "LOW RISK";
+//        } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
+//            healthStatus = "HIGH RISK";
+//        }
 
-        Log.d(TAG, " Testing.... " + fever);
-
-
-        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
-            healthStatus = "NEGATIVE";
-        } else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
-            healthStatus = "LOW RISK";
-        } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
-            healthStatus = "HIGH RISK";
-        }
+        Log.d(TAG, "MONWADA KRNNE DANNA OII Health Status " );
 
     }
 
