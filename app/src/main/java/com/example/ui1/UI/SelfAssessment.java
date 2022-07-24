@@ -24,8 +24,8 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     private Button btnSubmit;
     private Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
     private ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
+    private SwitchCompat switchBreathing, switchConscious;
     private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
-//    private int i = 0;
 
     public static String healthStatus;
 
@@ -176,23 +176,10 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-//        switchFever = findViewById(R.id.switchBtnFever);
-//
-//
-//        switchFever.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (switchCovid.isChecked()) {
-//                    switchFever.setChecked(true);
-//                } else {
-//                    if (switchFever.isChecked()) {
-//                        i++;
-//                    } else {
-//                        i--;
-//                    }
-//                }
-//            }
-//        });
+        switchBreathing = findViewById(R.id.switchBtnBreathing);
+        switchConscious = findViewById(R.id.switchConscious);
+
+
 //        switchCough = findViewById(R.id.switchBtnCough);
 //        switchCough.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -272,6 +259,7 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void generateHealthStatus() {
+
         if(pcr.equals("Positive")){
             healthStatus = "POSITIVE";
         } else if(pcr.equals("Negative")){
@@ -282,33 +270,20 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
             } else if(rat.equals("Negative")){
                 healthStatus = "NEGATIVE";
             } else{
-                if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
-                    healthStatus = "NEGATIVE";
-                } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
+                if(switchBreathing.isChecked() || switchConscious.isChecked()){
                     healthStatus = "HIGH RISK";
-                }  else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
-                    healthStatus = "LOW RISK";
+                }else {
+                    if (fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")) {
+                        healthStatus = "NEGATIVE";
+                    } else if (fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
+                        healthStatus = "HIGH RISK";
+                    } else if (fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")) {
+                        healthStatus = "LOW RISK";
+                    }
                 }
             }
         }
     }
-
-
-//    public static void generateHealthStatus(){
-//        fever = spinnerFever.getSelectedItem().toString();
-//        cough = spinnerCough.getSelectedItem().toString();
-//        diarrhea = spinnerDiarrhea.getSelectedItem().toString();
-//        bodyPain = spinnerBodyPain.getSelectedItem().toString();
-//        headache = spinnerHeadache.getSelectedItem().toString();
-//        lossOfSmell = spinnerLossOfSmell.getSelectedItem().toString();
-//
-//        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
-//            healthStatus = "NEGATIVE";
-//        } else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
-//            healthStatus = "LOW RISK";
-//        }
-//    }
-
 
     public void saveData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -336,27 +311,6 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        String fever = parent.getItemAtPosition(position).toString();
-//        String cough = parent.getItemAtPosition(position).toString();
-//        String diarrhea = parent.getItemAtPosition(position).toString();
-//        String bodyPain = parent.getItemAtPosition(position).toString();
-//        String headache = parent.getItemAtPosition(position).toString();
-//        String lossOfSmell = parent.getItemAtPosition(position).toString();
-//        String rat = parent.getItemAtPosition(position).toString();
-//        String pcr = parent.getItemAtPosition(position).toString();
-//
-//        Log.d(TAG, " Testing.... " + healthStatus);
-//
-//
-//        if(fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")){
-//            healthStatus = "NEGATIVE";
-//        } else if(fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")){
-//            healthStatus = "LOW RISK";
-//        } else if(fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
-//            healthStatus = "HIGH RISK";
-//        }
-
-        Log.d(TAG, "MONWADA KRNNE DANNA OII Health Status " );
 
     }
 
