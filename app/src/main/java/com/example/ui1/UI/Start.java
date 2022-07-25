@@ -31,12 +31,7 @@ public class Start extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(Start.this,Home.class);
-        startActivity(intent);
 
-    }
 
 
 }
