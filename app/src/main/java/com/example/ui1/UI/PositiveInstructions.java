@@ -27,7 +27,7 @@ public class PositiveInstructions extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },50000);
+        },60000*3);
 
     }
 

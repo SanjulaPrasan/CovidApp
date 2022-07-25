@@ -26,7 +26,7 @@ public class ModerateRiskInstructions extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },50000);
+        },60000*3);
     }
 
     @Override
