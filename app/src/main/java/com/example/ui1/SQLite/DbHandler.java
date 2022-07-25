@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi;
 import com.example.ui1.Models.ContactModel;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +59,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(MAC_ADDRESS, contactModel.getMacAddress());
-        LocalDate date = contactModel.getDate();
+        LocalDateTime date = contactModel.getDate();
         contentValues.put(CONTACT_STARTED,date.toString());
 
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
@@ -76,7 +77,7 @@ public class DbHandler extends SQLiteOpenHelper {
             do {
                 ContactModel contactModel = new ContactModel();
                 contactModel.setMacAddress(cursor.getString(0));
-                contactModel.setDate(LocalDate.parse("cursor.getString(1)"));
+                contactModel.setDate(LocalDateTime.parse("cursor.getString(1)"));
 
                 closeContacts.add(contactModel);
             } while (cursor.moveToNext());
@@ -88,9 +89,9 @@ public class DbHandler extends SQLiteOpenHelper {
     public int removeData() {
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyy-MM-dd");
-        LocalDate now = LocalDate.now();
-        LocalDate then = now.minusDays(1);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime then = now.minusDays(1);
 
 //        String query = "DELETE FROM " + TABLE_NAME + " WHERE " + CONTACT_STARTED +" < " + "'"+then.toString()+"'";
 //        System.out.println(query);

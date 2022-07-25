@@ -222,19 +222,19 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
 
 
     public void openHome(){
-        if(health.equals("POSITIVE")){
+        if(healthStatus.equals("POSITIVE")){
             Intent intent = new Intent(SelfAssessment.this,PositiveInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
-        else if (health.equals("HIGH RISK")){
+        else if (healthStatus.equals("HIGH RISK")){
             Intent intent = new Intent(SelfAssessment.this,HighRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
-        else if(health.equals("MODERATE RISK")){
+        else if(healthStatus.equals("MODERATE RISK")){
             Intent intent = new Intent(SelfAssessment.this,ModerateRiskInstructions.class);
             startActivity(intent);
             finish();

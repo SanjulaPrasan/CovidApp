@@ -32,6 +32,7 @@ import com.example.ui1.R;
 import com.example.ui1.SQLite.DbHandler;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -52,7 +53,7 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 30000;
+    int delay = 60000*60;
 
     private DbHandler dbHandler;
 
@@ -263,8 +264,8 @@ public class Home extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void addToDatabase(String mac_Address){
 
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyy-MM-dd");
-        LocalDate now = LocalDate.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime now = LocalDateTime.now();
         ContactModel contactModel= new ContactModel(mac_Address,now);
 
         dbHandler.addContactData(contactModel);
