@@ -26,17 +26,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ui1.Bluetooth.BluetoothActivity;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.R;
 import com.example.ui1.SQLite.DbHandler;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class Home extends AppCompatActivity {
     private TextView status;
