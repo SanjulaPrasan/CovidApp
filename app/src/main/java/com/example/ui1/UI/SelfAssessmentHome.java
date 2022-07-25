@@ -225,19 +225,19 @@ public class SelfAssessmentHome extends AppCompatActivity {
     }
 
     public void openHome(){
-        if(health.equals("POSITIVE")){
+        if( SelfAssessment.healthStatus.equals("POSITIVE")){
             Intent intent = new Intent(SelfAssessmentHome.this,PositiveInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
-        else if (health.equals("HIGH RISK")){
+        else if ( SelfAssessment.healthStatus.equals("HIGH RISK")){
             Intent intent = new Intent(SelfAssessmentHome.this,HighRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
-        else if(health.equals("MODERATE RISK")){
+        else if( SelfAssessment.healthStatus.equals("MODERATE RISK")){
             Intent intent = new Intent(SelfAssessmentHome.this,ModerateRiskInstructions.class);
             startActivity(intent);
             finish();
@@ -251,4 +251,12 @@ public class SelfAssessmentHome extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SelfAssessmentHome.this,Home.class);
+        startActivity(intent);
+
+    }
+
 }
