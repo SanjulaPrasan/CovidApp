@@ -120,4 +120,11 @@ public class Profile extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Profile.this,Home.class);
+        startActivity(intent);
+
+    }
+
 }
