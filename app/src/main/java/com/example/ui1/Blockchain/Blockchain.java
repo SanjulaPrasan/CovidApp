@@ -54,17 +54,18 @@ public class Blockchain {
         return MyContract.load(contractAddress,web3j,credentials,GAS_price,GAS_LIMIT);
     }
 
-    public void sendData(String macAddress,int healthStatus){
+    public void sendData(String macAddress,int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        mycontract.addUser(macAddress,BigInteger.valueOf(healthStatus));
+        mycontract.addUser(macAddress,BigInteger.valueOf(healthStatus)).sendAsync().get();
     }
-
+    //TODO need to change the call to return a list from contract
     public List<String> getAddress(String macAddress, int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserAddress().send();
+        return (List<String>) mycontract.getUserAddress().sendAsync().get();
     }
+    //TODO need to change the call to return a list from contract
     public List<String> getHealthStatus(String macAddress, int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserHealthStatus().send();
+        return (List<String>) mycontract.getUserHealthStatus().sendAsync().get();
     }
 }

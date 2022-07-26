@@ -2,6 +2,7 @@ package com.example.ui1.UI;
 
 import static com.example.ui1.UI.Home.health;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -15,7 +16,18 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.rx.Web3jRx;
 
 public class SelfAssessmentHome extends AppCompatActivity {
 
@@ -26,11 +38,16 @@ public class SelfAssessmentHome extends AppCompatActivity {
     private SwitchCompat switchBreathing, switchConscious;
     private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
 
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
+
+    int health=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_assessment_home);
-
 
 
 
@@ -175,6 +192,8 @@ public class SelfAssessmentHome extends AppCompatActivity {
                 generateNewHealthStatus();
                 saveDataHome();
                 openHome();
+
+                insertData();
             }
         });
 
@@ -258,5 +277,50 @@ public class SelfAssessmentHome extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void insertData(){
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userId = user.getUid();
+        Blockchain blockchain= new Blockchain();
+
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if (userProfile != null) {
+
+                    String blueMAC = userProfile.blueMac;
+                    String helathstats = SelfAssessment.healthStatus;
+                    System.out.println(blueMAC);
+
+                    //int healthStatus = 0;
+                    if(SelfAssessment.healthStatus.equals("POSITIVE")){
+                        health = 1;
+                        System.out.println("HealthStatus print : "+health);
+                    }
+                    else if(SelfAssessment.healthStatus.equals("NEGATIVE")){
+                        health = 2;
+                        System.out.println("HealthStatus print : "+health);
+                    }
+                    try {
+                        blockchain.sendData(blueMAC,health);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
 
 }

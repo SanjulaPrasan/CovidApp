@@ -30,10 +30,14 @@ import com.example.ui1.Models.ContactModel;
 import com.example.ui1.R;
 import com.example.ui1.SQLite.DbHandler;
 
+import org.web3j.abi.datatypes.Int;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Timer;
+
+import jnr.ffi.annotations.In;
 
 
 public class Home extends AppCompatActivity {
@@ -82,6 +86,15 @@ public class Home extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setLooping(true);
+            }
+        });
+
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, blocksaveTEST.class);
+                startActivity(intent);
+                finish();
             }
         });
 
