@@ -26,7 +26,7 @@ public class Blockchain {
     TransactionManager transactionManager;
     DefaultGasProvider defaultGasProvider;
 
-    public void startConnection(){
+    public Blockchain() {
         web3j= Web3j.build(new HttpService(URL));
         credentials = getCredentialsFromPrivateKey();
         transactionManager = new RawTransactionManager(web3j, credentials);
@@ -47,22 +47,24 @@ public class Blockchain {
         return Credentials.create(PRIVATE_KEY);
     }
 
-    private MyContract loadContractWithTransactionManager(String contractAddress , Web3j web3j, TransactionManager transactionManager, DefaultGasProvider defaultGasProvider){
+    public MyContract loadContractWithTransactionManager(String contractAddress , Web3j web3j, TransactionManager transactionManager, DefaultGasProvider defaultGasProvider){
         return MyContract.load(contractAddress,web3j,transactionManager,GAS_price,GAS_LIMIT);
     }
-    private MyContract loadContractWithCredentials(String contractAddress , Web3j web3j, org.web3j.crypto.Credentials credentials, DefaultGasProvider defaultGasProvider){
+    public MyContract loadContractWithCredentials(String contractAddress , Web3j web3j, org.web3j.crypto.Credentials credentials, DefaultGasProvider defaultGasProvider){
         return MyContract.load(contractAddress,web3j,credentials,GAS_price,GAS_LIMIT);
     }
 
-    private void sendData(String macAddress,int healthStatus){
+    public void sendData(String macAddress,int healthStatus){
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
         mycontract.addUser(macAddress,BigInteger.valueOf(healthStatus));
     }
 
-
-    private List<String> getAddress(String macAddress, int healthStatus) throws Exception {
+    public List<String> getAddress(String macAddress, int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
         return (List<String>) mycontract.getUserAddress().send();
-
+    }
+    public List<String> getHealthStatus(String macAddress, int healthStatus) throws Exception {
+        MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
+        return (List<String>) mycontract.getUserHealthStatus().send();
     }
 }
