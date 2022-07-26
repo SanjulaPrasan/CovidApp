@@ -9,8 +9,12 @@ import android.widget.Button;
 
 import com.example.ui1.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Privacy extends AppCompatActivity {
     private Button btnPrivacy;
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

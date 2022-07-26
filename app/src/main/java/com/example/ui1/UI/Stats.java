@@ -126,5 +126,12 @@ public class Stats extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Stats.this,Home.class);
+        startActivity(intent);
+
+    }
 }
 
