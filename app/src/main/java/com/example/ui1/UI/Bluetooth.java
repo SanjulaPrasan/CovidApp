@@ -68,9 +68,9 @@ public class Bluetooth extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void checkBluetoothState() {
         if (bluetoothAdapter == null) {
-            Toast.makeText(this, "NOT supported", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "NOT supported, You can't use this Application", Toast.LENGTH_LONG).show();
         }
-        if (!bluetoothAdapter.isEnabled()) {
+        else if (!bluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH);
         }
