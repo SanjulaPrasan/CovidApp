@@ -88,15 +88,7 @@ public class Home extends AppCompatActivity {
                 mp.setLooping(true);
             }
         });
-
-        videoView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, blocksaveTEST.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        
 
 
         btnStats = (Button) findViewById(R.id.btnStats);
