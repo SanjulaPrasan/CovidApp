@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -28,16 +29,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.R;
+import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SQLite.DbHandler;
-
-import org.web3j.abi.datatypes.Int;
+import com.example.ui1.SelfAssessment.SelfAssessment;
+import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Timer;
-
-import jnr.ffi.annotations.In;
 
 
 public class Home extends AppCompatActivity {
@@ -47,6 +46,7 @@ public class Home extends AppCompatActivity {
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
+    private Button btnRepo;
     public static String health;
 
     public static final int REQUEST_ENABLE_BLUETOOTH = 11;
@@ -55,16 +55,18 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 60000*60;
+    int delay = 60000*10;
 
     private DbHandler dbHandler;
-
-    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+
+
+        //System.out.println("Helath "+health);
 
         status = findViewById(R.id.tvStatusValue);
 
@@ -72,8 +74,6 @@ public class Home extends AppCompatActivity {
         health = sharedPreferences.getString(SelfAssessment.TEXT, "");
 
         status.setText("" + health);
-
-
 
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
@@ -88,8 +88,6 @@ public class Home extends AppCompatActivity {
                 mp.setLooping(true);
             }
         });
-        
-
 
         btnStats = (Button) findViewById(R.id.btnStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +111,14 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        btnRepo = (Button)findViewById(R.id.btnReport);
+        btnRepo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openReport();;
+            }
+        });
+
         mBTDevices = new ArrayList<>();
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         dbHandler = new DbHandler(Home.this);
@@ -132,6 +138,11 @@ public class Home extends AppCompatActivity {
     }
     public void openProf(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        finish();
+    }
+    public void openReport(){
+        Intent intent = new Intent(this, ReportActivity.class);
         startActivity(intent);
         finish();
     }
@@ -245,7 +256,7 @@ public class Home extends AppCompatActivity {
         if (mBluetoothAdapter == null) {
             Toast.makeText(this, "NOT supported", Toast.LENGTH_LONG).show();
         }
-        if (!mBluetoothAdapter.isEnabled()) {
+        else if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BLUETOOTH);
         }

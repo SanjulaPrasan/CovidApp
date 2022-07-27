@@ -1,44 +1,58 @@
-package com.example.ui1.UI;
+package com.example.ui1.SelfAssessment;
 
-import static com.example.ui1.UI.Home.health;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
+import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.UI.Home;
+import com.example.ui1.UI.ModerateRiskInstructions;
+import com.example.ui1.UI.PositiveInstructions;
+import com.example.ui1.UI.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class SelfAssessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
-    private static final String TAG = "SelfAssessment";
+public class SelfAssessmentHome extends AppCompatActivity {
 
     private Button btnSubmit;
+//    private Button  btnHome;
     private Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
     private ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
     private SwitchCompat switchBreathing, switchConscious;
     private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
 
-    public static String healthStatus;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
 
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String TEXT = "text";
+    int health=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self_assessment);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_self_assessment_home);
 
+
+//        btnHome = (Button) findViewById(R.id.btnHome);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         spinnerFever = (Spinner) findViewById(R.id.spinFever);
@@ -172,70 +186,79 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         switchBreathing = findViewById(R.id.switchBtnBreathing);
         switchConscious = findViewById(R.id.switchConscious);
 
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                generateHealthStatus();
-                saveData();
+                generateNewHealthStatus();
+                saveDataHome();
                 openHome();
+
+                insertData();
             }
         });
+
+//        btnHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openHome();
+//            }
+//        });
     }
 
-    private void generateHealthStatus() {
-
+    public void generateNewHealthStatus(){
         if(pcr.equals("Positive")){
-            healthStatus = "POSITIVE";
+            SelfAssessment.healthStatus = "POSITIVE";
         } else if(pcr.equals("Negative")){
-            healthStatus = "NEGATIVE";
+            SelfAssessment.healthStatus = "NEGATIVE";
         } else {
             if(rat.equals("Positive")){
-                healthStatus = "HIGH RISK";
+                SelfAssessment.healthStatus = "HIGH RISK";
             } else if(rat.equals("Negative")){
-                healthStatus = "NEGATIVE";
+                SelfAssessment.healthStatus = "NEGATIVE";
             } else{
                 if(switchBreathing.isChecked() || switchConscious.isChecked()){
-                    healthStatus = "HIGH RISK";
+                    SelfAssessment.healthStatus = "HIGH RISK";
                 }else {
                     if (fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")) {
-                        healthStatus = "NEGATIVE";
+                        SelfAssessment.healthStatus = "NEGATIVE";
                     } else if (fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
-                        healthStatus = "MODERATE RISK";
+                        SelfAssessment.healthStatus = "MODERATE RISK";
                     } else if (fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")) {
-                        healthStatus = "LOW RISK";
+                        SelfAssessment.healthStatus = "LOW RISK";
                     }
                 }
             }
         }
     }
 
-    public void saveData(){
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+
+    public void saveDataHome(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putString(TEXT, healthStatus);
+        editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
 
         editor.apply();
 
         Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
 
-
     public void openHome(){
-        if(healthStatus.equals("POSITIVE")){
-            Intent intent = new Intent(SelfAssessment.this,PositiveInstructions.class);
+        if( SelfAssessment.healthStatus.equals("POSITIVE")){
+            Intent intent = new Intent(SelfAssessmentHome.this, PositiveInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
-        else if (healthStatus.equals("HIGH RISK")){
-            Intent intent = new Intent(SelfAssessment.this,HighRiskInstructions.class);
+        else if ( SelfAssessment.healthStatus.equals("HIGH RISK")){
+            Intent intent = new Intent(SelfAssessmentHome.this, HighRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
-        else if(healthStatus.equals("MODERATE RISK")){
-            Intent intent = new Intent(SelfAssessment.this,ModerateRiskInstructions.class);
+        else if( SelfAssessment.healthStatus.equals("MODERATE RISK")){
+            Intent intent = new Intent(SelfAssessmentHome.this, ModerateRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
@@ -243,24 +266,67 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
         else
         {
             Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(SelfAssessment.this, Home.class));
+            startActivity(new Intent(SelfAssessmentHome.this, Home.class));
             finish();
         }
-    }
 
+    }
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(SelfAssessmentHome.this,Home.class);
+        startActivity(intent);
+        finish();
 
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void insertData(){
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userId = user.getUid();
+        Blockchain blockchain= new Blockchain();
+
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+                if (userProfile != null) {
+
+                    String blueMAC = userProfile.blueMac;
+                    String helathstats = SelfAssessment.healthStatus;
+                    System.out.println(blueMAC);
+
+                    //int healthStatus = 0;
+                    if(SelfAssessment.healthStatus.equals("POSITIVE")){
+                        health = 1;
+                        System.out.println("HealthStatus print : "+health);
+                    }
+                    else if(SelfAssessment.healthStatus.equals("NEGATIVE")){
+                        health = 2;
+                        System.out.println("HealthStatus print : "+health);
+                    }
+                    try {
+                        blockchain.sendData(blueMAC,health);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void insertFirebase(){
 
     }
+
+
+
 }
