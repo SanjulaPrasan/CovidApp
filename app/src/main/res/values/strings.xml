@@ -14,4 +14,23 @@
     <string name="findHead"><br>How to Find the MAC Address of Your Device</br></string>
 
     <string name="findPara"><br>1. On your Home screen press the Menu button and Settings.</br>\n\n<br>2. Scroll down to About Device and press Status.</br>\n\n<br>3. Scroll down till you find the Wi-Fi MAC address entry.</br>\n\n<br>4. This is you devices MAC address.</br>\n\n<br>5. Directly below that is your Bluetooth MAC address.</br></string>
+
+    <string name="positivePara"><br>\u2022 If you have an emergency warning sign (trouble breathing), seek emergency medical care immediately.</br>\n\n<br>\u2022 Stay in a separate room from other household members, if possible.</br>\n\n<br>\u2022 Use a separate bathroom, if possible.</br>\n\n<br>\u2022 Take steps to improve ventilation at home, if possible.</br>\n\n<br>\u2022 Avoid contact with other members of the household and pets.</br>\n\n<br>\u2022 Don’t share personal household items, like cups, towels, and utensils.</br>\n\n<br>\u2022 Wear a well-fitting mask when you need to be around other people.</br>\n\n<br>\u2022 Once you isolate for at least 5 days, if you are fever free and your other symptoms have improved, you can end isolation</br>\n\n<br>\u2022 Use an antigen test towards the end of the 5-day isolation period. If your test result is positive, you should continue to isolate until day 10. If your test result is negative, you can end isolation</br></string>
+
+    <string name="highRiskPara"><br>\u2022 Seek emergency medical care immediately.</br>\n\n<br>\u2022 Stay in a separate room from other household members, if possible.</br>\n\n<br>\u2022 Use a separate bathroom, if possible.</br>\n\n<br>\u2022 Take steps to improve ventilation at home, if possible.</br>\n\n<br>\u2022 Avoid contact with other members of the household and pets.</br>\n\n<br>\u2022 Don’t share personal household items, like cups, towels, and utensils.</br>\n\n<br>\u2022 Wear a well-fitting mask when you need to be around other people.</br>\n\n<br>\u2022 Once you isolate for at least 10 days, if you are fever free and your other symptoms have improved, you can end isolation</br>\n\n<br>\u2022 Use an antigen test towards the end of the 10-day isolation period. If your test result is positive, you should continue to isolate until day 20. If your test result is negative, you can end isolation</br></string>
+
+    <string name="moderateRiskPara"><br>\u2022 Stay in a separate room from other household members, if possible.</br>\n\n<br>\u2022 Use a separate bathroom, if possible.</br>\n\n<br>\u2022 Take steps to improve ventilation at home, if possible.</br>\n\n<br>\u2022 Avoid contact with other members of the household and pets.</br>\n\n<br>\u2022 Don’t share personal household items, like cups, towels, and utensils.</br>\n\n<br>\u2022 Wear a well-fitting mask when you need to be around other people.</br>\n\n<br>\u2022 Once you isolate for at least 10 days, if you are fever free and your other symptoms have improved, you can end isolation</br>\n\n<br>\u2022 If you are unsure if your symptoms are moderate, talk to a healthcare provider for further guidance.</br></string>
+
+    <string-array name="fever" colors="block">
+        <item>No</item>
+        <item>1-5 Days</item>
+        <item>5-10 Days</item>
+    </string-array>
+
+    <string-array name="test">
+        <item>Not done</item>
+        <item>Negative</item>
+        <item>Positive</item>
+    </string-array>
+
 </resources>

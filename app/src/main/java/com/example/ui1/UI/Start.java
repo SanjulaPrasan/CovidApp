@@ -31,4 +31,7 @@ public class Start extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
+
 }

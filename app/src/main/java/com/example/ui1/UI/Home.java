@@ -26,14 +26,19 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ui1.Bluetooth.BluetoothActivity;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.R;
 import com.example.ui1.SQLite.DbHandler;
 
-import java.time.LocalDate;
+import org.web3j.abi.datatypes.Int;
+
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Timer;
+
+import jnr.ffi.annotations.In;
+
 
 public class Home extends AppCompatActivity {
     private TextView status;
@@ -50,9 +55,11 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 30000;
+    int delay = 60000*60;
 
     private DbHandler dbHandler;
+
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +73,8 @@ public class Home extends AppCompatActivity {
 
         status.setText("" + health);
 
+
+
         this.videoView = findViewById(R.id.vvBlueScan);
         this.videoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.blue_scan2));
         MediaController videoControl = new MediaController(this);
@@ -77,6 +86,15 @@ public class Home extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setLooping(true);
+            }
+        });
+
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, blocksaveTEST.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -113,14 +131,17 @@ public class Home extends AppCompatActivity {
     public void openStats(){
         Intent intent = new Intent(this, Stats.class);
         startActivity(intent);
+        finish();
     }
     public void openSelfAss(){
         Intent intent = new Intent(this, SelfAssessmentHome.class);
         startActivity(intent);
+        finish();
     }
     public void openProf(){
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
+        finish();
     }
 
 
@@ -254,8 +275,8 @@ public class Home extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void addToDatabase(String mac_Address){
 
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyy-MM-dd");
-        LocalDate now = LocalDate.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime now = LocalDateTime.now();
         ContactModel contactModel= new ContactModel(mac_Address,now);
 
         dbHandler.addContactData(contactModel);

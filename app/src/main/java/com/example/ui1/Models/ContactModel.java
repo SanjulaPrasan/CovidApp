@@ -5,21 +5,22 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class ContactModel {
     private String macAddress;
-    private LocalDate date;
+    private LocalDateTime date;
 
 
 
-    public ContactModel(String macAddress, LocalDate date) {
+    public ContactModel(String macAddress, LocalDateTime date) {
         this.macAddress = macAddress;
         this.date = date;
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ContactModel(String macAddress, String date) {
         this.macAddress = macAddress;
-        this.date = LocalDate.parse(date);
+        this.date = LocalDateTime.parse(date);
     }
 
     public ContactModel() {
@@ -33,11 +34,11 @@ public class ContactModel {
         this.macAddress = macAddress;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }
