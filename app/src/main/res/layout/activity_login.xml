@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,22 +8,23 @@
     tools:context=".UI.Login"
     android:background="@color/white">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal|center_vertical" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/ivLogo"
@@ -42,7 +43,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="35sp"
-                 />
+                />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tempEmail"
@@ -96,17 +97,17 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/rounded_rectangle"
-            android:text="LogIn"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/rounded_rectangle"
+                android:text="LogIn"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/tvRegister1"
@@ -131,5 +132,9 @@
                 android:gravity="center"/>
 
 
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
