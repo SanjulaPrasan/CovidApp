@@ -1,6 +1,4 @@
-package com.example.ui1.UI;
-
-import static com.example.ui1.UI.Home.health;
+package com.example.ui1.SelfAssessment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +17,11 @@ import android.widget.Toast;
 
 import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
+import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.UI.Home;
+import com.example.ui1.UI.ModerateRiskInstructions;
+import com.example.ui1.UI.PositiveInstructions;
+import com.example.ui1.UI.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,9 +29,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.web3j.protocol.Web3j;
-import org.web3j.protocol.rx.Web3jRx;
 
 public class SelfAssessmentHome extends AppCompatActivity {
 
@@ -50,7 +50,6 @@ public class SelfAssessmentHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_self_assessment_home);
-
 
 
 //        btnHome = (Button) findViewById(R.id.btnHome);
@@ -247,19 +246,19 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
     public void openHome(){
         if( SelfAssessment.healthStatus.equals("POSITIVE")){
-            Intent intent = new Intent(SelfAssessmentHome.this,PositiveInstructions.class);
+            Intent intent = new Intent(SelfAssessmentHome.this, PositiveInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
         else if ( SelfAssessment.healthStatus.equals("HIGH RISK")){
-            Intent intent = new Intent(SelfAssessmentHome.this,HighRiskInstructions.class);
+            Intent intent = new Intent(SelfAssessmentHome.this, HighRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
         else if( SelfAssessment.healthStatus.equals("MODERATE RISK")){
-            Intent intent = new Intent(SelfAssessmentHome.this,ModerateRiskInstructions.class);
+            Intent intent = new Intent(SelfAssessmentHome.this, ModerateRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
@@ -321,6 +320,10 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void insertFirebase(){
 
     }
 

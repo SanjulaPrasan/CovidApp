@@ -1,6 +1,4 @@
-package com.example.ui1.UI;
-
-import static com.example.ui1.UI.Home.health;
+package com.example.ui1.SelfAssessment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -8,17 +6,19 @@ import androidx.appcompat.widget.SwitchCompat;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.ui1.R;
+import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.UI.Home;
+import com.example.ui1.UI.ModerateRiskInstructions;
+import com.example.ui1.UI.PositiveInstructions;
 
 public class SelfAssessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -225,19 +225,19 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
 
     public void openHome(){
         if(healthStatus.equals("POSITIVE")){
-            Intent intent = new Intent(SelfAssessment.this,PositiveInstructions.class);
+            Intent intent = new Intent(SelfAssessment.this, PositiveInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
         else if (healthStatus.equals("HIGH RISK")){
-            Intent intent = new Intent(SelfAssessment.this,HighRiskInstructions.class);
+            Intent intent = new Intent(SelfAssessment.this, HighRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
         else if(healthStatus.equals("MODERATE RISK")){
-            Intent intent = new Intent(SelfAssessment.this,ModerateRiskInstructions.class);
+            Intent intent = new Intent(SelfAssessment.this, ModerateRiskInstructions.class);
             startActivity(intent);
             finish();
             Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
