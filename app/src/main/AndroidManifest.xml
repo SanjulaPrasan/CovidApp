@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
 
     <application
@@ -19,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
-
+        <activity
+            android:name=".SelfAssessment.ReportActivity"
+            android:exported="false" />
         <activity
             android:name=".UI.PositiveInstructions"
             android:exported="false" />
@@ -57,7 +58,7 @@
             android:name=".UI.Registration"
             android:exported="false" />
         <activity
-            android:name=".UI.SelfAssessment"
+            android:name=".SelfAssessment.SelfAssessment"
             android:exported="false" />
         <activity
             android:name=".UI.Home"
@@ -66,7 +67,7 @@
             android:name=".UI.Stats"
             android:exported="false" />
         <activity
-            android:name=".UI.SelfAssessmentHome"
+            android:name=".SelfAssessment.SelfAssessmentHome"
             android:exported="false" />
         <activity
             android:name=".UI.Profile"

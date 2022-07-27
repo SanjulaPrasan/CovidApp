@@ -29,16 +29,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.R;
+import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SQLite.DbHandler;
-
-import org.web3j.abi.datatypes.Int;
+import com.example.ui1.SelfAssessment.SelfAssessment;
+import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Timer;
-
-import jnr.ffi.annotations.In;
 
 
 public class Home extends AppCompatActivity {
@@ -48,6 +46,7 @@ public class Home extends AppCompatActivity {
     private Button btnStats;
     private  Button btnSelfAss;
     private Button btnProf;
+    private Button btnRepo;
     public static String health;
 
     public static final int REQUEST_ENABLE_BLUETOOTH = 11;
@@ -112,6 +111,14 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        btnRepo = (Button)findViewById(R.id.btnReport);
+        btnRepo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openReport();;
+            }
+        });
+
         mBTDevices = new ArrayList<>();
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         dbHandler = new DbHandler(Home.this);
@@ -131,6 +138,11 @@ public class Home extends AppCompatActivity {
     }
     public void openProf(){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        finish();
+    }
+    public void openReport(){
+        Intent intent = new Intent(this, ReportActivity.class);
         startActivity(intent);
         finish();
     }
