@@ -19,9 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
-        <activity
-            android:name=".UI.blocksaveTEST"
-            android:exported="false" />
+
         <activity
             android:name=".UI.PositiveInstructions"
             android:exported="false" />
