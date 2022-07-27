@@ -35,25 +35,19 @@
                 android:layout_marginLeft="140dp"
                 android:text="Sign Up"
                 android:textColor="#000000"
-                android:textSize="35sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="35sp"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tempFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:layout_marginTop="30dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRegistration">
+                android:layout_marginTop="30dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
@@ -72,15 +66,12 @@
                 android:id="@+id/tempAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:layout_marginTop="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tempFullName">
+                android:layout_marginTop="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAdd"
@@ -98,15 +89,12 @@
                 android:id="@+id/tempPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:layout_marginTop="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tempAdd">
+                android:layout_marginTop="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPhone"
@@ -125,15 +113,13 @@
                 android:id="@+id/tempEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
                 android:layout_marginTop="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tempPhone">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
@@ -153,16 +139,14 @@
                 android:id="@+id/tempPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
                 app:passwordToggleEnabled="true"
                 android:layout_marginTop="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tempEmail">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -178,19 +162,23 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tempMac"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="100dp"
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:layout_marginTop="5dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tempPassword">
+                android:paddingRight="20dp"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMACAdd"
@@ -205,70 +193,52 @@
                     android:drawableStart="@drawable/ic_bluetooth"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/btnFind"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle"
+                android:text="Find"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                />
 
-        <Button
-            android:id="@+id/btnFind"
-            android:layout_width="65dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/rounded_rectangle"
-            android:text="Find"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/tempMac"
-            app:layout_constraintLeft_toRightOf="@id/tempMac"
-            app:layout_constraintRight_toRightOf="parent"
-            app:lay2out_constraintTop_toTopOf="@id/tempMac" />
-
-        <Button
+        </LinearLayout>
+            <Button
                 android:id="@+id/btnRegister"
-                android:layout_width="320dp"
-                android:layout_height="55dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/rounded_rectangle"
                 android:text="Create Account"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/tempMac"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:background="@drawable/rounded_rectangle"
                 />
 
             <TextView
                 android:id="@+id/tvLogIn1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="100dp"
                 android:gravity="center"
                 android:text="Already have an account?"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tvLogIn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="200dp"
                 android:gravity="center"
                 android:text="Login"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvLogIn1" />
+                android:textSize="18sp"/>
 
     </LinearLayout>
 
