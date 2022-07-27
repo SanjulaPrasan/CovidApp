@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center_horizontal">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -47,7 +47,7 @@
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="25dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
@@ -177,12 +177,11 @@
                 android:theme="@style/TextInputLayoutStyle"
                 app:boxStrokeColor="@color/black"
                 app:hintTextAppearance="@color/black"
-                android:paddingRight="20dp"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMACAdd"
-                    android:layout_width="match_parent"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:hint="Bluetooth MAC Address"
                     android:textColor="@color/black"
@@ -201,7 +200,7 @@
                 android:text="Find"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 />
 
         </LinearLayout>
@@ -209,7 +208,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/rounded_rectangle"
