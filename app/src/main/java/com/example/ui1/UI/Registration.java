@@ -199,17 +199,5 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     }
                 });
     }
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        if (mAuth.getCurrentUser()!=null){
-            Toast.makeText(Registration.this,"Already Logged In!",Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(Registration.this, Home.class));
-            finish();
-        }
-        else{
-            Toast.makeText(Registration.this,"You can login now!",Toast.LENGTH_SHORT).show();
-        }
-    }*/
 }

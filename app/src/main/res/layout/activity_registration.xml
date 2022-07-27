@@ -191,6 +191,7 @@
             android:hint="Bluetooth MAC Address"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:textAllCaps="false"
             android:textColorHint="@color/reg_tv"
             android:drawablePadding="10dp"
             android:drawableStart="@drawable/ic_bluetooth"
