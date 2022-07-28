@@ -1,9 +1,5 @@
 package com.example.ui1.SelfAssessment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +10,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
@@ -293,9 +293,9 @@ public class SelfAssessmentHome extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
                 if (userProfile != null) {
 
-                    String blueMAC = userProfile.blueMac;
+                    String mobile = userProfile.phone;
                     String helathstats = SelfAssessment.healthStatus;
-                    System.out.println(blueMAC);
+                    System.out.println(mobile);
 
                     //int healthStatus = 0;
                     if(SelfAssessment.healthStatus.equals("POSITIVE")){
@@ -307,7 +307,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
                         System.out.println("HealthStatus print : "+health);
                     }
                     try {
-                        blockchain.sendData(blueMAC,health);
+                        blockchain.sendData(Integer.parseInt(mobile),health);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

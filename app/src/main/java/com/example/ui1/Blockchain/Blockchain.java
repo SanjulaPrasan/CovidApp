@@ -12,6 +12,7 @@ import org.web3j.tx.gas.DefaultGasProvider;
 
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Blockchain {
@@ -20,7 +21,7 @@ public class Blockchain {
     private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
     private final static BigInteger GAS_price = BigInteger.valueOf(20000000000L) ;
 
-    private final static String DEPLOYED_ADDRESS = "0xfd6a246ee6a18f47b9d8c713a2bb12096d64c7f5";
+    private final static String DEPLOYED_ADDRESS = "0xc0a5482cfed5158bfaeb4a86d120d2c315c41e64";
     Web3j web3j;
     Credentials credentials;
     TransactionManager transactionManager;
@@ -54,18 +55,23 @@ public class Blockchain {
         return MyContract.load(contractAddress,web3j,credentials,GAS_price,GAS_LIMIT);
     }
 
-    public void sendData(String macAddress,int healthStatus) throws Exception {
+    public void sendData(int macAddress,int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        mycontract.addUser(macAddress,BigInteger.valueOf(healthStatus)).sendAsync().get();
+        mycontract.addUser(BigInteger.valueOf(macAddress),BigInteger.valueOf(healthStatus)).sendAsync().get();
     }
-    //TODO need to change the call to return a list from contract
-    public List<String> getAddress(String macAddress, int healthStatus) throws Exception {
+
+    public List getPositiveAddress(String macAddress, int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserAddress().sendAsync().get();
-    }
-    //TODO need to change the call to return a list from contract
-    public List<String> getHealthStatus(String macAddress, int healthStatus) throws Exception {
-        MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserHealthStatus().sendAsync().get();
+
+        List addressList = mycontract.getUserAddress().send();
+        List statusList = mycontract.getUserHealthStatus().send();
+        List positivePatientsList = new ArrayList();
+        BigInteger i = mycontract.getUsersCount().send();
+        int k = i.intValue();
+        for(int j = 0 ; j < k ; j++){
+            if( statusList.get(j).toString().equals("1"))
+                positivePatientsList.add( "0" + addressList.get(j).toString());
+        }
+        return positivePatientsList;
     }
 }
