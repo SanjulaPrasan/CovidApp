@@ -27,7 +27,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.Models.ContactModel;
+import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
 import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SQLite.DbHandler;
@@ -37,6 +39,7 @@ import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Home extends AppCompatActivity {
@@ -86,6 +89,48 @@ public class Home extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 mp.setLooping(true);
+            }
+        });
+
+        //receiving positive mobile address from blockchain
+        List positiveMobileNumbers = new ArrayList();
+        Blockchain blockchain =  new Blockchain();
+        try {
+            positiveMobileNumbers = blockchain.getPositiveMobileNumbers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        positiveMobileNumbers.add("0756740580");
+//        positiveMobileNumbers.add("0716442386");
+//        positiveMobileNumbers.add("0771212123");
+
+        //update positive bluetooth mac address from firebase
+        PositivePatient positivePatient = new PositivePatient(positiveMobileNumbers);
+        videoView.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                //receive positive bluetooth mac address from firebase
+                List positivePatientMacAddress = positivePatient.getPositiveList();
+                for(Object macAddress:positivePatientMacAddress){
+                    System.out.println( "Positive patient macAddress "+macAddress);
+                }
+                //receive close contact bluetooth mac address from local storage
+                List closeContactsList = dbHandler.getCloseContacts();
+                for(Object closeMacAddress:closeContactsList){
+                    System.out.println(closeMacAddress);
+                }
+                List rtnList = new ArrayList();
+                for(Object dto : closeContactsList) {
+                    if(positivePatientMacAddress.contains(dto)) {
+                        rtnList.add(dto.toString());
+                    }
+                }
+                if(rtnList.size()> 0){
+                    Toast.makeText(Home.this,"You have made close contacts with " +
+                            rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
+                            .show();
+                }
             }
         });
 
