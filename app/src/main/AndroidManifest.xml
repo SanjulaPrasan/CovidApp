@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
+            android:name=".UI.DatabaseCompareActivity"
+            android:exported="false" />
+        <activity
             android:name=".SelfAssessment.ReportActivity"
             android:exported="false" />
         <activity
