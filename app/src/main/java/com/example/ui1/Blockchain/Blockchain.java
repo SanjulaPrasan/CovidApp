@@ -10,10 +10,10 @@ import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.DefaultGasProvider;
 
-import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class Blockchain {
     private final static String PRIVATE_KEY = "d5203cfb48fa6f7213fcdc1cc9e22754e071532d5fb21d8fd117644e162e2faf";
@@ -37,8 +37,10 @@ public class Blockchain {
     public void printWeb3jVersion(Web3j web3j){
         Web3ClientVersion web3jClientVersion = null;
         try {
-            web3jClientVersion = web3j.web3ClientVersion().send();
-        } catch (IOException e) {
+            web3jClientVersion = web3j.web3ClientVersion().sendAsync().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
             e.printStackTrace();
         }
         System.out.println(web3jClientVersion.getWeb3ClientVersion());
@@ -60,13 +62,13 @@ public class Blockchain {
         mycontract.addUser(BigInteger.valueOf(macAddress),BigInteger.valueOf(healthStatus)).sendAsync().get();
     }
 
-    public List getPositiveAddress(String macAddress, int healthStatus) throws Exception {
+    public List getPositiveMobileNumbers() throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
 
-        List addressList = mycontract.getUserAddress().send();
-        List statusList = mycontract.getUserHealthStatus().send();
+        List addressList = mycontract.getUserAddress().sendAsync().get();
+        List statusList = mycontract.getUserHealthStatus().sendAsync().get();
         List positivePatientsList = new ArrayList();
-        BigInteger i = mycontract.getUsersCount().send();
+        BigInteger i = mycontract.getUsersCount().sendAsync().get();
         int k = i.intValue();
         for(int j = 0 ; j < k ; j++){
             if( statusList.get(j).toString().equals("1"))
