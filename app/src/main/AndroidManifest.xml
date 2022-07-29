@@ -19,8 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
-            android:name=".UI.DatabaseCompareActivity"
+            android:name=".SelfAssessment.SelfAssessment"
             android:exported="false" />
+
         <activity
             android:name=".SelfAssessment.ReportActivity"
             android:exported="false" />
@@ -59,9 +60,6 @@
             android:exported="false" />
         <activity
             android:name=".UI.Registration"
-            android:exported="false" />
-        <activity
-            android:name=".SelfAssessment.SelfAssessment"
             android:exported="false" />
         <activity
             android:name=".UI.Home"
