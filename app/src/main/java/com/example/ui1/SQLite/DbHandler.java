@@ -12,11 +12,11 @@ import androidx.annotation.RequiresApi;
 
 import com.example.ui1.Models.ContactModel;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class DbHandler extends SQLiteOpenHelper {
 
@@ -67,19 +67,15 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public List<ContactModel> getCloseContacts() {
-        List<ContactModel> closeContacts = new ArrayList();
+    public List<String> getCloseContacts() {
+        List<String> closeContacts = new ArrayList();
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT DISTINCT " + MAC_ADDRESS +" FROM " + TABLE_NAME;
 
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-                ContactModel contactModel = new ContactModel();
-                contactModel.setMacAddress(cursor.getString(0));
-                contactModel.setDate(LocalDateTime.parse("cursor.getString(1)"));
-
-                closeContacts.add(contactModel);
+                closeContacts.add(cursor.getString(0).toLowerCase(Locale.ROOT));
             } while (cursor.moveToNext());
         }
         return closeContacts;
