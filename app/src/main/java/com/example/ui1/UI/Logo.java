@@ -46,33 +46,32 @@ public class Logo extends AppCompatActivity {
         if (mAuth.getCurrentUser()!=null){
 
             if(health.equals("POSITIVE")){
-
                 Intent intent = new Intent(Logo.this,PositiveInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
             }
             else if (health.equals("HIGH RISK")){
                 Intent intent = new Intent(Logo.this,HighRiskInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
             }
             else if(health.equals("MODERATE RISK")){
                 Intent intent = new Intent(Logo.this,ModerateRiskInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
             }
             else
             {
-                Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Logo.this, Home.class));
                 finish();
             }
         }
         else{
-            Toast.makeText(Logo.this,"You can login now!",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(Logo.this,"You can login now!",Toast.LENGTH_SHORT).show();
         }
     }
 }

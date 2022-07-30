@@ -305,7 +305,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(SelfAssessmentHome.this,"add data",Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(SelfAssessmentHome.this,"Data Added",Toast.LENGTH_SHORT).show();
                             }else{
                                 Toast.makeText(SelfAssessmentHome.this,"Can't data",Toast.LENGTH_SHORT).show();
                             }
