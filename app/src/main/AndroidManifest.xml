@@ -28,13 +28,13 @@
             android:name=".SelfAssessment.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.PositiveInstructions"
+            android:name=".Introduction.PositiveInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.HighRiskInstructions"
+            android:name=".Introduction.HighRiskInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.ModerateRiskInstructions"
+            android:name=".Introduction.ModerateRiskInstructions"
             android:exported="false" />
         <activity
             android:name=".UI.FindBlueMACAddress"

@@ -1,12 +1,12 @@
-package com.example.ui1.UI;
+package com.example.ui1.Introduction;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.WindowManager;
 
 import com.example.ui1.R;
+import com.example.ui1.UI.Home;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,7 +23,7 @@ public class ModerateRiskInstructions extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(ModerateRiskInstructions.this,Home.class);
+                Intent intent = new Intent(ModerateRiskInstructions.this, Home.class);
                 startActivity(intent);
                 finish();
             }

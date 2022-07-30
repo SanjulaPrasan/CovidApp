@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,10 +14,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ui1.R;
-import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.UI.Home;
-import com.example.ui1.UI.ModerateRiskInstructions;
-import com.example.ui1.UI.PositiveInstructions;
+import com.example.ui1.Introduction.ModerateRiskInstructions;
+import com.example.ui1.Introduction.PositiveInstructions;
 
 public class SelfAssessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
