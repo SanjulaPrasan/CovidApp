@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.ui1.R;
 import com.example.ui1.SelfAssessment.SelfAssessment;
+import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -92,7 +93,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
 
     public void openSelfAss(){
-        Intent intent = new Intent(this, SelfAssessment.class);
+        Intent intent = new Intent(this, SelfAssessmentHome.class);
         startActivity(intent);
     }
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.ui1.R;
 import com.example.ui1.SelfAssessment.SelfAssessment;
+import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -98,7 +99,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Login.this, SelfAssessment.class);
+                    Intent intent = new Intent(Login.this, SelfAssessmentHome.class);
                     startActivity(intent);
                     finish();
                 }else{
