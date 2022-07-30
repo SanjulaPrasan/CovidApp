@@ -1,4 +1,4 @@
-package com.example.ui1.UI;
+package com.example.ui1.Registration;
 
 public class User {
 

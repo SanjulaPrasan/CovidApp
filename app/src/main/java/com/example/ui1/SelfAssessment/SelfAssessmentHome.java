@@ -20,7 +20,7 @@ import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.UI.Home;
 import com.example.ui1.Introduction.ModerateRiskInstructions;
 import com.example.ui1.Introduction.PositiveInstructions;
-import com.example.ui1.UI.User;
+import com.example.ui1.Registration.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;

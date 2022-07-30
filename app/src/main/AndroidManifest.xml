@@ -37,7 +37,7 @@
             android:name=".Introduction.ModerateRiskInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.FindBlueMACAddress"
+            android:name=".Introduction.FindBlueMACAddress"
             android:exported="false" />
         <activity
             android:name=".UI.SplashScreenLogo"
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.Login"
+            android:name=".Registration.Login"
             android:exported="false" />
         <activity
             android:name=".UI.Privacy"
@@ -61,7 +61,7 @@
             android:name=".UI.Start"
             android:exported="false" />
         <activity
-            android:name=".UI.Registration"
+            android:name=".Registration.Registration"
             android:exported="false" />
         <activity
             android:name=".UI.Home"
