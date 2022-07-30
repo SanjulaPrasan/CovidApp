@@ -82,7 +82,7 @@ public class Profile extends AppCompatActivity {
                     //greetingTextView.setText("Welcome, "+ fullname+ "!");
                     fullNameTextView.setText("Fullname: "+fullName);
                     emailTextView.setText("Email: "+email);
-                    addressTextView.setText("Address: "+address);
+                    addressTextView.setText("City: "+address);
                     phoneTextView.setText("Phone: "+phone);
                     blueMACTextView.setText("Bluetooth MAC: "+blueMAC);
                 }
