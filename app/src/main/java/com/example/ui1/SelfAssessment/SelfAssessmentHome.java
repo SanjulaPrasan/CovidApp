@@ -1,9 +1,5 @@
 package com.example.ui1.SelfAssessment;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +11,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+
 import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
 import com.example.ui1.UI.HighRiskInstructions;
@@ -22,6 +22,8 @@ import com.example.ui1.UI.Home;
 import com.example.ui1.UI.ModerateRiskInstructions;
 import com.example.ui1.UI.PositiveInstructions;
 import com.example.ui1.UI.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,17 +32,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class SelfAssessmentHome extends AppCompatActivity {
 
     private Button btnSubmit;
-//    private Button  btnHome;
     private Spinner spinnerFever, spinnerCough, spinnerDiarrhea, spinnerBodyPain, spinnerHeadache, spinnerLossOfSmell, spinnerRA, spinnerPCR;
     private ArrayAdapter<CharSequence> feverAdapter, coughAdapter, diarrheaAdapter, bodyPainAdapter, headacheAdapter, lossOfSmellAdapter, raAdapter, pcrAdapter;
     private SwitchCompat switchBreathing, switchConscious;
     private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
 
-    private FirebaseUser user;
+   // private FirebaseUser user;
+    private FirebaseAuth mAuth;
     private DatabaseReference reference;
+    private DatabaseReference selfAssData;
     private String userId;
 
     int health=0;
@@ -48,7 +54,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_self_assessment_home);
 
 
@@ -281,10 +287,11 @@ public class SelfAssessmentHome extends AppCompatActivity {
     }
 
     public void insertData(){
-
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        userId = mAuth.getCurrentUser().getUid();
+        selfAssData = FirebaseDatabase.getInstance().getReference("SelfData").child(userId);
         reference = FirebaseDatabase.getInstance().getReference("Users");
-        userId = user.getUid();
+
         Blockchain blockchain= new Blockchain();
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -293,25 +300,46 @@ public class SelfAssessmentHome extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
                 if (userProfile != null) {
 
-                    String blueMAC = userProfile.blueMac;
-                    String helathstats = SelfAssessment.healthStatus;
-                    System.out.println(blueMAC);
+                    String mobile = userProfile.phone;
+                    System.out.println(mobile);
+
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                    Calendar cal = Calendar.getInstance();
+                    String date = dateFormat.format(cal.getTime());
+
+                    String status=SelfAssessment.healthStatus;
+
+                    SelfData selfData= new SelfData(status,date);
+                    selfAssData.child(date).setValue(selfData).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(SelfAssessmentHome.this,"add data",Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(SelfAssessmentHome.this,"Can't data",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
 
                     //int healthStatus = 0;
                     if(SelfAssessment.healthStatus.equals("POSITIVE")){
                         health = 1;
                         System.out.println("HealthStatus print : "+health);
+                        try {
+                            blockchain.sendData(Integer.parseInt(mobile),health);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                     else if(SelfAssessment.healthStatus.equals("NEGATIVE")){
                         health = 2;
                         System.out.println("HealthStatus print : "+health);
+                        try {
+                            blockchain.sendData(Integer.parseInt(mobile),health);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
-                    try {
-                        blockchain.sendData(blueMAC,health);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
                 }
             }
 

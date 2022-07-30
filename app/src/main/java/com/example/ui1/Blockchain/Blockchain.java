@@ -10,9 +10,10 @@ import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.DefaultGasProvider;
 
-import java.io.IOException;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class Blockchain {
     private final static String PRIVATE_KEY = "d5203cfb48fa6f7213fcdc1cc9e22754e071532d5fb21d8fd117644e162e2faf";
@@ -20,7 +21,7 @@ public class Blockchain {
     private final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721975L);
     private final static BigInteger GAS_price = BigInteger.valueOf(20000000000L) ;
 
-    private final static String DEPLOYED_ADDRESS = "0xfd6a246ee6a18f47b9d8c713a2bb12096d64c7f5";
+    private final static String DEPLOYED_ADDRESS = "0xc0a5482cfed5158bfaeb4a86d120d2c315c41e64";
     Web3j web3j;
     Credentials credentials;
     TransactionManager transactionManager;
@@ -36,8 +37,10 @@ public class Blockchain {
     public void printWeb3jVersion(Web3j web3j){
         Web3ClientVersion web3jClientVersion = null;
         try {
-            web3jClientVersion = web3j.web3ClientVersion().send();
-        } catch (IOException e) {
+            web3jClientVersion = web3j.web3ClientVersion().sendAsync().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
             e.printStackTrace();
         }
         System.out.println(web3jClientVersion.getWeb3ClientVersion());
@@ -54,18 +57,23 @@ public class Blockchain {
         return MyContract.load(contractAddress,web3j,credentials,GAS_price,GAS_LIMIT);
     }
 
-    public void sendData(String macAddress,int healthStatus) throws Exception {
+    public void sendData(int macAddress,int healthStatus) throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        mycontract.addUser(macAddress,BigInteger.valueOf(healthStatus)).sendAsync().get();
+        mycontract.addUser(BigInteger.valueOf(macAddress),BigInteger.valueOf(healthStatus)).sendAsync().get();
     }
-    //TODO need to change the call to return a list from contract
-    public List<String> getAddress(String macAddress, int healthStatus) throws Exception {
+
+    public List getPositiveMobileNumbers() throws Exception {
         MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserAddress().sendAsync().get();
-    }
-    //TODO need to change the call to return a list from contract
-    public List<String> getHealthStatus(String macAddress, int healthStatus) throws Exception {
-        MyContract mycontract =loadContractWithCredentials(DEPLOYED_ADDRESS,web3j,credentials,defaultGasProvider);
-        return (List<String>) mycontract.getUserHealthStatus().sendAsync().get();
+
+        List addressList = mycontract.getUserAddress().sendAsync().get();
+        List statusList = mycontract.getUserHealthStatus().sendAsync().get();
+        List positivePatientsList = new ArrayList();
+        BigInteger i = mycontract.getUsersCount().sendAsync().get();
+        int k = i.intValue();
+        for(int j = 0 ; j < k ; j++){
+            if( statusList.get(j).toString().equals("1"))
+                positivePatientsList.add( "0" + addressList.get(j).toString());
+        }
+        return positivePatientsList;
     }
 }
