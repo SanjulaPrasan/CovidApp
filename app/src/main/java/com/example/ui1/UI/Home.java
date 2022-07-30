@@ -99,9 +99,7 @@ public class Home extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        positiveMobileNumbers.add("0756740580");
-//        positiveMobileNumbers.add("0716442386");
-//        positiveMobileNumbers.add("0771212123");
+
 
         //update positive bluetooth mac address from firebase
         PositivePatient positivePatient = new PositivePatient(positiveMobileNumbers);
@@ -126,6 +124,7 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 if(rtnList.size()> 0){
+
                     Toast.makeText(Home.this,"You have made close contacts with " +
                             rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
                             .show();

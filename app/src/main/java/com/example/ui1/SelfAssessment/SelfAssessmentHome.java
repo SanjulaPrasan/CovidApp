@@ -216,7 +216,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
                     SelfAssessment.healthStatus = "HIGH RISK";
                 }else {
                     if (fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")) {
-                        SelfAssessment.healthStatus = "NEGATIVE";
+                        SelfAssessment.healthStatus = "No Risk";
                     } else if (fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
                         SelfAssessment.healthStatus = "MODERATE RISK";
                     } else if (fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")) {
