@@ -59,11 +59,13 @@
             </LinearLayout>
 
 
+
+
             <TextView
                 android:id="@+id/tvFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
@@ -130,7 +132,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:visibility="visible"
+                android:visibility="gone"
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginRight="20dp"
                 android:text="Home"
                 android:textSize="20sp"

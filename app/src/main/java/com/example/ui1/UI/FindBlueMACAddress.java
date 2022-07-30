@@ -17,7 +17,6 @@ public class FindBlueMACAddress extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_find_blue_macaddress);
 
         btnBack = (Button) findViewById(R.id.btnBack);
