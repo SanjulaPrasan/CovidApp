@@ -19,9 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
+            android:name=".UI.Logo"
+            android:exported="false" />
+        <activity
             android:name=".SelfAssessment.SelfAssessment"
             android:exported="false" />
-
         <activity
             android:name=".SelfAssessment.ReportActivity"
             android:exported="false" />
@@ -38,7 +40,7 @@
             android:name=".UI.FindBlueMACAddress"
             android:exported="false" />
         <activity
-            android:name=".UI.Logo"
+            android:name=".UI.CloseContactInstructions"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
