@@ -43,7 +43,6 @@ public class SelfAssessmentHome extends AppCompatActivity {
     private SwitchCompat switchBreathing, switchConscious;
     private String fever, cough, diarrhea, bodyPain, headache, lossOfSmell, rat, pcr;
 
-   // private FirebaseUser user;
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
     private DatabaseReference selfAssData;
@@ -57,8 +56,6 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
         setContentView(R.layout.activity_self_assessment_home);
 
-
-//        btnHome = (Button) findViewById(R.id.btnHome);
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         spinnerFever = (Spinner) findViewById(R.id.spinFever);
@@ -204,12 +201,6 @@ public class SelfAssessmentHome extends AppCompatActivity {
             }
         });
 
-//        btnHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openHome();
-//            }
-//        });
     }
 
     public void generateNewHealthStatus(){
@@ -247,7 +238,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
         editor.apply();
 
-        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
 
     public void openHome(){
@@ -255,23 +246,23 @@ public class SelfAssessmentHome extends AppCompatActivity {
             Intent intent = new Intent(SelfAssessmentHome.this, PositiveInstructions.class);
             startActivity(intent);
             finish();
-            Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
         }
         else if ( SelfAssessment.healthStatus.equals("HIGH RISK")){
             Intent intent = new Intent(SelfAssessmentHome.this, HighRiskInstructions.class);
             startActivity(intent);
             finish();
-            Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
         }
         else if( SelfAssessment.healthStatus.equals("MODERATE RISK")){
             Intent intent = new Intent(SelfAssessmentHome.this, ModerateRiskInstructions.class);
             startActivity(intent);
             finish();
-            Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(SelfAssessmentHome.this, Home.class));
             finish();
         }
@@ -350,11 +341,5 @@ public class SelfAssessmentHome extends AppCompatActivity {
         });
 
     }
-
-    public void insertFirebase(){
-
-    }
-
-
 
 }
