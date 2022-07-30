@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_email.xml" value="0.1775" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_person.xml" value="0.1775" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_profile.xml" value="0.172" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_img.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle1.xml" value="0.1555" />
@@ -23,7 +24,7 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_moderate_risk_instructions.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_positive_instructions.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_privacy.xml" value="0.140625" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_profile.xml" value="0.12" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_registration.xml" value="0.1617161716171617" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_report.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_self_assessment.xml" value="0.22" />
