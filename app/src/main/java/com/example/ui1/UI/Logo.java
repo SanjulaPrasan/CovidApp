@@ -66,13 +66,13 @@ public class Logo extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,"Already Logged In!",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Logo.this, Home.class));
                 finish();
             }
         }
         else{
-            Toast.makeText(Logo.this,"You can login now!",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(Logo.this,"You can login now!",Toast.LENGTH_SHORT).show();
         }
     }
 }
