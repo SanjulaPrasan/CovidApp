@@ -43,7 +43,7 @@ import java.util.List;
 
 
 public class Home extends AppCompatActivity {
-    private TextView status;
+    private TextView status,txtNotify;
     VideoView videoView;
 
     private Button btnStats;
@@ -70,6 +70,7 @@ public class Home extends AppCompatActivity {
         //System.out.println("Helath "+health);
 
         status = findViewById(R.id.tvStatusValue);
+        txtNotify= findViewById(R.id.txtNotify);
 
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         health = sharedPreferences.getString(SelfAssessment.TEXT, "");
@@ -123,10 +124,13 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 if(rtnList.size()> 0){
-
+                    txtNotify.setText("Close Contact");
+                    txtNotify.setVisibility(View.VISIBLE);
+                    status.setVisibility(View.GONE);
                     Toast.makeText(Home.this,"You have made close contacts with " +
                             rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
                             .show();
+
                 }
             }
         });
