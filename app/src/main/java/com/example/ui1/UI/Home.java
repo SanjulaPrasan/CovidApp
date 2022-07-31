@@ -67,7 +67,6 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
         //System.out.println("Helath "+health);
 
         status = findViewById(R.id.tvStatusValue);

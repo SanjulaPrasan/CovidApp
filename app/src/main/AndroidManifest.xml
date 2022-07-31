@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI1">
         <activity
+            android:name=".CloseContactIntroduction"
+            android:exported="false" />
+        <activity
             android:name=".UI.Logo"
             android:exported="false" />
         <activity
