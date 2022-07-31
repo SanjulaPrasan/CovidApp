@@ -58,7 +58,7 @@ public class Home extends AppCompatActivity {
     public ArrayList<BluetoothDevice> mBTDevices;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 60000*10;
+    int delay = 60000*2;
 
     private DbHandler dbHandler;
 
@@ -124,9 +124,13 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 if(rtnList.size()> 0){
-                    txtNotify.setText("Close Contact");
-                    txtNotify.setVisibility(View.VISIBLE);
-                    status.setVisibility(View.GONE);
+                    SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
+                    //health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+                    health ="Close Contact";
+                    status.setText("" + health);
+                    //txtNotify.setText("Close Contact");
+                    //txtNotify.setVisibility(View.VISIBLE);
+                    //status.setVisibility(View.GONE);
                     Toast.makeText(Home.this,"You have made close contacts with " +
                             rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
                             .show();
