@@ -124,9 +124,18 @@ public class Home extends AppCompatActivity {
                     }
                 }
                 if(rtnList.size()> 0){
+
+                    SelfAssessment.healthStatus = "Close Contact";
                     SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
-                    //health = sharedPreferences.getString(SelfAssessment.TEXT, "");
-                    health ="Close Contact";
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+
+                    editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
+
+                    editor.apply();
+
+                    //health ="Close Contact";
                     status.setText("" + health);
                     //txtNotify.setText("Close Contact");
                     //txtNotify.setVisibility(View.VISIBLE);

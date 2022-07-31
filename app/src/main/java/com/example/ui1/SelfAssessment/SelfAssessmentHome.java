@@ -229,6 +229,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
 
     public void saveDataHome(){
+        SelfAssessment.healthStatus = "NEGATIVE";
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
