@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -31,8 +30,8 @@ import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
-import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SQLite.DbHandler;
+import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
@@ -43,7 +42,7 @@ import java.util.List;
 
 
 public class Home extends AppCompatActivity {
-    private TextView status,txtNotify;
+    private TextView status;
     VideoView videoView;
 
     private Button btnStats;
@@ -56,9 +55,9 @@ public class Home extends AppCompatActivity {
     private static final String TAG = "BluetoothActivity";
     BluetoothAdapter mBluetoothAdapter;
     public ArrayList<BluetoothDevice> mBTDevices;
-    Handler handler = new Handler();
-    Runnable runnable;
-    int delay = 60000*2;
+    Handler handlerBluetooth,handlerBlockchain;
+    Runnable runnable,runnable1;
+    int delay = 60000*10;
 
     private DbHandler dbHandler;
 
@@ -66,11 +65,12 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        handlerBluetooth = new Handler();
+        handlerBlockchain = new Handler();
 
         //System.out.println("Helath "+health);
 
         status = findViewById(R.id.tvStatusValue);
-        txtNotify= findViewById(R.id.txtNotify);
 
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         health = sharedPreferences.getString(SelfAssessment.TEXT, "");
@@ -99,54 +99,16 @@ public class Home extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         //update positive bluetooth mac address from firebase
         PositivePatient positivePatient = new PositivePatient(positiveMobileNumbers);
-        videoView.setOnClickListener(new View.OnClickListener() {
+
+        handlerBlockchain.postDelayed(runnable1 = new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
-            public void onClick(View view) {
-                //receive positive bluetooth mac address from firebase
-                List positivePatientMacAddress = positivePatient.getPositiveList();
-                for(Object macAddress:positivePatientMacAddress){
-                    System.out.println( "Positive patient macAddress "+macAddress);
-                }
-                //receive close contact bluetooth mac address from local storage
-                List closeContactsList = dbHandler.getCloseContacts();
-                for(Object closeMacAddress:closeContactsList){
-                    System.out.println(closeMacAddress);
-                }
-                List rtnList = new ArrayList();
-                for(Object dto : closeContactsList) {
-                    if(positivePatientMacAddress.contains(dto)) {
-                        rtnList.add(dto.toString());
-                    }
-                }
-                if(rtnList.size()> 0){
-
-                    SelfAssessment.healthStatus = "Close Contact";
-                    SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    health = sharedPreferences.getString(SelfAssessment.TEXT, "");
-
-                    editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
-
-                    editor.apply();
-
-                    //health ="Close Contact";
-                    status.setText("" + health);
-                    //txtNotify.setText("Close Contact");
-                    //txtNotify.setVisibility(View.VISIBLE);
-                    //status.setVisibility(View.GONE);
-                    Toast.makeText(Home.this,"You have made close contacts with " +
-                            rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
-                            .show();
-
-                }
+            public void run() {
+                compare(positivePatient);
             }
-        });
+        },5000);
 
         btnStats = (Button) findViewById(R.id.btnStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
@@ -253,9 +215,9 @@ public class Home extends AppCompatActivity {
 
         View v= this.findViewById(android.R.id.content);
         btnDiscover(v);
-        handler.postDelayed(runnable = new Runnable() {
+        handlerBluetooth.postDelayed(runnable = new Runnable() {
             public void run() {
-                handler.postDelayed(runnable, delay);
+                handlerBluetooth.postDelayed(runnable, delay);
                 //Toast.makeText(Home.this, "Scanning",Toast.LENGTH_SHORT).show();
                 mBTDevices.clear();
                 btnDiscover(v);
@@ -357,5 +319,36 @@ public class Home extends AppCompatActivity {
 //        else {
 //            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
 //        }
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void compare(PositivePatient positivePatient){
+        //receive positive bluetooth mac address from firebase
+        List positivePatientMacAddress = positivePatient.getPositiveList();
+        for(Object macAddress:positivePatientMacAddress){
+            System.out.println( "Positive patient macAddress "+macAddress);
+        }
+        //receive close contact bluetooth mac address from local storage
+        List closeContactsList = dbHandler.getCloseContacts();
+        for(Object closeMacAddress:closeContactsList){
+            System.out.println(closeMacAddress);
+        }
+        List rtnList = new ArrayList();
+        for(Object dto : closeContactsList) {
+            if(positivePatientMacAddress.contains(dto)) {
+                rtnList.add(dto.toString());
+            }
+        }
+        if(rtnList.size()> 0){
+
+            Toast.makeText(Home.this,"You have made close contacts with " +
+                            rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
+                    .show();
+        }
+        else{
+            Toast.makeText(Home.this,"No risk",Toast.LENGTH_LONG)
+                    .show();
+        }
     }
 }
