@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.Introduction.ModerateRiskInstructions;
 import com.example.ui1.Introduction.PositiveInstructions;
@@ -64,6 +65,11 @@ public class Logo extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 //Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+            }
+            else if(health.equals("Close Contact")){
+                Intent intent = new Intent(Logo.this, CloseContactIntroduction.class);
+                startActivity(intent);
+                finish();
             }
             else
             {
