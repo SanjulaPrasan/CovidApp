@@ -18,7 +18,9 @@ public class CloseContactIntroduction extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_close_contact_introduction);timer = new Timer();
+        setContentView(R.layout.activity_close_contact_introduction);
+
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
