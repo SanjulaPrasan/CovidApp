@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ui1.Introduction.HighRiskInstructions;
+import com.example.ui1.Introduction.ModerateRiskInstructions;
+import com.example.ui1.Introduction.PositiveInstructions;
 import com.example.ui1.R;
 import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,19 +50,19 @@ public class Logo extends AppCompatActivity {
 
             if(health.equals("POSITIVE")){
 
-                Intent intent = new Intent(Logo.this,PositiveInstructions.class);
+                Intent intent = new Intent(Logo.this, PositiveInstructions.class);
                 startActivity(intent);
                 finish();
                 Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
             }
             else if (health.equals("HIGH RISK")){
-                Intent intent = new Intent(Logo.this,HighRiskInstructions.class);
+                Intent intent = new Intent(Logo.this, HighRiskInstructions.class);
                 startActivity(intent);
                 finish();
                 Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
             }
             else if(health.equals("MODERATE RISK")){
-                Intent intent = new Intent(Logo.this,ModerateRiskInstructions.class);
+                Intent intent = new Intent(Logo.this, ModerateRiskInstructions.class);
                 startActivity(intent);
                 finish();
                 Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
