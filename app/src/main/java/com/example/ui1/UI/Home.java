@@ -27,7 +27,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Blockchain.Blockchain;
-import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
@@ -36,6 +35,7 @@ import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
+import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -216,6 +216,15 @@ public class Home extends AppCompatActivity {
 
         View v= this.findViewById(android.R.id.content);
         btnDiscover(v);
+        Method method;
+        try {
+            method = mBluetoothAdapter.getClass().getMethod("setScanMode", int.class, int.class);
+            method.invoke(mBluetoothAdapter,BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE,600);
+            //Log.e("invoke","method invoke successfully");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         handlerBluetooth.postDelayed(runnable = new Runnable() {
             public void run() {
                 handlerBluetooth.postDelayed(runnable, delay);
@@ -333,7 +342,7 @@ public class Home extends AppCompatActivity {
         //receive close contact bluetooth mac address from local storage
         List closeContactsList = dbHandler.getCloseContacts();
         for(Object closeMacAddress:closeContactsList){
-            System.out.println(closeMacAddress);
+            System.out.println("Close contacts: "+closeMacAddress);
         }
         List rtnList = new ArrayList();
         for(Object dto : closeContactsList) {
