@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,10 +14,10 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ui1.R;
-import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.UI.Home;
-import com.example.ui1.UI.ModerateRiskInstructions;
-import com.example.ui1.UI.PositiveInstructions;
+import com.example.ui1.Introduction.ModerateRiskInstructions;
+import com.example.ui1.Introduction.PositiveInstructions;
 
 public class SelfAssessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -200,7 +199,7 @@ public class SelfAssessment extends AppCompatActivity implements AdapterView.OnI
                     healthStatus = "HIGH RISK";
                 }else {
                     if (fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")) {
-                        healthStatus = "NEGATIVE";
+                        healthStatus = "NO RISK";
                     } else if (fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
                         healthStatus = "MODERATE RISK";
                     } else if (fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")) {

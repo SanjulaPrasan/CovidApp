@@ -73,8 +73,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
                         android:text="Rapid Antigen \nTest"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
                     <Spinner
                         android:id="@+id/spinRAT"
@@ -83,7 +83,7 @@
                         android:layout_marginLeft="15dp"
                         android:entries="@array/test"
                         android:gravity="right"
-                        android:theme="@style/spinnerTheme"/>
+                        android:theme="@style/spinnerTheme" />
 
                 </LinearLayout>
 
@@ -133,7 +133,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
 
 
                 <TextView

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,15 +16,14 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import com.example.ui1.Blockchain.Blockchain;
 import com.example.ui1.R;
-import com.example.ui1.UI.HighRiskInstructions;
+import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.UI.Home;
-import com.example.ui1.UI.ModerateRiskInstructions;
-import com.example.ui1.UI.PositiveInstructions;
-import com.example.ui1.UI.User;
+import com.example.ui1.Introduction.ModerateRiskInstructions;
+import com.example.ui1.Introduction.PositiveInstructions;
+import com.example.ui1.Registration.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -212,13 +210,13 @@ public class SelfAssessmentHome extends AppCompatActivity {
             if(rat.equals("Positive")){
                 SelfAssessment.healthStatus = "HIGH RISK";
             } else if(rat.equals("Negative")){
-                SelfAssessment.healthStatus = "NEGATIVE";
+                SelfAssessment.healthStatus = "NO RISK";
             } else{
                 if(switchBreathing.isChecked() || switchConscious.isChecked()){
                     SelfAssessment.healthStatus = "HIGH RISK";
                 }else {
                     if (fever.equals("No") && cough.equals("No") && diarrhea.equals("No") && bodyPain.equals("No") && headache.equals("No") && lossOfSmell.equals("No")) {
-                        SelfAssessment.healthStatus = "NEGATIVE";
+                        SelfAssessment.healthStatus = "NO RISK";
                     } else if (fever.equals("5-10 Days") || cough.equals("5-10 Days") || diarrhea.equals("5-10 Days") || bodyPain.equals("5-10 Days") || headache.equals("5-10 Days") || lossOfSmell.equals("5-10 Days")) {
                         SelfAssessment.healthStatus = "MODERATE RISK";
                     } else if (fever.equals("1-5 Days") || cough.equals("1-5 Days") || diarrhea.equals("1-5 Days") || bodyPain.equals("1-5 Days") || headache.equals("1-5 Days") || lossOfSmell.equals("1-5 Days")) {
@@ -231,6 +229,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
 
     public void saveDataHome(){
+
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -305,7 +304,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(SelfAssessmentHome.this,"add data",Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(SelfAssessmentHome.this,"Data Added",Toast.LENGTH_SHORT).show();
                             }else{
                                 Toast.makeText(SelfAssessmentHome.this,"Can't data",Toast.LENGTH_SHORT).show();
                             }

@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -28,14 +27,16 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Blockchain.Blockchain;
+import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
-import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SQLite.DbHandler;
+import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
+import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -56,8 +57,8 @@ public class Home extends AppCompatActivity {
     private static final String TAG = "BluetoothActivity";
     BluetoothAdapter mBluetoothAdapter;
     public ArrayList<BluetoothDevice> mBTDevices;
-    Handler handler = new Handler();
-    Runnable runnable;
+    Handler handlerBluetooth,handlerBlockchain;
+    Runnable runnable,runnable1;
     int delay = 60000*10;
 
     private DbHandler dbHandler;
@@ -66,7 +67,8 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        handlerBluetooth = new Handler();
+        handlerBlockchain = new Handler();
 
         //System.out.println("Helath "+health);
 
@@ -99,39 +101,22 @@ public class Home extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        positiveMobileNumbers.add("0756740580");
-//        positiveMobileNumbers.add("0716442386");
-//        positiveMobileNumbers.add("0771212123");
-
         //update positive bluetooth mac address from firebase
         PositivePatient positivePatient = new PositivePatient(positiveMobileNumbers);
-        videoView.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
-                //receive positive bluetooth mac address from firebase
-                List positivePatientMacAddress = positivePatient.getPositiveList();
-                for(Object macAddress:positivePatientMacAddress){
-                    System.out.println( "Positive patient macAddress "+macAddress);
+
+        if (health.equals("CLOSE CONTACT")){
+            System.out.println("Yor are close contact");
+        }else{
+            handlerBlockchain.postDelayed(runnable1 = new Runnable() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @Override
+                public void run() {
+                    compare(positivePatient);
                 }
-                //receive close contact bluetooth mac address from local storage
-                List closeContactsList = dbHandler.getCloseContacts();
-                for(Object closeMacAddress:closeContactsList){
-                    System.out.println(closeMacAddress);
-                }
-                List rtnList = new ArrayList();
-                for(Object dto : closeContactsList) {
-                    if(positivePatientMacAddress.contains(dto)) {
-                        rtnList.add(dto.toString());
-                    }
-                }
-                if(rtnList.size()> 0){
-                    Toast.makeText(Home.this,"You have made close contacts with " +
-                            rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
-                            .show();
-                }
-            }
-        });
+            },5000);
+        }
+
+
 
         btnStats = (Button) findViewById(R.id.btnStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
@@ -238,9 +223,18 @@ public class Home extends AppCompatActivity {
 
         View v= this.findViewById(android.R.id.content);
         btnDiscover(v);
-        handler.postDelayed(runnable = new Runnable() {
+        Method method;
+        try {
+            method = mBluetoothAdapter.getClass().getMethod("setScanMode", int.class, int.class);
+            method.invoke(mBluetoothAdapter,BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE,600);
+            //Log.e("invoke","method invoke successfully");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        handlerBluetooth.postDelayed(runnable = new Runnable() {
             public void run() {
-                handler.postDelayed(runnable, delay);
+                handlerBluetooth.postDelayed(runnable, delay);
                 //Toast.makeText(Home.this, "Scanning",Toast.LENGTH_SHORT).show();
                 mBTDevices.clear();
                 btnDiscover(v);
@@ -343,5 +337,47 @@ public class Home extends AppCompatActivity {
 //        else {
 //            Toast.makeText(Home.this, "failed ", Toast.LENGTH_LONG).show();
 //        }
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void compare(PositivePatient positivePatient){
+        //receive positive bluetooth mac address from firebase
+        List positivePatientMacAddress = positivePatient.getPositiveList();
+        for(Object macAddress:positivePatientMacAddress){
+            System.out.println( "Positive patient macAddress "+macAddress);
+        }
+        //receive close contact bluetooth mac address from local storage
+        List closeContactsList = dbHandler.getCloseContacts();
+        for(Object closeMacAddress:closeContactsList){
+            System.out.println("Close contacts: "+closeMacAddress);
+        }
+        List rtnList = new ArrayList();
+        for(Object dto : closeContactsList) {
+            if(positivePatientMacAddress.contains(dto)) {
+                rtnList.add(dto.toString());
+            }
+        }
+        if(rtnList.size()> 0){
+
+            SelfAssessment.healthStatus = "CLOSE CONTACT";
+            SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+            editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
+            editor.apply();
+            status.setText("" + health);
+
+            Intent intent = new Intent(Home.this, CloseContactIntroduction.class);
+            startActivity(intent);
+            finish();
+
+            Toast.makeText(Home.this,"You have made close contacts with " +
+                            rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
+                    .show();
+        }
+        else{
+            //Toast.makeText(Home.this,"No risk",Toast.LENGTH_LONG).show();
+        }
     }
 }

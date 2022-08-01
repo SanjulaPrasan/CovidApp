@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.ui1.R;
+import com.example.ui1.Registration.Login;
 
 public class Start extends AppCompatActivity {
     private Button btnStart;

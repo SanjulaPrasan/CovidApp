@@ -5,7 +5,6 @@
       <map>
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_email.xml" value="0.1775" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_person.xml" value="0.1775" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/ic_profile.xml" value="0.172" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_img.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle.xml" value="0.1555" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/drawable/rounded_rectangle1.xml" value="0.1555" />
@@ -15,6 +14,8 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth.xml" value="0.140625" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetooth_view.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_bluetoth.xml" value="0.2" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_close_contact_instructions.xml" value="0.2" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_close_contact_introduction.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_find_blue_macaddress.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_high_risk_instructions.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_home.xml" value="0.129981884057971" />
@@ -24,7 +25,7 @@
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_moderate_risk_instructions.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_positive_instructions.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_privacy.xml" value="0.140625" />
-        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_profile.xml" value="0.12" />
+        <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_registration.xml" value="0.1617161716171617" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_report.xml" value="0.2" />
         <entry key="..\:/CAMPUS WORK/Group Project/GIT HUB/CovidApp/app/src/main/res/layout/activity_self_assessment.xml" value="0.22" />
@@ -57,8 +58,9 @@
         <entry key="..\:/CAMPUS WORK/Group Project/UI Design AS/app/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_bluetooth.xml" value="0.209375" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_bluetoth.xml" value="0.25" />
+        <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_close_contact_introduction.xml" value="0.209375" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_database_compare.xml" value="0.209375" />
-        <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_home.xml" value="0.20615384615384616" />
+        <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_login.xml" value="0.209375" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_logo.xml" value="0.25" />
         <entry key="..\:/Niro's Documents/Computer Science/Year 2 - Semester 1/CSCI 23072 - Group Project/Group Project Git Repo/app/src/main/res/layout/activity_privacy.xml" value="0.20615384615384616" />

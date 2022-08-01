@@ -1,4 +1,4 @@
-package com.example.ui1.UI;
+package com.example.ui1.Registration;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -11,14 +11,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ui1.R;
-import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
