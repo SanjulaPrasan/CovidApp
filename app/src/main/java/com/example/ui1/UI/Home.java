@@ -352,6 +352,21 @@ public class Home extends AppCompatActivity {
         }
         if(rtnList.size()> 0){
 
+<<<<<<< Updated upstream
+=======
+            SelfAssessment.healthStatus = "CLOSE CONTACT";
+            SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+            editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
+            editor.apply();
+            status.setText("" + health);
+
+            Intent intent = new Intent(Home.this, CloseContactIntroduction.class);
+            startActivity(intent);
+            finish();
+
+>>>>>>> Stashed changes
             Toast.makeText(Home.this,"You have made close contacts with " +
                             rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)
                     .show();
