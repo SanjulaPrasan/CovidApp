@@ -36,6 +36,7 @@ import com.example.ui1.SelfAssessment.ReportActivity;
 import com.example.ui1.SelfAssessment.SelfAssessment;
 import com.example.ui1.SelfAssessment.SelfAssessmentHome;
 
+import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -222,6 +223,15 @@ public class Home extends AppCompatActivity {
 
         View v= this.findViewById(android.R.id.content);
         btnDiscover(v);
+        Method method;
+        try {
+            method = mBluetoothAdapter.getClass().getMethod("setScanMode", int.class, int.class);
+            method.invoke(mBluetoothAdapter,BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE,600);
+            //Log.e("invoke","method invoke successfully");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
         handlerBluetooth.postDelayed(runnable = new Runnable() {
             public void run() {
                 handlerBluetooth.postDelayed(runnable, delay);
@@ -356,7 +366,7 @@ public class Home extends AppCompatActivity {
             editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
             editor.apply();
             status.setText("" + health);
-            
+
             Intent intent = new Intent(Home.this, CloseContactIntroduction.class);
             startActivity(intent);
             finish();
