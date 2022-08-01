@@ -27,7 +27,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Blockchain.Blockchain;
-import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
@@ -349,7 +348,7 @@ public class Home extends AppCompatActivity {
         //receive close contact bluetooth mac address from local storage
         List closeContactsList = dbHandler.getCloseContacts();
         for(Object closeMacAddress:closeContactsList){
-            System.out.println(closeMacAddress);
+            System.out.println("Close contacts: "+closeMacAddress);
         }
         List rtnList = new ArrayList();
         for(Object dto : closeContactsList) {
