@@ -229,7 +229,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
 
 
     public void saveDataHome(){
-        SelfAssessment.healthStatus = "NO RISK";
+
         SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
