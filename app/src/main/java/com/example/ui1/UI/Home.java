@@ -103,13 +103,19 @@ public class Home extends AppCompatActivity {
         //update positive bluetooth mac address from firebase
         PositivePatient positivePatient = new PositivePatient(positiveMobileNumbers);
 
-        handlerBlockchain.postDelayed(runnable1 = new Runnable() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void run() {
-                compare(positivePatient);
-            }
-        },5000);
+        if (health.equals("CLOSE CONTACT")){
+            System.out.println("Yor are close contact");
+        }else{
+            handlerBlockchain.postDelayed(runnable1 = new Runnable() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @Override
+                public void run() {
+                    compare(positivePatient);
+                }
+            },5000);
+        }
+
+
 
         btnStats = (Button) findViewById(R.id.btnStats);
         btnStats.setOnClickListener(new View.OnClickListener() {
@@ -342,6 +348,18 @@ public class Home extends AppCompatActivity {
             }
         }
         if(rtnList.size()> 0){
+
+            SelfAssessment.healthStatus = "CLOSE CONTACT";
+            SharedPreferences sharedPreferences = getSharedPreferences(SelfAssessment.SHARED_PREFS, MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            health = sharedPreferences.getString(SelfAssessment.TEXT, "");
+            editor.putString(SelfAssessment.TEXT, SelfAssessment.healthStatus);
+            editor.apply();
+            status.setText("" + health);
+            
+            Intent intent = new Intent(Home.this, CloseContactIntroduction.class);
+            startActivity(intent);
+            finish();
 
             Toast.makeText(Home.this,"You have made close contacts with " +
                             rtnList.size() +" positive patients in last 14 days",Toast.LENGTH_LONG)

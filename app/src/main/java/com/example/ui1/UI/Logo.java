@@ -66,7 +66,7 @@ public class Logo extends AppCompatActivity {
                 finish();
                 //Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
             }
-            else if(health.equals("Close Contact")){
+            else if(health.equals("CLOSE CONTACT")){
                 Intent intent = new Intent(Logo.this, CloseContactIntroduction.class);
                 startActivity(intent);
                 finish();
