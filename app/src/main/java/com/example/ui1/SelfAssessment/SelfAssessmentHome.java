@@ -210,7 +210,7 @@ public class SelfAssessmentHome extends AppCompatActivity {
             if(rat.equals("Positive")){
                 SelfAssessment.healthStatus = "HIGH RISK";
             } else if(rat.equals("Negative")){
-                SelfAssessment.healthStatus = "NEGATIVE";
+                SelfAssessment.healthStatus = "NO RISK";
             } else{
                 if(switchBreathing.isChecked() || switchConscious.isChecked()){
                     SelfAssessment.healthStatus = "HIGH RISK";
