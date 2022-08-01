@@ -37,6 +37,9 @@
             android:name=".Introduction.FindBlueMACAddress"
             android:exported="false" />
         <activity
+            android:name=".Introduction.CloseContactIntroduction"
+            android:exported="false" />
+        <activity
             android:name=".UI.SplashScreenLogo"
             android:exported="true">
             <intent-filter>
