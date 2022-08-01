@@ -28,16 +28,16 @@
             android:name=".SelfAssessment.ReportActivity"
             android:exported="false" />
         <activity
-            android:name=".UI.PositiveInstructions"
+            android:name=".Introduction.PositiveInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.HighRiskInstructions"
+            android:name=".Introduction.HighRiskInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.ModerateRiskInstructions"
+            android:name=".Introduction.ModerateRiskInstructions"
             android:exported="false" />
         <activity
-            android:name=".UI.FindBlueMACAddress"
+            android:name=".Introduction.FindBlueMACAddress"
             android:exported="false" />
         <activity
             android:name=".UI.Logo"
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.Login"
+            android:name=".Registration.Login"
             android:exported="false" />
         <activity
             android:name=".UI.Privacy"
@@ -61,7 +61,7 @@
             android:name=".UI.Start"
             android:exported="false" />
         <activity
-            android:name=".UI.Registration"
+            android:name=".Registration.Registration"
             android:exported="false" />
         <activity
             android:name=".UI.Home"
