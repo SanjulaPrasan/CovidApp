@@ -27,6 +27,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ui1.Blockchain.Blockchain;
+import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Models.ContactModel;
 import com.example.ui1.Models.PositivePatient;
 import com.example.ui1.R;
