@@ -1,8 +1,12 @@
 package com.example.ui1.Registration;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -101,7 +105,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
                     finish();
                 }else{
-                    Toast.makeText(Login.this, "Incorrect username or password.", Toast.LENGTH_LONG).show();
+                    new AlertDialog.Builder(Login.this)
+                            .setMessage("Incorrect username or password.")
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .create().show();
+//                    Toast.makeText(Login.this, "Incorrect username or password.", Toast.LENGTH_LONG).show();
 
                 }
                 progressBar.setVisibility(View.GONE);

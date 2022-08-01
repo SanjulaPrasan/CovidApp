@@ -206,12 +206,12 @@ public class Home extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
-            Log.d(TAG, "onReceive: ACTION FOUND.");
+//            Log.d(TAG, "onReceive: ACTION FOUND.");
 
             if (action.equals(BluetoothDevice.ACTION_FOUND)){
                 BluetoothDevice device = intent.getParcelableExtra (BluetoothDevice.EXTRA_DEVICE);
                 mBTDevices.add(device);
-                Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
+//                Log.d(TAG, "onReceive: " + device.getName() + ": " + device.getAddress());
                 String address  = device.getAddress();
                 addToDatabase(address);
             }
@@ -243,11 +243,11 @@ public class Home extends AppCompatActivity {
     }
 
     public void btnDiscover(View view) {
-        Log.d(TAG, "btnDiscover: Looking for unpaired devices.");
+//        Log.d(TAG, "btnDiscover: Looking for unpaired devices.");
 
         if(mBluetoothAdapter.isDiscovering()){
             mBluetoothAdapter.cancelDiscovery();
-            Log.d(TAG, "btnDiscover: Canceling discovery.");
+//            Log.d(TAG, "btnDiscover: Canceling discovery.");
 
             //check BT permissions in manifest
             checkBTPermissions();
@@ -284,9 +284,10 @@ public class Home extends AppCompatActivity {
 
                 this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1001); //Any number
             }
-        }else{
-            Log.d(TAG, "checkBTPermissions: No need to check permissions. SDK version < LOLLIPOP.");
         }
+//        else{
+//            Log.d(TAG, "checkBTPermissions: No need to check permissions. SDK version < LOLLIPOP.");
+//        }
     }
 
     @SuppressLint("MissingPermission")
