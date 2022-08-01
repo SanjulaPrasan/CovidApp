@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ui1.Introduction.CloseContactIntroduction;
 import com.example.ui1.Introduction.HighRiskInstructions;
 import com.example.ui1.Introduction.ModerateRiskInstructions;
 import com.example.ui1.Introduction.PositiveInstructions;
@@ -53,19 +54,25 @@ public class Logo extends AppCompatActivity {
                 Intent intent = new Intent(Logo.this, PositiveInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "POSITIVE POSITIVE", Toast.LENGTH_SHORT).show();
             }
             else if (health.equals("HIGH RISK")){
                 Intent intent = new Intent(Logo.this, HighRiskInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "High Risk", Toast.LENGTH_SHORT).show();
             }
             else if(health.equals("MODERATE RISK")){
                 Intent intent = new Intent(Logo.this, ModerateRiskInstructions.class);
                 startActivity(intent);
                 finish();
-                Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "MODERATE RISK", Toast.LENGTH_SHORT).show();
+            }
+            else if(health.equals("CLOSE CONTACT")){
+                Intent intent = new Intent(Logo.this, CloseContactIntroduction.class);
+                startActivity(intent);
+                finish();
+                //Toast.makeText(this, "CLOSE CONTACT", Toast.LENGTH_SHORT).show();
             }
             else
             {
